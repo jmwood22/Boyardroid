@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android" 
+        android:layout_width="fill_parent" 
+        android:layout_height="fill_parent" 
+        android:overScrollMode="always" 
+        android:isScrollContainer="true" 
+        android:scrollbarAlwaysDrawVerticalTrack="true" 
+        android:scrollbarStyle="outsideInset" 
+        android:scrollbars="vertical">
+
+	<TableLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
+
+	    <TableRow
+	        android:id="@+id/tableRow1"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+
+	        <Button
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/apple_button"
+	            android:text="@string/apple"
+	            android:textColor="@android:color/white" />
+
+	        <Button
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/banana_button"
+	            android:text="@string/banana"
+	            android:textColor="@android:color/black" />
+
+	    </TableRow>
+
+	    <TableRow
+	        android:id="@+id/tableRow2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+
+	        <Button
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/orange_button"
+	            android:text="@string/orange"
+	            android:textColor="@android:color/white" />
+
+	        <Button
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/lemon_button"
+	            android:text="@string/lemon"
+	            android:textColor="@android:color/white" />
+
+	    </TableRow>
+
+	    <TableRow
+	        android:id="@+id/tableRow3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+
+	        <Button
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/lime_button"
+	            android:text="@string/lime"
+	            android:textColor="@android:color/black" />
+
+	        <Button
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/blueberry_button"
+	            android:text="@string/blueberry"
+	            android:textColor="@android:color/white" />
+
+	    </TableRow>
+
+	    <TableRow
+	        android:id="@+id/tableRow4"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+
+	        <Button
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/grape_button"
+	            android:text="@string/grape"
+	            android:textColor="@android:color/black" />
+
+	    </TableRow>
+	</TableLayout>
+</ScrollView>
