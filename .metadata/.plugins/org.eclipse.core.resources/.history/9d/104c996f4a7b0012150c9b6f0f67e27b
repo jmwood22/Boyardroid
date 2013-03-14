@@ -1,0 +1,51 @@
+package com.crunchers.boyardroid;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+
+
+public class Fridge extends Activity {
+
+	@Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_fridge);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.activity_fridge, menu);
+        return true;
+    }
+    /** called when the user clicks the breakfast button */
+    public void searchbreakfast(View view){
+    	//Do something in response to button
+    }
+    
+    /** called when the user clicks the lunch button */
+    public void searchlunch(View view){
+    	//Do something in response to button
+    }
+    
+    /** called when the user clicks the dinner button */
+    public void searchdinner(View view){
+    	//Do something in response to button
+    }
+    /** called when the user clicks the add ingredient button */
+    public void addIngre(View view){
+    	//Do something in response to button
+    }
+    /** called when the user clicks the remove ingredient button */
+    public void removIngre(View view){
+    	//Do something in response to button
+    	
+    }
+    /** called when the user clicks the breakfast button */
+    public void favRecipe(View view){
+    	//Do something in response to button
+    }
+
+}

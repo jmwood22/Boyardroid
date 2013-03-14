@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuickRecipe" >
+
+    <Button
+        android:id="@+id/fruit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="160dp"
+        android:text="@string/title_activity_fruit" />
+
+    <Button
+        android:id="@+id/meat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/fruit"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="66dp"
+        android:text="@string/meat" />
+
+    <Button
+        android:id="@+id/grains"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/fruit"
+        android:layout_below="@+id/fruit"
+        android:layout_marginTop="36dp"
+        android:text="@string/grain" />
+
+    <Button
+        android:id="@+id/spices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/grains"
+        android:layout_alignBottom="@+id/grains"
+        android:layout_alignLeft="@+id/vegetables"
+        android:text="@string/spice" />
+
+    <Button
+        android:id="@+id/dairy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/grains"
+        android:layout_alignLeft="@+id/spices"
+        android:text="@string/dairy" />
+
+    <Button
+        android:id="@+id/vegetables"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/meat"
+        android:layout_alignBottom="@+id/meat"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="24dp"
+        android:text="@string/vegetable" />
+
+</RelativeLayout>

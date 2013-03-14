@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".QuickRecipe" >
+
+    <Button
+        android:id="@+id/fruit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="65dp"
+        android:layout_marginTop="160dp"
+        android:text="@string/title_activity_fruit" />
+
+    <Button
+        android:id="@+id/meat"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/fruit"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="66dp"
+        android:text="Meat" />
+
+    <Button
+        android:id="@+id/vegetables"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/meat"
+        android:layout_alignBottom="@+id/meat"
+        android:layout_marginLeft="50dp"
+        android:layout_toRightOf="@+id/meat"
+        android:text="Vegetables" />
+
+    <Button
+        android:id="@+id/dairy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/fruit"
+        android:layout_alignLeft="@+id/button1"
+        android:text="Dairy" />
+
+    <Button
+        android:id="@+id/grains"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/fruit"
+        android:layout_below="@+id/fruit"
+        android:layout_marginTop="36dp"
+        android:text="Grains" />
+
+    <Button
+        android:id="@+id/spices"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/button2"
+        android:layout_alignTop="@+id/button3"
+        android:text="Spices" />
+
+</RelativeLayout>
