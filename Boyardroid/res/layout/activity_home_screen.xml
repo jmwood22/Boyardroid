@@ -4,20 +4,8 @@
     android:layout_height="match_parent"
     android:background="@drawable/mascot"
     tools:context=".HomeScreen" >
-
-    <Button
-        android:id="@+id/fridge"
-        android:layout_width="120dp"
-        android:layout_height="55dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="32dp"
-        android:layout_marginLeft="28dp"
-        android:background="#00FFFF"
-        android:text="@string/fridge_button"
-        android:onClick="" />
-
-    <TextView
+    
+        <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -30,6 +18,18 @@
         android:textStyle="bold"
         android:background="@android:color/transparent"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Button
+        android:id="@+id/fridge"
+        android:layout_width="120dp"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="32dp"
+        android:layout_marginLeft="28dp"
+        android:background="#00FFFF"
+        android:text="@string/fridge_button"
+        android:onClick="" />
 
     <Button
         android:id="@+id/quick_recipe"

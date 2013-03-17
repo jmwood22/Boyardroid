@@ -38,6 +38,46 @@
             android:name="com.crunchers.boyardroid.Fruit"
             android:label="@string/title_activity_fruit" >
         </activity>
+        <activity
+            android:name="com.crunchers.boyardroid.Meat"
+            android:label="@string/title_activity_meat"
+            android:parentActivityName="com.crunchers.boyardroid.QuickRecipe" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.crunchers.boyardroid.QuickRecipe" />
+        </activity>
+        <activity
+            android:name="com.crunchers.boyardroid.Vegetable"
+            android:label="@string/title_activity_vegetable"
+            android:parentActivityName="com.crunchers.boyardroid.QuickRecipe" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.crunchers.boyardroid.QuickRecipe" />
+        </activity>
+        <activity
+            android:name="com.crunchers.boyardroid.Grain"
+            android:label="@string/title_activity_grain"
+            android:parentActivityName="com.crunchers.boyardroid.QuickRecipe" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.crunchers.boyardroid.QuickRecipe" />
+        </activity>
+        <activity
+            android:name="com.crunchers.boyardroid.Dairy"
+            android:label="@string/title_activity_dairy"
+            android:parentActivityName="com.crunchers.boyardroid.QuickRecipe" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.crunchers.boyardroid.QuickRecipe" />
+        </activity>
+        <activity
+            android:name="com.crunchers.boyardroid.Spice"
+            android:label="@string/title_activity_spice"
+            android:parentActivityName="com.crunchers.boyardroid.QuickRecipe" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.crunchers.boyardroid.QuickRecipe" />
+        </activity>
     </application>
 
 </manifest>
