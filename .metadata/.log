@@ -2791,3 +2791,13 @@ org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
 
 !ENTRY com.android.ide.eclipse.adt 4 0 2013-03-17 14:53:53.704
 !MESSAGE Warning: Ignoring name conflict in resource file for name menu_settings
+!SESSION 2013-03-18 16:08:11.284 -----------------------------------------------
+eclipse.buildId=v21.0.1-543035
+java.version=1.6.0_23
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product com.android.ide.eclipse.adt.package.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product com.android.ide.eclipse.adt.package.product
+
+!ENTRY com.android.ide.eclipse.adt 2 0 2013-03-18 16:16:12.627
+!MESSAGE activity_quick_recipe.xml: Couldn't resolve resource @string/veggie

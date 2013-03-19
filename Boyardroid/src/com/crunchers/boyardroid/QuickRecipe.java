@@ -9,8 +9,6 @@ import android.view.View.OnClickListener;
 import android.widget.Button;
 
 public class QuickRecipe extends Activity {
-
-	
 	
 	Button fruit;
 	Button meat;
