@@ -16,7 +16,7 @@ import android.widget.ListView;
 
 public class Fridge extends Activity implements OnClickListener {
 
-	
+	static ArrayList<String> listItems = new ArrayList<String>();
 	
 	@Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,18 +25,26 @@ public class Fridge extends Activity implements OnClickListener {
           
         //TEST OF LISTVIEW AND SCROLL FUNCTION!
         ListView listView = (ListView)findViewById(R.id.listView1);
-    	final ArrayList<String> listItems = new ArrayList<String>();
-    	listItems.add("Chicken");
+    	/*listItems.add("Chicken");
     	listItems.add("Lettuce");
     	listItems.add("Tomatoes");
     	listItems.add("Eggs");
     	listItems.add("Ketchup");
     	listItems.add("Bread");
-    	listItems.add("Swiss Cheese");
+    	listItems.add("Swiss Cheese");*/
     	final ArrayAdapter<String> adapter = new ArrayAdapter<String>( this, android.R.layout.simple_list_item_1, listItems );
     	listView.setAdapter(adapter);
     	
     }
+	//adds ingredient to fridge
+	public static void addToFridge(String ingredient)
+	{
+		listItems.add(ingredient);
+	}
+	public static void removeFromFridge(String ingredient)
+	{
+		listItems.remove(ingredient);
+	}
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
