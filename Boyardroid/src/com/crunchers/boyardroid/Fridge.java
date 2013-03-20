@@ -14,12 +14,14 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 
-public class Fridge extends Activity implements OnClickListener {
+public class Fridge extends Activity implements OnClickListener 
+{
 
 	static ArrayList<String> listItems = new ArrayList<String>();
 	
 	@Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) 
+	{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fridge);
           
@@ -36,6 +38,7 @@ public class Fridge extends Activity implements OnClickListener {
     	listView.setAdapter(adapter);
     	
     }
+	
 	//adds ingredient to fridge
 	public static void addToFridge(String ingredient)
 	{
@@ -46,41 +49,51 @@ public class Fridge extends Activity implements OnClickListener {
 		listItems.remove(ingredient);
 	}
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
+    
+	
+	@Override
+    public boolean onCreateOptionsMenu(Menu menu) 
+    {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.activity_fridge, menu);
         return true;
     }
     /** called when the user clicks the breakfast button */
-    public void searchbreakfast(View view){
+    public void searchbreakfast(View view)
+    {
     	//Do something in response to button
     }
     
     /** called when the user clicks the lunch button */
-    public void searchlunch(View view){
+    public void searchlunch(View view)
+    {
     	//Do something in response to button
     }
     
     /** called when the user clicks the dinner button */
-    public void searchdinner(View view){
+    public void searchdinner(View view)
+    {
     	//Do something in response to button
     }
     /** called when the user clicks the add ingredient button */
-    public void addIngre(View view){
+    public void addIngre(View view)
+    {
     	//Do something in response to button
     }
     /** called when the user clicks the remove ingredient button */
-    public void removIngre(View view){
+    public void removIngre(View view)
+    {
     	//Do something in response to button
     	
     }
     /** called when the user clicks the breakfast button */
-    public void favRecipe(View view){
+    public void favRecipe(View view)
+    {
     	//Do something in response to button
     }
     
-    public void onClick(DialogInterface dialog, int which) {
+    public void onClick(DialogInterface dialog, int which) 
+    {
 		switch(which) {
 		case DialogInterface.BUTTON_POSITIVE:
 			Intent i = new Intent(getApplicationContext(), QuickRecipe.class);
@@ -92,7 +105,8 @@ public class Fridge extends Activity implements OnClickListener {
 		
 	}
 	
-	public void dialogBtn(View v) {
+	public void dialogBtn(View v) 
+	{
 		new AlertDialog.Builder(this)
 		.setTitle("More?")
 		.setMessage("Add more ingredients?")
