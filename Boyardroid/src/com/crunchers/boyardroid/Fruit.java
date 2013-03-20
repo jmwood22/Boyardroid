@@ -30,63 +30,63 @@ public class Fruit extends Activity {
 		apple.setOnClickListener(new OnClickListener() {
 		  public void onClick(View v){
 			  if (((CheckBox) v).isChecked())
-				  Fridge.listItems.add("Apple");
+				  QuickRecipe.addToList("Apple");
 			  else
-				  Fridge.listItems.remove("Apple");
+				  QuickRecipe.removeFromList("Apple");
 		  }
 		});
 		banana = (CheckBox)findViewById(R.id.banana);
 		banana.setOnClickListener(new OnClickListener() {
 		  public void onClick(View v){
 			  if (((CheckBox) v).isChecked())
-				  Fridge.addToFridge("Banana");
+				  QuickRecipe.addToList("Banana");
 			  else
-				  Fridge.removeFromFridge("Banana");
+				  QuickRecipe.removeFromList("Banana");
 		  }
 		});
 		orange = (CheckBox)findViewById(R.id.orange);
 		orange.setOnClickListener(new OnClickListener() {
 		  public void onClick(View v){
 			  if (((CheckBox) v).isChecked())
-				  Fridge.addToFridge("Orange");
+				  QuickRecipe.addToList("Orange");
 			  else
-				  Fridge.removeFromFridge("Orange");
+				  QuickRecipe.removeFromList("Orange");
 		  }
 		});
 		lemon = (CheckBox)findViewById(R.id.lemon);
 		lemon.setOnClickListener(new OnClickListener() {
 		  public void onClick(View v){
 			  if (((CheckBox) v).isChecked())
-				  Fridge.addToFridge("Lemon");
+				  QuickRecipe.addToList("Lemon");
 			  else
-				  Fridge.removeFromFridge("Lemon");
+				  QuickRecipe.removeFromList("Lemon");
 		  }
 		});
 		lime = (CheckBox)findViewById(R.id.lime);
 		lime.setOnClickListener(new OnClickListener() {
 		  public void onClick(View v){
 			  if (((CheckBox) v).isChecked())
-				  Fridge.addToFridge("Lime");
+				  QuickRecipe.addToList("Lime");
 			  else
-				  Fridge.removeFromFridge("Lime");
+				  QuickRecipe.removeFromList("Lime");
 		  }
 		});
 		blueberry = (CheckBox)findViewById(R.id.blueberry);
 		blueberry.setOnClickListener(new OnClickListener() {
 		  public void onClick(View v){
 			  if (((CheckBox) v).isChecked())
-				  Fridge.addToFridge("Blueberry");
+				  QuickRecipe.addToList("Blueberry");
 			  else
-				  Fridge.removeFromFridge("Blueberry");
+				  QuickRecipe.removeFromList("Blueberry");
 		  }
 		});
 		grape = (CheckBox)findViewById(R.id.grape);
 		grape.setOnClickListener(new OnClickListener() {
 		  public void onClick(View v){
 			  if (((CheckBox) v).isChecked())
-				  Fridge.addToFridge("Grape");
+				  QuickRecipe.addToList("Grape");
 			  else
-				  Fridge.removeFromFridge("Grape");
+				  QuickRecipe.removeFromList("Grape");
 		  }
 		});
 		findRecipes = (Button)findViewById(R.id.findRecipes);
@@ -97,7 +97,8 @@ public class Fruit extends Activity {
 		add = (Button)findViewById(R.id.add);
 		add.setOnClickListener(new OnClickListener() {
 		  public void onClick(View v){
-		       Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
+		      QuickRecipe.mergeLists(); 
+			  Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 		       startActivity(i);
 		  }
 		});

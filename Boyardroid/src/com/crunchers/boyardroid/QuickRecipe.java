@@ -1,5 +1,7 @@
 package com.crunchers.boyardroid;
 
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,6 +18,8 @@ public class QuickRecipe extends Activity {
 	Button grain;
 	Button dairy;
 	Button spice;
+	
+	static ArrayList<String> quickListItems = new ArrayList<String>();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -65,6 +69,34 @@ public class QuickRecipe extends Activity {
 		  }
 		});
 	}
+	
+	public static void addToList(String ingredient)
+	{
+		quickListItems.add(ingredient);
+	}
+	public static void removeFromList(String ingredient)
+	{
+		quickListItems.remove(ingredient);
+	}
+	
+	public static void mergeLists()
+	{
+		
+		for(int i = 0; i<quickListItems.size();i++)
+		{
+			addToFridge(quickListItems.get(i));
+		}
+	}
+	
+	//adds ingredient to fridge
+		public static void addToFridge(String ingredient)
+		{
+			Fridge.addToFridge(ingredient);
+		}
+		public static void removeFromFridge(String ingredient)
+		{
+			Fridge.removeFromFridge(ingredient);
+		}
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
