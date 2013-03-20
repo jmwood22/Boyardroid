@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/RelativeLayout1"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
+
+	tools:context=".Quick Recipe" >
+
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="400dip"
+    android:isScrollContainer="true"
+    android:overScrollMode="always"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    android:scrollbarStyle="outsideInset"
+    android:scrollbars="vertical" >
+
+	<TableLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="404dp" >
+		<TableRow
+	        	android:id="@+id/tableRow1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content" >
+	        <CheckBox
+	            android:id="@+id/bacon"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/baconbutton"
+	            android:text="@string/bacon"
+	            android:textColor="@android:color/white" />
+	        <CheckBox
+	            android:id="@+id/bologna"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/bolognabutton"
+	            android:text="@string/bologna"
+	            android:textColor="@android:color/white" />
+	    </TableRow>
+	    
+	    <TableRow
+	        android:id="@+id/tableRow2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	        
+		<CheckBox
+	            android:id="@+id/chicken"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/chickenbutton"
+	            android:text="@string/chicken"
+	            android:textColor="@android:color/white" />
+	        <CheckBox
+	            android:id="@+id/clam"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/clambutton"
+	            android:text="@string/clam"
+	            android:textColor="@android:color/white" />
+	    </TableRow>
+
+	    <TableRow
+	        android:id="@+id/tableRow3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	        <CheckBox
+	            android:id="@+id/crab"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/crabbutton"
+	            android:text="@string/crab"
+	            android:textColor="@android:color/white" />
+	        <CheckBox
+	            android:id="@+id/crawfish"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/crawfishbutton"
+	            android:text="@string/crawfish"
+	            android:textColor="@android:color/white" />
+	    </TableRow>
+	    
+	    <TableRow
+	        android:id="@+id/tableRow4"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	        <CheckBox
+	            android:id="@+id/eggs"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/eggsbutton"
+	            android:text="@string/eggs"
+	            android:textColor="@android:color/white" />
+	        <CheckBox
+	            android:id="@+id/ground_beef"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/ground_beefbutton"
+	            android:text="@string/ground_beef"
+	            android:textColor="@android:color/white" />
+	    </TableRow>
+
+	    <TableRow
+	        android:id="@+id/tableRow5"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	        <CheckBox
+	            android:id="@+id/ham"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/hambutton"
+	            android:text="@string/ham"
+	            android:textColor="@android:color/white" />
+	        <CheckBox
+	            android:id="@+id/lamb"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/lambbutton"
+	            android:text="@string/lamb"
+	            android:textColor="@android:color/white" />
+	    </TableRow>
+
+	    <TableRow
+	        android:id="@+id/tableRow6"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+                <CheckBox
+	            android:id="@+id/lobster"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/lobsterbutton"
+	            android:text="@string/lobster"
+	            android:textColor="@android:color/white" />
+	        <CheckBox
+	            android:id="@+id/oyster"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/oysterbutton"
+	            android:text="@string/oyster"
+	            android:textColor="@android:color/white" />
+	    </TableRow>
+
+	    <TableRow
+	        android:id="@+id/tableRow7"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	        <CheckBox
+	            android:id="@+id/pepperoni"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/pepperonibutton"
+	            android:text="@string/pepperoni"
+	            android:textColor="@android:color/white" />
+	        <CheckBox
+	            android:id="@+id/pork"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/porkbutton"
+	            android:text="@string/pork"
+	            android:textColor="@android:color/white" />
+	    </TableRow>
+
+	    <TableRow
+	        android:id="@+id/tableRow8"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	        <CheckBox
+	            android:id="@+id/sausage"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/sausagebutton"
+	            android:text="@string/sausage"
+	            android:textColor="@android:color/white" />
+	        <CheckBox
+	            android:id="@+id/scallop"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/scallopbutton"
+	            android:text="@string/scallop"
+	            android:textColor="@android:color/white" />
+	    </TableRow>
+
+	    <TableRow
+	        android:id="@+id/tableRow9"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	        <CheckBox
+	            android:id="@+id/shrimp"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/shrimpbutton"
+	            android:text="@string/shrimp"
+	            android:textColor="@android:color/white" />
+	        <CheckBox
+	            android:id="@+id/solami"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/solamibutton"
+	            android:text="@string/solami"
+	            android:textColor="@android:color/white" />
+	    </TableRow>
+
+	    <TableRow
+	        android:id="@+id/tableRow10"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	        <CheckBox
+	            android:id="@+id/steak"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/steakbutton"
+	            android:text="@string/steak"
+	            android:textColor="@android:color/white" />
+	        <CheckBox
+	            android:id="@+id/turkey"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/turkeybutton"
+	            android:text="@string/turkey"
+	            android:textColor="@android:color/white" />
+	    </TableRow>
+	</TableLayout>
+</ScrollView>
+
+<Button
+    android:id="@+id/findRecipes"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_marginRight="24dp"
+    android:layout_toLeftOf="@+id/add"
+    android:text="Find Recipes" />
+
+<Button
+    android:id="@+id/add"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:layout_marginRight="34dp"
+    android:text="Add to List" />
+
+</RelativeLayout>
