@@ -3,20 +3,19 @@ package com.crunchers.boyardroid;
 import java.util.ArrayList;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.DialogInterface.OnClickListener;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 
-public class Fridge extends Activity implements OnClickListener 
+public class Fridge extends Activity 
 {
-
+	Button add;
 	static ArrayList<String> listItems = new ArrayList<String>();
 	
 	@Override
@@ -24,6 +23,15 @@ public class Fridge extends Activity implements OnClickListener
 	{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fridge);
+        add = (Button)findViewById(R.id.fruit);
+		add.setOnClickListener(new OnClickListener() 
+		{
+		  public void onClick(View v)
+		  {
+		       Intent i=new Intent(getApplicationContext(),Fruit.class);
+		       startActivity(i);
+		  }
+		});
           
         //TEST OF LISTVIEW AND SCROLL FUNCTION!
         ListView listView = (ListView)findViewById(R.id.listView1);
@@ -91,7 +99,7 @@ public class Fridge extends Activity implements OnClickListener
     {
     	//Do something in response to button
     }
-    
+    /*
     public void onClick(DialogInterface dialog, int which) 
     {
 		switch(which) {
@@ -113,6 +121,6 @@ public class Fridge extends Activity implements OnClickListener
 		.setPositiveButton("Yes", this)
 		.setNegativeButton("No", this)
 		.show();
-	}
+	}*/
 
 }
