@@ -23,12 +23,13 @@ public class Fridge extends Activity
 	{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fridge);
-        add = (Button)findViewById(R.id.fruit);
+        
+        add = (Button)findViewById(R.id.add);
 		add.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
 		  {
-		       Intent i=new Intent(getApplicationContext(),Fruit.class);
+		       Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 		       startActivity(i);
 		  }
 		});
