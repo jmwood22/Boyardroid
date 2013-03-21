@@ -78,6 +78,10 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.crunchers.boyardroid.QuickRecipe" />
         </activity>
+        <activity
+            android:name="com.crunchers.boyardroid.QuickRecipeList"
+            android:label="@string/title_activity_quick_recipe_list" >
+        </activity>
     </application>
 
 </manifest>

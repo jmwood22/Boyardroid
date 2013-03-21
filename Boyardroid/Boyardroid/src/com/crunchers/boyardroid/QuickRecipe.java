@@ -19,6 +19,7 @@ public class QuickRecipe extends Activity
 	Button grain;
 	Button dairy;
 	Button spice;
+	Button quickRecipe;
 	
 	static ArrayList<String> quickListItems = new ArrayList<String>();
 	
@@ -91,6 +92,16 @@ public class QuickRecipe extends Activity
 		       Intent i=new Intent(getApplicationContext(),Spice.class);
 		       startActivity(i);
 		  }
+		});
+		
+		quickRecipe = (Button)findViewById(R.id.quickRecipe);
+		quickRecipe.setOnClickListener(new OnClickListener()
+		{
+			public void onClick(View v)
+			{
+				Intent i = new Intent(getApplicationContext(),QuickRecipeList.class);
+				startActivity(i);
+			}
 		});
 	}
 	

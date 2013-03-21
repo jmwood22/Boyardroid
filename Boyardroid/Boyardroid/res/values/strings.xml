@@ -84,5 +84,7 @@
     <string name="title_activity_grain">Grain</string>
     <string name="title_activity_dairy">Dairy</string>
     <string name="title_activity_spice">Spice</string>
+    <string name="title_activity_quick_recipe_list">QuickRecipeList</string>
+    <string name="action_settings">Settings</string>
 
 </resources>

@@ -12,6 +12,8 @@ public class HomeScreen extends Activity
 
 Button fridge;
 Button quickRecipe;
+boolean fridgeList = true;
+
 @Override
 public void onCreate(Bundle savedInstanceState) 
 {
@@ -22,7 +24,8 @@ public void onCreate(Bundle savedInstanceState)
 	 {
 	  public void onClick(View v)
 	   {
-	       Intent i=new Intent(getApplicationContext(),Fridge.class);
+	      fridgeList = true; 
+		  Intent i=new Intent(getApplicationContext(),Fridge.class);
 	       startActivity(i);
 	    }
 	 });
@@ -33,7 +36,8 @@ public void onCreate(Bundle savedInstanceState)
 	{
 	 public void onClick(View v)
 	  {
-	      Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
+	     fridgeList = false; 
+		 Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 	      startActivity(i);
 	   }
 	}
