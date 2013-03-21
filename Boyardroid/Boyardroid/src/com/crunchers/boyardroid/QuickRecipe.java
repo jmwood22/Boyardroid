@@ -21,7 +21,8 @@ public class QuickRecipe extends Activity
 	Button spice;
 	Button quickRecipe;
 	
-	static ArrayList<String> quickListItems = new ArrayList<String>();
+	
+	static ArrayList<String> tempListItems = new ArrayList<String>();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -107,25 +108,42 @@ public class QuickRecipe extends Activity
 	
 	public static void addToList(String ingredient)
 	{
-		if(Fridge.listItems.indexOf(ingredient)==-1)
-			quickListItems.add(ingredient);
+		if(tempListItems.indexOf(ingredient)==-1)
+			tempListItems.add(ingredient);
 	}
 	public static void removeFromList(String ingredient)
 	{
-		quickListItems.remove(ingredient);
+		tempListItems.remove(ingredient);
 	}
 	
 	public static void mergeLists()
 	{
 		
-		for(int i = 0; i<quickListItems.size();i++)
+		if(HomeScreen.fridgeList==true)
 		{
-			addToFridge(quickListItems.get(i));
+			for(int i = 0; i<tempListItems.size();i++)
+			{
+				addToFridge(tempListItems.get(i));
+			}
 		}
 		
-		quickListItems.clear();
+		else
+		{
+			for(int i = 0; i<tempListItems.size();i++)
+			{
+				addToQuick(tempListItems.get(i));
+			}
+		}
+		
+		tempListItems.clear();
 	}
 	
+	public static void addToQuick(String ingredient) 
+	{
+		QuickRecipeList.addToQuick(ingredient);
+		
+	}
+
 	//adds ingredient to fridge
 		public static void addToFridge(String ingredient)
 		{

@@ -28,35 +28,35 @@
 	            android:id="@+id/bacon"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/baconbutton"
+	            android:background="@drawable/bacon"
 	            android:text="@string/bacon"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/bologna"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/bolognabutton"
+	            android:background="@drawable/bologna"
 	            android:text="@string/bologna"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
-	    
+
 	    <TableRow
 	        android:id="@+id/tableRow2"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content" >
-	        
+
 		<CheckBox
 	            android:id="@+id/chicken"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/chickenbutton"
+	            android:background="@drawable/chicken"
 	            android:text="@string/chicken"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/clam"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/clambutton"
+	            android:background="@drawable/clam"
 	            android:text="@string/clam"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -69,18 +69,18 @@
 	            android:id="@+id/crab"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/crabbutton"
+	            android:background="@drawable/crab"
 	            android:text="@string/crab"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/crawfish"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/crawfishbutton"
+	            android:background="@drawable/crawfish"
 	            android:text="@string/crawfish"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
-	    
+
 	    <TableRow
 	        android:id="@+id/tableRow4"
 	        android:layout_width="wrap_content"
@@ -89,14 +89,14 @@
 	            android:id="@+id/eggs"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/eggsbutton"
+	            android:background="@drawable/eggs"
 	            android:text="@string/eggs"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/ground_beef"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/ground_beefbutton"
+	            android:background="@drawable/ground_beef"
 	            android:text="@string/ground_beef"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -109,14 +109,14 @@
 	            android:id="@+id/ham"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/hambutton"
+	            android:background="@drawable/ham"
 	            android:text="@string/ham"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/lamb"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/lambbutton"
+	            android:background="@drawable/lamb"
 	            android:text="@string/lamb"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -129,14 +129,14 @@
 	            android:id="@+id/lobster"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/lobsterbutton"
+	            android:background="@drawable/lobster"
 	            android:text="@string/lobster"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/oyster"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/oysterbutton"
+	            android:background="@drawable/oyster"
 	            android:text="@string/oyster"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -149,14 +149,14 @@
 	            android:id="@+id/pepperoni"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/pepperonibutton"
+	            android:background="@drawable/pepperoni"
 	            android:text="@string/pepperoni"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/pork"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/porkbutton"
+	            android:background="@drawable/pork"
 	            android:text="@string/pork"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -169,14 +169,14 @@
 	            android:id="@+id/sausage"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/sausagebutton"
+	            android:background="@drawable/sausage"
 	            android:text="@string/sausage"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/scallop"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/scallopbutton"
+	            android:background="@drawable/scallop"
 	            android:text="@string/scallop"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -189,14 +189,14 @@
 	            android:id="@+id/shrimp"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/shrimpbutton"
+	            android:background="@drawable/shrimp"
 	            android:text="@string/shrimp"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/solami"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/solamibutton"
+	            android:background="@drawable/solami"
 	            android:text="@string/solami"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -209,14 +209,14 @@
 	            android:id="@+id/steak"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/steakbutton"
+	            android:background="@drawable/steak"
 	            android:text="@string/steak"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/turkey"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/turkeybutton"
+	            android:background="@drawable/turkey"
 	            android:text="@string/turkey"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
