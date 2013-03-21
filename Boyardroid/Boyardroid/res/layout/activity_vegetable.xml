@@ -28,14 +28,14 @@
 	            android:id="@+id/avocado"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/avocadobutton"
+	            android:background="@drawable/avocado"
 	            android:text="@string/avocado"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/beet"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/beetbutton"
+	            android:background="@drawable/beet"
 	            android:text="@string/beet"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -49,14 +49,14 @@
 	            android:id="@+id/blackolive"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/blackolivebutton"
+	            android:background="@drawable/blackolive"
 	            android:text="@string/blackolive"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/broccolli"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/broccollibutton"
+	            android:background="@drawable/broccolli"
 	            android:text="@string/broccolli"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -69,14 +69,14 @@
 	            android:id="@+id/celery"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/celerybutton"
+	            android:background="@drawable/celery"
 	            android:text="@string/celery"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/carrot"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/carrotbutton"
+	            android:background="@drawable/carrot"
 	            android:text="@string/carrot"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -89,14 +89,14 @@
 	            android:id="@+id/cauliflower"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/cauliflowerbutton"
+	            android:background="@drawable/cauliflower"
 	            android:text="@string/cauliflower"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/celery"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/celerybutton"
+	            android:background="@drawable/celery"
 	            android:text="@string/celery"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -109,14 +109,14 @@
 	            android:id="@+id/corn"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/cornbutton"
+	            android:background="@drawable/corn"
 	            android:text="@string/corn"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/cucumber"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/cucumberbutton"
+	            android:background="@drawable/cucumber"
 	            android:text="@string/cucumber"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -129,14 +129,14 @@
 	            android:id="@+id/eggplant"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/eggplantbutton"
+	            android:background="@drawable/eggplant"
 	            android:text="@string/eggplant"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/garlic"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/garlicbutton"
+	            android:background="@drawable/garlic"
 	            android:text="@string/garlic"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -149,14 +149,14 @@
 	            android:id="@+id/ginger"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/gingerbutton"
+	            android:background="@drawable/ginger"
 	            android:text="@string/ginger"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/greenbean"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/greenbeanbutton"
+	            android:background="@drawable/greenbean"
 	            android:text="@string/greenbean"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -169,14 +169,14 @@
 	            android:id="@+id/jalapeno"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/jalapenobutton"
+	            android:background="@drawable/jalapeno"
 	            android:text="@string/jalapeno"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/lettuce"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/lettucebutton"
+	            android:background="@drawable/lettuce"
 	            android:text="@string/lettuce"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -189,14 +189,14 @@
 	            android:id="@+id/olive"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/olivebutton"
+	            android:background="@drawable/olive"
 	            android:text="@string/olive"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/onion"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/onionbutton"
+	            android:background="@drawable/onion"
 	            android:text="@string/onion"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -209,14 +209,14 @@
 	            android:id="@+id/peas"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/peasbutton"
+	            android:background="@drawable/peas"
 	            android:text="@string/peas"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/pepper"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/pepperbutton"
+	            android:background="@drawable/pepper"
 	            android:text="@string/pepper"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -229,14 +229,14 @@
 	            android:id="@+id/pickle"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/picklebutton"
+	            android:background="@drawable/pickle"
 	            android:text="@string/pickle"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/potato"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/potatobutton"
+	            android:background="@drawable/potato"
 	            android:text="@string/potato"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -249,14 +249,14 @@
 	            android:id="@+id/pumpkin"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/pumpkinbutton"
+	            android:background="@drawable/pumpkin"
 	            android:text="@string/pumpkin"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/radish"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/radishbutton"
+	            android:background="@drawable/radish"
 	            android:text="@string/radish"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -269,14 +269,14 @@
 	            android:id="@+id/spinach"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/spinachbutton"
+	            android:background="@drawable/spinach"
 	            android:text="@string/spinach"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/squash"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/squashbutton"
+	            android:background="@drawable/squash"
 	            android:text="@string/squash"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -289,14 +289,14 @@
 	            android:id="@+id/tomato"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/tomatobutton"
+	            android:background="@drawable/tomato"
 	            android:text="@string/tomato"
 	            android:textColor="@android:color/white" />
 	        <CheckBox
 	            android:id="@+id/yam"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/yambutton"
+	            android:background="@drawable/yam"
 	            android:text="@string/yam"
 	            android:textColor="@android:color/white" />
 	    </TableRow>
@@ -309,7 +309,7 @@
 	            android:id="@+id/zuchini"
 	            android:layout_width="wrap_content"
 	            android:layout_height="wrap_content"
-	            android:background="@drawable/zuchinibutton"
+	            android:background="@drawable/zuchini"
 	            android:text="@string/zuchini"
 	            android:textColor="@android:color/white" />
 	    </TableRow>

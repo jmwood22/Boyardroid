@@ -12,7 +12,7 @@ public class HomeScreen extends Activity
 
 Button fridge;
 Button quickRecipe;
-boolean fridgeList = true;
+static boolean fridgeList = true;
 
 @Override
 public void onCreate(Bundle savedInstanceState) 
