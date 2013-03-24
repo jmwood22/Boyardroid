@@ -13,12 +13,12 @@
         android:layout_height="75dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_toLeftOf="@+id/button2"
+        android:layout_toLeftOf="@+id/remove"
         android:onClick="addIngre"
         android:text="@string/addIngredient_button" />
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/remove"
         android:layout_width="wrap_content"
         android:layout_height="75dp"
         android:layout_alignParentRight="true"
@@ -50,7 +50,7 @@
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_alignParentLeft="true"
-	        android:layout_below="@+id/button1"
+	        android:layout_below="@+id/add"
 	        android:layout_marginLeft="34dp" >
 	    </ScrollView>
 
@@ -60,7 +60,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_above="@+id/button4"
 	        android:layout_alignParentLeft="true"
-	        android:layout_below="@+id/button1" >
+	        android:layout_below="@+id/add" >
 
 	    </ListView>
 	
