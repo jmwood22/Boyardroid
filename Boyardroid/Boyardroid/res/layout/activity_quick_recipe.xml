@@ -84,7 +84,7 @@
 
     <Button
         android:id="@+id/quickRecipe"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/fridgeList"
         android:layout_alignBottom="@+id/fridgeList"
@@ -94,7 +94,7 @@
 
     <Button
         android:id="@+id/fridgeList"
-        android:layout_width="wrap_content"
+        android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"

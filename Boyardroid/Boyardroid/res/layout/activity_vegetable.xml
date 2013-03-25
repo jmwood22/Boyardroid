@@ -317,21 +317,21 @@
 </ScrollView>
 
 <Button
-    android:id="@+id/findRecipes"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_marginRight="24dp"
-    android:layout_toLeftOf="@+id/add"
-    android:text="Find Recipes" />
+            android:id="@+id/findRecipes"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/longbutton"
+            android:text="Find Recipes" />
 
-<Button
-    android:id="@+id/add"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_alignParentBottom="true"
-    android:layout_alignParentRight="true"
-    android:layout_marginRight="34dp"
-    android:text="Add to List" />
+        <Button
+            android:id="@+id/add"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/longbutton"
+            android:text="Add to List" />
 
 </RelativeLayout>

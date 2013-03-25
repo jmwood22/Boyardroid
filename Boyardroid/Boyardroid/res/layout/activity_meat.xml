@@ -289,20 +289,22 @@
         android:layout_height="wrap_content" >
 
         <Button
-            android:id="@+id/add"
-            android:layout_width="160dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentTop="true"
-            android:text="Add to List" />
-
-        <Button
             android:id="@+id/findRecipes"
             android:layout_width="160dp"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentTop="true"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:background="@drawable/longbutton"
             android:text="Find Recipes" />
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/longbutton"
+            android:text="Add to List" />
 
     </RelativeLayout>
 

@@ -14,7 +14,7 @@
         android:layout_marginTop="29dp"
         android:text="@string/app_name"
         android:textSize="50sp"
-        android:textColor="#00FFFF"
+        android:textColor="#0084ed"
         android:textStyle="bold"
         android:background="@android:color/transparent"
         android:textAppearance="?android:attr/textAppearanceLarge" />
@@ -27,7 +27,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginBottom="32dp"
         android:layout_marginLeft="28dp"
-        android:background="#00FFFF"
+        android:background="@drawable/longbutton"
         android:text="@string/fridge_button"
         android:onClick="" />
 
@@ -38,7 +38,7 @@
         android:layout_alignBaseline="@+id/fridge"
         android:layout_alignBottom="@+id/fridge"
         android:layout_alignRight="@+id/textView1"
-        android:background="#00FFFF"
+        android:background="@drawable/longbutton"
         android:text="@string/quick_recipe" />
     
 </RelativeLayout>

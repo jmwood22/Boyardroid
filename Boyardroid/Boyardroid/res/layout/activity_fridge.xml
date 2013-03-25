@@ -15,6 +15,7 @@
         android:layout_alignParentLeft="true"
         android:layout_toLeftOf="@+id/remove"
         android:onClick="addIngre"
+        android:background="@drawable/longbutton"
         android:text="@string/addIngredient_button" />
 
     <Button
@@ -24,6 +25,7 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:onClick="removIngre"
+        android:background="@drawable/longbutton"
         android:text="@string/removeIngredient_button" />
 
 	    
@@ -35,6 +37,7 @@
 	        android:layout_alignParentBottom="true"
 	        android:layout_marginBottom="0dp"
 	        android:onClick="favRecipe"
+	        android:background="@drawable/longbutton"
 	        android:text="@string/favoriteRecipe_button" />
 
 	    <Button
@@ -43,6 +46,7 @@
 	        android:layout_height="wrap_content"
 	        android:layout_above="@+id/button3"
 	        android:onClick="dialogBtn"
+	        android:background="@drawable/longbutton"
 	        android:text="@string/find_recipe" />
 
 	    <ScrollView
