@@ -1,14 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Grain" >
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/RelativeLayout1"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:orientation="vertical"
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_world" />
+	tools:context=".Quick Recipe" >
+
+<ScrollView
+    android:layout_width="fill_parent"
+    android:layout_height="400dip"
+    android:isScrollContainer="true"
+    android:overScrollMode="always"
+    android:scrollbarAlwaysDrawVerticalTrack="true"
+    android:scrollbarStyle="outsideInset"
+    android:scrollbars="vertical" >
+
+	<TableLayout
+	    android:layout_width="match_parent"
+	    android:layout_height="404dp" >
+		<TableRow
+	        	android:id="@+id/tableRow1"
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content" >
+	        <CheckBox
+	            android:id="@+id/bagel"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/bagel"
+	            android:text="@string/bagel"
+	            android:textColor="@android:color/white" />
+	        <CheckBox
+	            android:id="@+id/bread"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/bread"
+	            android:text="@string/bread"
+	            android:textColor="@android:color/white" />
+	    </TableRow>
+	    
+	    <TableRow
+	        android:id="@+id/tableRow2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	        
+		<CheckBox
+	            android:id="@+id/cereal"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/cereal"
+	            android:text="@string/cereal"
+	            android:textColor="@android:color/white" />
+	        <CheckBox
+	            android:id="@+id/cracker"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/cracker"
+	            android:text="@string/cracker"
+	            android:textColor="@android:color/white" />
+	    </TableRow>
+
+	    <TableRow
+	        android:id="@+id/tableRow3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	        <CheckBox
+	            android:id="@+id/oatmeal"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/oatmeal"
+	            android:text="@string/oatmeal"
+	            android:textColor="@android:color/white" />
+	        <CheckBox
+	            android:id="@+id/pasta"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/pasta"
+	            android:text="@string/pasta"
+	            android:textColor="@android:color/white" />
+	    </TableRow>
+	    
+	    <TableRow
+	        android:id="@+id/tableRow4"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content" >
+	        <CheckBox
+	            android:id="@+id/rice"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:background="@drawable/rice"
+	            android:text="@string/rice"
+	            android:textColor="@android:color/white" />
+	    </TableRow>
+	</TableLayout>
+</ScrollView>
+
+<Button
+    android:id="@+id/findRecipes"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_marginRight="24dp"
+    android:layout_toLeftOf="@+id/add"
+    android:text="Find Recipes" />
+
+<Button
+    android:id="@+id/add"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentRight="true"
+    android:layout_marginRight="34dp"
+    android:text="Add to List" />
 
 </RelativeLayout>
