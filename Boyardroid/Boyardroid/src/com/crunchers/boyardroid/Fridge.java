@@ -57,6 +57,7 @@ public class Fridge extends Activity
 		{
 		  public void onClick(View v)
 		  {
+			  HomeScreen.fridgeList = true;
 			  Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 		      startActivity(i);
 		  }
