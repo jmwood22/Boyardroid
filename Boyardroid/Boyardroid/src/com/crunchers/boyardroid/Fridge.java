@@ -5,61 +5,95 @@ import java.util.ArrayList;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.SparseBooleanArray;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckedTextView;
 import android.widget.ListView;
-
 
 public class Fridge extends Activity 
 {
 	Button add;
+	Button remove;
+	ListView listView;
+	ArrayAdapter<String> adapter;
 	static ArrayList<String> listItems = new ArrayList<String>();
+	static ArrayList<String> tempList = new ArrayList<String>();
 	
 	@Override
     protected void onCreate(Bundle savedInstanceState) 
 	{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fridge);
+		listView = (ListView)findViewById(R.id.listView1);
+		adapter = new ArrayAdapter<String>( this, android.R.layout.simple_list_item_multiple_choice, listItems );
+		listView.setAdapter(adapter);
+		listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+    	listView.setOnItemClickListener(new OnItemClickListener(){
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+				CheckedTextView check = (CheckedTextView)view;
+				if(check.isChecked())
+				{
+					check.setChecked(false);
+					tempList.remove(listItems.get(position));
+				}
+				else
+				{
+					check.setChecked(true);
+					tempList.add(listItems.get(position));
+				}
+			}
+
+    	});
         
-        add = (Button)findViewById(R.id.add);
+    	add = (Button)findViewById(R.id.add);
 		add.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
 		  {
-		       Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
-		       startActivity(i);
+			  Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
+		      startActivity(i);
 		  }
 		});
-          
-        //TEST OF LISTVIEW AND SCROLL FUNCTION!
-        ListView listView = (ListView)findViewById(R.id.listView1);
-    	/*listItems.add("Chicken");
-    	listItems.add("Lettuce");
-    	listItems.add("Tomatoes");
-    	listItems.add("Eggs");
-    	listItems.add("Ketchup");
-    	listItems.add("Bread");
-    	listItems.add("Swiss Cheese");*/
-    	final ArrayAdapter<String> adapter = new ArrayAdapter<String>( this, android.R.layout.simple_list_item_1, listItems );
-    	listView.setAdapter(adapter);
-    	
+		remove = (Button)findViewById(R.id.remove);
+		remove.setOnClickListener(new OnClickListener() 
+		{
+		  public void onClick(View v)
+		  {
+		       removeFromFridge();
+		  }
+		});
     }
 	
+	public SparseBooleanArray tempArray()
+	{
+		SparseBooleanArray sp = listView.getCheckedItemPositions();
+		return sp;
+	}
 	//adds ingredient to fridge
 	public static void addToFridge(String ingredient)
 	{
 		listItems.add(ingredient);
 	}
-	public static void removeFromFridge(String ingredient)
+	//removes ingredients from fridge
+	public void removeFromFridge()
 	{
-		listItems.remove(ingredient);
+		for (int i = 0; i < tempList.size(); i++) {
+			listItems.remove(tempList.get(i));
+			adapter.notifyDataSetChanged();
+		}
+		tempList.clear();
+		for(int i = 0; i < listItems.size();i++){
+			listView.setItemChecked(i, false);
+		}
 	}
-
     
-	
 	@Override
     public boolean onCreateOptionsMenu(Menu menu) 
     {

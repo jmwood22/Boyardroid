@@ -20,7 +20,7 @@ public class QuickRecipe extends Activity
 	Button dairy;
 	Button spice;
 	Button quickRecipe;
-	
+	Button fridge;
 	
 	static ArrayList<String> tempListItems = new ArrayList<String>();
 	
@@ -104,6 +104,15 @@ public class QuickRecipe extends Activity
 				startActivity(i);
 			}
 		});
+		fridge = (Button)findViewById(R.id.fridgeList);
+		fridge.setOnClickListener(new OnClickListener()
+		{
+			public void onClick(View v)
+			{
+				Intent i = new Intent(getApplicationContext(),Fridge.class);
+				startActivity(i);
+			}
+		});
 	}
 	
 	public static void addToList(String ingredient)
@@ -147,12 +156,15 @@ public class QuickRecipe extends Activity
 	//adds ingredient to fridge
 		public static void addToFridge(String ingredient)
 		{
-			Fridge.addToFridge(ingredient);
-		}
+			if(Fridge.listItems.contains(ingredient)){
+			}
+			else
+				Fridge.addToFridge(ingredient);
+		}/*
 		public static void removeFromFridge(String ingredient)
 		{
 			Fridge.removeFromFridge(ingredient);
-		}
+		}*/
 
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) 
