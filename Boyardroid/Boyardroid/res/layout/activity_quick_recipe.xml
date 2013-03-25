@@ -1,84 +1,104 @@
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".QuickRecipe"   
-    android:background="@drawable/mascot" 
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
     android:layout_centerHorizontal="true"
-    android:layout_centerVertical="true" 
-    android:layout_margin="50dip">
+    android:layout_centerVertical="true"
+    android:layout_margin="0dip"
+    tools:context=".QuickRecipe" >
 
-        <TableRow
-            android:id="@+id/tableRow1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <Button
-                android:id="@+id/meat"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="5dip"
-                android:text="@string/meat" />
-
-            <Button
-                android:id="@+id/vegetable"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="5dip"
-                android:text="Veggie" />
-
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <Button
-                android:id="@+id/fruit"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="5dip"
-                android:text="@string/title_activity_fruit" />
-
-            <Button
-                android:id="@+id/dairy"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="5dip"
-                android:text="@string/dairy" />
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tableRow3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" >
-
-            <Button
-                android:id="@+id/spice"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="5dip"
-                android:text="@string/spice" />
-
-            <Button
-                android:id="@+id/grain"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:layout_margin="5dip"
-                android:text="@string/grain" />
-        </TableRow>
+    <TableRow
+        android:id="@+id/tableRow1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_alignParentTop="true" >
 
         <Button
-            android:id="@+id/quickRecipe"
+            android:id="@+id/meat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Quick Recipe List" />
+            android:background="@drawable/meatbutton"
+            android:layout_margin="10dip"
+            android:text="@string/meat" />
 
         <Button
-            android:id="@+id/fridgeList"
+            android:id="@+id/vegetable"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Fride List" />
+            android:layout_margin="10dip"
+            android:background="@drawable/vegetablebutton"
+            android:text="Veggie" />
 
-    </TableLayout>
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:gravity="center"
+        android:layout_below="@+id/tableRow1" >
+
+        <Button
+            android:id="@+id/fruit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/fruitbutton"
+            android:layout_margin="10dip"
+            android:text="@string/title_activity_fruit" />
+
+        <Button
+            android:id="@+id/dairy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/dairybutton"
+            android:layout_margin="10dip"
+            android:text="@string/dairy" />
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/tableRow3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:gravity="center"
+        android:layout_below="@+id/tableRow2" >
+
+        <Button
+            android:id="@+id/grain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/grainbutton"
+            android:layout_margin="10dip"
+            android:text="@string/grain" />
+
+        <Button
+            android:id="@+id/spice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/spicebutton"
+            android:layout_margin="10dip"
+            android:text="@string/spice" />
+    </TableRow>
+
+    <Button
+        android:id="@+id/quickRecipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/fridgeList"
+        android:layout_alignBottom="@+id/fridgeList"
+        android:layout_alignParentRight="true"
+        android:background="@drawable/longbutton"
+        android:text="Quick Recipe List" />
+
+    <Button
+        android:id="@+id/fridgeList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/longbutton"
+        android:text="Fridge List" />
+
+</RelativeLayout>
