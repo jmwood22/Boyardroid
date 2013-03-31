@@ -403,15 +403,16 @@ public final class R {
     public static final class layout {
         public static final int activity_dairy=0x7f030000;
         public static final int activity_fridge=0x7f030001;
-        public static final int activity_fruit=0x7f030002;
-        public static final int activity_grain=0x7f030003;
-        public static final int activity_home_screen=0x7f030004;
-        public static final int activity_main=0x7f030005;
-        public static final int activity_meat=0x7f030006;
-        public static final int activity_quick_recipe=0x7f030007;
-        public static final int activity_quick_recipe_list=0x7f030008;
-        public static final int activity_spice=0x7f030009;
-        public static final int activity_vegetable=0x7f03000a;
+        public static final int activity_fridge_results=0x7f030002;
+        public static final int activity_fruit=0x7f030003;
+        public static final int activity_grain=0x7f030004;
+        public static final int activity_home_screen=0x7f030005;
+        public static final int activity_main=0x7f030006;
+        public static final int activity_meat=0x7f030007;
+        public static final int activity_quick_recipe=0x7f030008;
+        public static final int activity_quick_recipe_list=0x7f030009;
+        public static final int activity_spice=0x7f03000a;
+        public static final int activity_vegetable=0x7f03000b;
     }
     public static final class menu {
         public static final int activity_dairy=0x7f070000;
@@ -425,7 +426,9 @@ public final class R {
         public static final int activity_quick_recipe=0x7f070008;
         public static final int activity_spice=0x7f070009;
         public static final int activity_vegetable=0x7f07000a;
-        public static final int quick_recipe_list=0x7f07000b;
+        public static final int fridge_recipe_results=0x7f07000b;
+        public static final int fridge_results=0x7f07000c;
+        public static final int quick_recipe_list=0x7f07000d;
     }
     public static final class string {
         public static final int action_settings=0x7f050072;
@@ -529,6 +532,8 @@ public final class R {
         public static final int swiss=0x7f050069;
         public static final int title_activity_dairy=0x7f05005b;
         public static final int title_activity_fridge=0x7f050008;
+        public static final int title_activity_fridge_recipe_results=0x7f050074;
+        public static final int title_activity_fridge_results=0x7f050075;
         public static final int title_activity_fruit=0x7f050011;
         public static final int title_activity_grain=0x7f050053;
         public static final int title_activity_home_screen=0x7f050007;

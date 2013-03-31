@@ -82,6 +82,14 @@
             android:name="com.crunchers.boyardroid.QuickRecipeList"
             android:label="@string/title_activity_quick_recipe_list" >
         </activity>
+        <activity
+            android:name="com.crunchers.boyardroid.FridgeRecipeResults"
+            android:label="@string/title_activity_fridge_recipe_results" >
+        </activity>
+        <activity
+            android:name="com.crunchers.boyardroid.FridgeResults"
+            android:label="@string/title_activity_fridge_results" >
+        </activity>
     </application>
 
 </manifest>

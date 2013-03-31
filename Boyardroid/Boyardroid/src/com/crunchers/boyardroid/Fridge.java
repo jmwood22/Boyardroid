@@ -1,9 +1,13 @@
 package com.crunchers.boyardroid;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.SparseBooleanArray;
 import android.view.Menu;
@@ -15,20 +19,54 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 public class Fridge extends Activity 
 {
 	Button add;
 	Button remove;
+	Button find;
 	ListView listView;
 	ArrayAdapter<String> adapter;
 	static ArrayList<String> listItems = new ArrayList<String>();
 	static ArrayList<String> tempList = new ArrayList<String>();
+	static String fridgeItems = "";
+	String query;
+	static Cursor c;
+	
+	DataBaseHelper db;
+	static SQLiteDatabase database;
 	
 	@Override
     protected void onCreate(Bundle savedInstanceState) 
 	{
         super.onCreate(savedInstanceState);
+        
+        db = new DataBaseHelper(this);
+		 
+		 try {
+		  
+		 db.createDataBase();
+		  
+		 } catch (IOException ioe) {
+		  
+		 throw new Error("Unable to create database");
+		  
+		 }
+		  
+		 try {
+		  
+		 db.openDataBase();
+		  
+		 }catch(SQLException sqle){
+		  
+		 throw sqle;
+		  
+		 }
+		 
+		 database = db.getWritableDatabase();
+		 database.execSQL("CREATE TABLE IF NOT EXISTS FRIDGE (_id INTEGER PRIMARY KEY, ingredient TEXT)");
+		 
         setContentView(R.layout.activity_fridge);
 		listView = (ListView)findViewById(R.id.listView1);
 		adapter = new ArrayAdapter<String>( this, android.R.layout.simple_list_item_multiple_choice, listItems );
@@ -49,7 +87,57 @@ public class Fridge extends Activity
 					tempList.add(listItems.get(position));
 				}
 			}
+			
+			
 
+    	});
+    	
+    	find = (Button)findViewById(R.id.button4);
+    	find.setOnClickListener(new OnClickListener()
+    	{
+    		public void onClick(View v)
+    		{
+    			//database.execSQL("DELETE FROM Fridge");
+    			//database.execSQL("INSERT INTO Fridge VALUES (" + fridgeItems.substring(0, fridgeItems.length()-2) + ")");
+    			
+    			
+    			//Toast.makeText(getApplicationContext(), fridgeItems.substring(0, fridgeItems.length()-2), Toast.LENGTH_LONG).show();
+    			//Toast.makeText(getApplicationContext(), "INSERT INTO Fridge (Ingredient) VALUES (" + fridgeItems.substring(0, fridgeItems.length()-2) + ")", Toast.LENGTH_LONG).show();
+    			
+    			if(listItems.size()>0)
+    			{
+    					database.execSQL("DELETE FROM Fridge");
+    					for(int i = 0;i<listItems.size();i++)
+    					{
+    						database.execSQL("INSERT INTO Fridge (Ingredient) VALUES ('" + listItems.get(i) +"')");
+    					}
+    			}
+    			
+    			Intent i=new Intent(getApplicationContext(),FridgeResults.class);
+  		      	startActivity(i); 
+    			
+  		      	
+  		      	//c.moveToFirst();
+    			
+    			//String[] cols = c.getColumnNames();
+    			
+    			//int test = c.getColumnIndex("nm");
+    			
+    			
+    			//String tester = "";
+    			//tester+= test;
+    			
+    			//for(int i = 0; i<cols.length;i++)
+    			//Toast.makeText(getApplicationContext(), c.getString(c.getColumnIndex("nm")), Toast.LENGTH_LONG).show();
+    			
+    			//Toast.makeText(getApplicationContext(), c.getString(1), Toast.LENGTH_LONG).show();
+    			//Toast.makeText(getApplicationContext(), c.getString(2), Toast.LENGTH_LONG).show();
+    			//Intent i = new Intent(getApplicationContext(),QuickRecipe.class);
+    			//startActivity(i);
+    			//c.close();
+    		}
+
+			
     	});
         
     	add = (Button)findViewById(R.id.add);
@@ -70,6 +158,7 @@ public class Fridge extends Activity
 		       removeFromFridge();
 		  }
 		});
+				 
     }
 	
 	public SparseBooleanArray tempArray()
@@ -77,16 +166,26 @@ public class Fridge extends Activity
 		SparseBooleanArray sp = listView.getCheckedItemPositions();
 		return sp;
 	}
+	
+	
 	//adds ingredient to fridge
-	public static void addToFridge(String ingredient)
+	public static void addToFridgeList(String ingredient)
 	{
 		listItems.add(ingredient);
+		//database.execSQL("CREATE TABLE Fridge (_id INTEGER PRIMARY KEY, ingredient TEXT)");
+		//database.execSQL("INSERT INTO Fridge (Ingredient) VALUES ('" + ingredient + "')");
+		
+		//fridgeItems += "'" + ingredient + "', ";
+		
 	}
+	
+	
 	//removes ingredients from fridge
 	public void removeFromFridge()
 	{
 		for (int i = 0; i < tempList.size(); i++) {
 			listItems.remove(tempList.get(i));
+			database.execSQL("DELETE FROM Fridge WHERE Fridge.Ingredient = '" + tempList.get(i) + "'");
 			adapter.notifyDataSetChanged();
 		}
 		tempList.clear();
@@ -102,39 +201,25 @@ public class Fridge extends Activity
         getMenuInflater().inflate(R.menu.activity_fridge, menu);
         return true;
     }
-    /** called when the user clicks the breakfast button */
-    public void searchbreakfast(View view)
-    {
-    	//Do something in response to button
-    }
-    
-    /** called when the user clicks the lunch button */
-    public void searchlunch(View view)
-    {
-    	//Do something in response to button
-    }
-    
-    /** called when the user clicks the dinner button */
-    public void searchdinner(View view)
-    {
-    	//Do something in response to button
-    }
-    /** called when the user clicks the add ingredient button */
-    public void addIngre(View view)
-    {
-    	//Do something in response to button
-    }
-    /** called when the user clicks the remove ingredient button */
-    public void removIngre(View view)
-    {
-    	//Do something in response to button
-    	
-    }
-    /** called when the user clicks the breakfast button */
-    public void favRecipe(View view)
-    {
-    	//Do something in response to button
-    }
+	
+	public void findRecipes()
+	{
+		
+		fridgeItems = fridgeItems.substring(0, fridgeItems.length()-2);
+		
+		String results = "Select r1.nm From (select recipe.name nm, count(*)cnt from recipe " +
+				 "left join recipecontains on recipecontains.recipe_id = recipe._id " +
+				 "left join ingredient on ingredient._id = recipecontains.ingredient_id " +
+				 "Where ingredient.name in (Select Fridge.Ingredient From Fridge) Group by recipe.name) " +
+				 "r1 Join (select recipe.name nm, count(*) cnt from recipe left join recipecontains on recipecontains.recipe_id = recipe._id " +
+				 "left join ingredient on ingredient._id = recipecontains.ingredient_id group by recipe.name) r on r.nm = r1.nm Where (r1.cnt/r.cnt) > .10 ";
+		
+		//String[] cols = new String[]{"_id","nm"};
+		c = database.rawQuery(results, null);
+		
+		
+	}
+	
     /*
     public void onClick(DialogInterface dialog, int which) 
     {

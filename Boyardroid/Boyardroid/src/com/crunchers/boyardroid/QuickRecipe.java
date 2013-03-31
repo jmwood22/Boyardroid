@@ -130,7 +130,7 @@ public class QuickRecipe extends Activity {
 	public static void addToFridge(String ingredient) {
 		if (Fridge.listItems.contains(ingredient)) {
 		} else
-			Fridge.addToFridge(ingredient);
+			Fridge.addToFridgeList(ingredient);
 	}/*
 	 * public static void removeFromFridge(String ingredient) {
 	 * Fridge.removeFromFridge(ingredient); }
