@@ -9,6 +9,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -63,6 +64,8 @@ public class FridgeResults extends Activity {
 		else
 			Toast.makeText(getApplicationContext(), "listView is null", Toast.LENGTH_LONG).show();
 		
+		
+		
 		//c = database.rawQuery("Select Ingredient From Fridge", null);
 		//Toast.makeText(getApplicationContext(), c.getColumnName(0), Toast.LENGTH_LONG).show();
 		
@@ -85,7 +88,7 @@ public class FridgeResults extends Activity {
 				 "left join ingredient on ingredient._id = recipecontains.ingredient_id " +
 				 "Where ingredient.name in (Select Fridge.Ingredient From Fridge) Group by recipe.name) " +
 				 "r1 Join (select recipe.name nm, count(*) cnt from recipe left join recipecontains on recipecontains.recipe_id = recipe._id " +
-				 "left join ingredient on ingredient._id = recipecontains.ingredient_id group by recipe.name) r on r.nm = r1.nm Where (r1.cnt/r.cnt)>.1";
+				 "left join ingredient on ingredient._id = recipecontains.ingredient_id group by recipe.name) r on r.nm = r1.nm Where  (Cast(r1.cnt AS REAL)/Cast(r.cnt AS REAL)) >= .75";
 		
 		//String[] cols = new String[]{"_id","nm"};
 		//String fridgeIngredients = "Select Ingredient From Fridge";

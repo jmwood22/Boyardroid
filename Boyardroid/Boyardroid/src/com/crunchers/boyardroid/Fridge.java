@@ -65,7 +65,7 @@ public class Fridge extends Activity
 		 }
 		 
 		 database = db.getWritableDatabase();
-		 database.execSQL("CREATE TABLE IF NOT EXISTS FRIDGE (_id INTEGER PRIMARY KEY, ingredient TEXT)");
+		 //database.execSQL("CREATE TABLE IF NOT EXISTS FRIDGE (_id INTEGER PRIMARY KEY, ingredient TEXT)");
 		 
         setContentView(R.layout.activity_fridge);
 		listView = (ListView)findViewById(R.id.listView1);

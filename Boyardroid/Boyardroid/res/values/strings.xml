@@ -119,5 +119,6 @@
     <string name="title_activity_quick_recipe_list">QuickRecipeList</string>
     <string name="title_activity_fridge_recipe_results">FridgeRecipeResults</string>
     <string name="title_activity_fridge_results">FridgeResults</string>
+    <string name="title_activity_quick_recipe_results">QuickRecipeResults</string>
 
 </resources>
