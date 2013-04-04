@@ -276,7 +276,7 @@ public final class R {
     public static final class id {
         public static final int LinearLayout1=0x7f080035;
         public static final int RelativeLayout1=0x7f080000;
-        public static final int action_settings=0x7f08007c;
+        public static final int action_settings=0x7f08007b;
         public static final int add=0x7f080017;
         public static final int apple=0x7f08001d;
         public static final int avocado=0x7f08005b;
@@ -334,7 +334,7 @@ public final class R {
         public static final int listView1=0x7f08001c;
         public static final int lobster=0x7f080040;
         public static final int meat=0x7f08004d;
-        public static final int menu_settings=0x7f08007b;
+        public static final int menu_settings=0x7f08007a;
         public static final int milk=0x7f08000b;
         public static final int mozzarella=0x7f08000c;
         public static final int munster=0x7f08000e;
@@ -352,12 +352,12 @@ public final class R {
         public static final int pepper=0x7f080059;
         public static final int pepperjack=0x7f080011;
         public static final int pepperoni=0x7f080042;
-        public static final int pickle=0x7f08006e;
+        public static final int pickle=0x7f08006d;
         public static final int pineapple=0x7f080026;
         public static final int pork=0x7f080043;
         public static final int potato=0x7f08006f;
         public static final int provolone=0x7f080012;
-        public static final int pumpkin=0x7f080071;
+        public static final int pumpkin=0x7f080070;
         public static final int quickRecipe=0x7f080053;
         public static final int quick_recipe=0x7f080033;
         public static final int radish=0x7f080072;
@@ -372,18 +372,17 @@ public final class R {
         public static final int solami=0x7f080049;
         public static final int sourcream=0x7f080014;
         public static final int spice=0x7f080052;
-        public static final int spinach=0x7f080074;
+        public static final int spinach=0x7f080073;
         public static final int squash=0x7f080075;
         public static final int steak=0x7f08004b;
         public static final int strawberry=0x7f080028;
         public static final int swiss=0x7f080015;
         public static final int tableRow1=0x7f080001;
         public static final int tableRow10=0x7f08004a;
-        public static final int tableRow11=0x7f08006d;
-        public static final int tableRow12=0x7f080070;
-        public static final int tableRow13=0x7f080073;
-        public static final int tableRow14=0x7f080076;
-        public static final int tableRow15=0x7f080079;
+        public static final int tableRow11=0x7f08006e;
+        public static final int tableRow12=0x7f080071;
+        public static final int tableRow13=0x7f080074;
+        public static final int tableRow14=0x7f080077;
         public static final int tableRow2=0x7f080004;
         public static final int tableRow3=0x7f080007;
         public static final int tableRow4=0x7f08000a;
@@ -393,12 +392,12 @@ public final class R {
         public static final int tableRow8=0x7f080044;
         public static final int tableRow9=0x7f080047;
         public static final int textView1=0x7f080031;
-        public static final int tomato=0x7f080077;
+        public static final int tomato=0x7f080076;
         public static final int turkey=0x7f08004c;
         public static final int vegetable=0x7f08004e;
         public static final int watermelon=0x7f080029;
         public static final int yam=0x7f080078;
-        public static final int zuchini=0x7f08007a;
+        public static final int zuchini=0x7f080079;
     }
     public static final class layout {
         public static final int activity_dairy=0x7f030000;
