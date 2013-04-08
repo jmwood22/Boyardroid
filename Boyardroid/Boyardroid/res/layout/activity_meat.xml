@@ -30,20 +30,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/bacon"
+                    android:gravity="top"
                     android:text="@string/bacon"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
 
                 <CheckBox
                     android:id="@+id/bologna"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/bologna"
+                    android:gravity="top"
                     android:text="@string/bologna"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
             </TableRow>
 
             <TableRow
@@ -56,20 +60,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/chicken"
+                    android:gravity="top"
                     android:text="@string/chicken"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
 
                 <CheckBox
                     android:id="@+id/clam"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/clam"
+                    android:gravity="top"
                     android:text="@string/clam"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
             </TableRow>
 
             <TableRow
@@ -82,20 +90,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/crab"
+                    android:gravity="top"
                     android:text="@string/crab"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
 
                 <CheckBox
                     android:id="@+id/crawfish"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/crawfish"
+                    android:gravity="top"
                     android:text="@string/crawfish"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
             </TableRow>
 
             <TableRow
@@ -108,20 +120,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/eggs"
+                    android:gravity="top"
                     android:text="@string/eggs"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
 
                 <CheckBox
                     android:id="@+id/ground_beef"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/ground_beef"
+                    android:gravity="top"
                     android:text="@string/ground_beef"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
             </TableRow>
 
             <TableRow
@@ -134,20 +150,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/ham"
+                    android:gravity="top"
                     android:text="@string/ham"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
 
                 <CheckBox
                     android:id="@+id/lamb"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/lamb"
+                    android:gravity="top"
                     android:text="@string/lamb"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
             </TableRow>
 
             <TableRow
@@ -160,20 +180,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/lobster"
+                    android:gravity="top"
                     android:text="@string/lobster"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
 
                 <CheckBox
                     android:id="@+id/oyster"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/oyster"
+                    android:gravity="top"
                     android:text="@string/oyster"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
             </TableRow>
 
             <TableRow
@@ -186,20 +210,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/pepperoni"
+                    android:gravity="top"
                     android:text="@string/pepperoni"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
 
                 <CheckBox
                     android:id="@+id/pork"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/pork"
+                    android:gravity="top"
                     android:text="@string/pork"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
             </TableRow>
 
             <TableRow
@@ -212,20 +240,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/sausage"
+                    android:gravity="top"
                     android:text="@string/sausage"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
 
                 <CheckBox
                     android:id="@+id/scallop"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/scallop"
+                    android:gravity="top"
                     android:text="@string/scallop"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
             </TableRow>
 
             <TableRow
@@ -238,20 +270,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/shrimp"
+                    android:gravity="top"
                     android:text="@string/shrimp"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
 
                 <CheckBox
                     android:id="@+id/solami"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/solami"
+                    android:gravity="top"
                     android:text="@string/solami"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
             </TableRow>
 
             <TableRow
@@ -264,10 +300,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
-                    android:layout_marginRight="22dp" android:layout_marginTop="15dp"
+                    android:layout_marginRight="22dp"
+                    android:layout_marginTop="15dp"
                     android:background="@drawable/steak"
+                    android:gravity="top"
                     android:text="@string/steak"
-                    android:textColor="@android:color/white" />
+                    android:textColor="@android:color/black" />
 
                 <CheckBox
                     android:id="@+id/turkey"
@@ -277,9 +315,9 @@
                     android:layout_marginRight="22dp"
                     android:layout_marginTop="15dp"
                     android:background="@drawable/turkey"
+                    android:gravity="top"
                     android:text="@string/turkey"
-                    android:textColor="@android:color/white" />
-
+                    android:textColor="@android:color/black" />
             </TableRow>
         </TableLayout>
     </ScrollView>
@@ -305,7 +343,6 @@
             android:layout_alignParentRight="true"
             android:background="@drawable/longbutton"
             android:text="Add to List" />
-
     </RelativeLayout>
 
 </LinearLayout>

@@ -42,7 +42,7 @@
     <string name="crab">Crab</string>
     <string name="crawfish">Crawfish</string>
     <string name="eggs">Eggs</string>
-    <string name="ground_beef">Ground Beef</string>
+    <string name="ground_beef">Beef</string>
     <string name="ham">Ham</string>
     <string name="lamb">Lamb</string>
     <string name="lobster">Lobster</string>
@@ -55,7 +55,7 @@
     <string name="solami">Solami</string>
     <string name="steak">Steak</string>
     <string name="turkey">Turkey</string>
-    <string name="title_activity_vegetable">Vegetable</string>
+    <string name="title_activity_vegetable">Veggie</string>
     <string name="avocado">Avocado</string>
     <string name="beet">Beet</string>
     <string name="blackolive">Black Olive</string>
@@ -93,7 +93,7 @@
     <string name="pasta">Pasta</string>
     <string name="rice">Rice</string>
     <string name="title_activity_dairy">Dairy</string>
-    <string name="bleucheese">Bleu Cheese</string>
+    <string name="bleucheese">Bleu</string>
     <string name="butter">Butter</string>
     <string name="cheese">Cheese</string>
     <string name="cheese2">Cheese 2</string>
@@ -111,7 +111,7 @@
     <string name="jelly">Jelly</string>
     <string name="ketchup">Ketchup</string>
     <string name="mustard">Mustard</string>
-    <string name="peanutbutter">Peanut Butter</string>
+    <string name="peanutbutter">P.Butter</string>
     <string name="salt">Salt</string>
     <string name="spice">Spice</string>
     <string name="meat">Meat</string>

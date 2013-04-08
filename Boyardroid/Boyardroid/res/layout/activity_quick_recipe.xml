@@ -11,25 +11,32 @@
         android:id="@+id/tableRow1"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:layout_alignParentTop="true" >
+        android:layout_alignParentTop="true"
+        android:gravity="center" >
 
         <Button
             android:id="@+id/meat"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/meatbutton"
-            android:layout_margin="10dip"
+            android:gravity="center_horizontal"
             android:text="@string/meat" />
 
         <Button
             android:id="@+id/vegetable"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dip"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/vegetablebutton"
-            android:text="Veggie" />
-
+            android:gravity="center_horizontal"
+            android:text="@string/title_activity_vegetable" />
     </TableRow>
 
     <TableRow
@@ -37,23 +44,31 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:gravity="center"
-        android:layout_below="@+id/tableRow1" >
+        android:layout_below="@+id/tableRow1"
+        android:gravity="center" >
 
         <Button
             android:id="@+id/fruit"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/fruitbutton"
-            android:layout_margin="10dip"
+            android:gravity="center_horizontal"
             android:text="@string/title_activity_fruit" />
 
         <Button
             android:id="@+id/dairy"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/dairybutton"
-            android:layout_margin="10dip"
+            android:gravity="center_horizontal"
             android:text="@string/dairy" />
     </TableRow>
 
@@ -62,23 +77,31 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
-        android:gravity="center"
-        android:layout_below="@+id/tableRow2" >
+        android:layout_below="@+id/tableRow2"
+        android:gravity="center" >
 
         <Button
             android:id="@+id/grain"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/grainbutton"
-            android:layout_margin="10dip"
+            android:gravity="center_horizontal"
             android:text="@string/grain" />
 
         <Button
             android:id="@+id/spice"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginTop="15dp"
             android:background="@drawable/spicebutton"
-            android:layout_margin="10dip"
+            android:gravity="center_horizontal"
             android:text="@string/spice" />
     </TableRow>
 
