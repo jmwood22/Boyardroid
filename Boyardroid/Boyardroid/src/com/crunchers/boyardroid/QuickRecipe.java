@@ -1,7 +1,5 @@
 package com.crunchers.boyardroid;
 
-import java.util.ArrayList;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,16 +10,7 @@ import android.widget.Button;
 
 public class QuickRecipe extends Activity {
 
-	Button fruit;
-	Button meat;
-	Button vegetable;
-	Button grain;
-	Button dairy;
-	Button spice;
-	Button quickRecipe;
-	Button fridge;
-
-	static ArrayList<String> tempListItems = new ArrayList<String>();
+	private Button fruit, meat, vegetable, grain, dairy, spice, quickRecipe, fridge;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -93,7 +82,7 @@ public class QuickRecipe extends Activity {
 		});
 	}
 
-	public static void addToList(String ingredient) {
+	/*public static void addToList(String ingredient) {
 		if (tempListItems.indexOf(ingredient) == -1)
 			tempListItems.add(ingredient);
 	}
@@ -136,6 +125,8 @@ public class QuickRecipe extends Activity {
 	 * Fridge.removeFromFridge(ingredient); }
 	 */
 
+	
+	
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.

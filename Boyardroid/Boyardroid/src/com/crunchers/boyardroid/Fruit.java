@@ -12,15 +12,10 @@ import android.widget.CheckBox;
 public class Fruit extends Activity 
 {
 
-	Button findRecipes;
-	Button add;
-	CheckBox apple;
-	CheckBox orange;
-	CheckBox lime;
-	CheckBox blueberry;
-	CheckBox grape;
-	CheckBox banana;
-	CheckBox lemon;
+	private Button findRecipes, add;
+	private CheckBox apple, orange, lime, blueberry, grape, banana, lemon;
+	
+	private ListManager lm = new ListManager();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -35,9 +30,9 @@ public class Fruit extends Activity
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Apple");
+				  lm.addToTempList("Apple");
 			  else
-				  QuickRecipe.removeFromList("Apple");
+				  lm.removeFromTempList("Apple");
 		  }
 		});
 		
@@ -48,9 +43,9 @@ public class Fruit extends Activity
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Banana");
+				  lm.addToTempList("Banana");
 			  else
-				  QuickRecipe.removeFromList("Banana");
+				  lm.removeFromTempList("Banana");
 		  }
 		});
 		
@@ -61,9 +56,9 @@ public class Fruit extends Activity
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Orange");
+				  lm.addToTempList("Orange");
 			  else
-				  QuickRecipe.removeFromList("Orange");
+				  lm.removeFromTempList("Orange");
 		  }
 		});
 		
@@ -74,9 +69,9 @@ public class Fruit extends Activity
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Lemon");
+				  lm.addToTempList("Lemon");
 			  else
-				  QuickRecipe.removeFromList("Lemon");
+				  lm.removeFromTempList("Lemon");
 		  }
 		});
 		
@@ -87,9 +82,9 @@ public class Fruit extends Activity
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Lime");
+				  lm.addToTempList("Lime");
 			  else
-				  QuickRecipe.removeFromList("Lime");
+				  lm.removeFromTempList("Lime");
 		  }
 		});
 		
@@ -100,9 +95,9 @@ public class Fruit extends Activity
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Blueberry");
+				  lm.addToTempList("Blueberry");
 			  else
-				  QuickRecipe.removeFromList("Blueberry");
+				  lm.removeFromTempList("Blueberry");
 		  }
 		});
 		
@@ -113,9 +108,9 @@ public class Fruit extends Activity
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Grape");
+				  lm.addToTempList("Grape");
 			  else
-				  QuickRecipe.removeFromList("Grape");
+				  lm.removeFromTempList("Grape");
 		  }
 		});
 		
@@ -135,7 +130,7 @@ public class Fruit extends Activity
 		{
 		  public void onClick(View v)
 		  {
-		      QuickRecipe.mergeLists(); 
+		      lm.mergeLists(); 
 			  Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 		       startActivity(i);
 		  }

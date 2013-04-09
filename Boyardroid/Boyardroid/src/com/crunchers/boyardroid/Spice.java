@@ -1,43 +1,36 @@
 package com.crunchers.boyardroid;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.support.v4.app.NavUtils;
 
 public class Spice extends Activity {
 	
-	Button findRecipes;
-	Button add;
-	CheckBox jelly;
-	CheckBox ketchup;
-	CheckBox mustard;
-	CheckBox peanutbutter;
-	CheckBox pepper;
-	CheckBox salt;
-	CheckBox spice;
+	private Button findRecipes, add;
+	private CheckBox jelly, ketchup, mustard, peanutbutter, pepper, salt, spice;
+	
+	private ListManager lm = new ListManager();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_spice);
-		// Show the Up button in the action bar.
-		//getActionBar().setDisplayHomeAsUpEnabled(true);
+
+		
 		jelly = (CheckBox)findViewById(R.id.jelly);
 		jelly.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Jelly");
+				  lm.addToTempList("Jelly");
 			  else
-				  QuickRecipe.removeFromList("Jelly");
+				  lm.removeFromTempList("Jelly");
 		  }
 		});
 		
@@ -47,9 +40,9 @@ public class Spice extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Ketchup");
+				  lm.addToTempList("Ketchup");
 			  else
-				  QuickRecipe.removeFromList("Ketchup");
+				  lm.removeFromTempList("Ketchup");
 		  }
 		});
 		
@@ -59,9 +52,9 @@ public class Spice extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Mustard");
+				  lm.addToTempList("Mustard");
 			  else
-				  QuickRecipe.removeFromList("Mustard");
+				  lm.removeFromTempList("Mustard");
 		  }
 		});
 		
@@ -71,9 +64,9 @@ public class Spice extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("PeanutButter");
+				  lm.addToTempList("PeanutButter");
 			  else
-				  QuickRecipe.removeFromList("PeanutButter");
+				  lm.removeFromTempList("PeanutButter");
 		  }
 		});
 		
@@ -83,9 +76,9 @@ public class Spice extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Pepper");
+				  lm.addToTempList("Pepper");
 			  else
-				  QuickRecipe.removeFromList("Pepper");
+				  lm.removeFromTempList("Pepper");
 		  }
 		});
 		
@@ -95,9 +88,9 @@ public class Spice extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Salt");
+				  lm.addToTempList("Salt");
 			  else
-				  QuickRecipe.removeFromList("Salt");
+				  lm.removeFromTempList("Salt");
 		  }
 		});
 		
@@ -107,9 +100,9 @@ public class Spice extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Spice");
+				  lm.addToTempList("Spice");
 			  else
-				  QuickRecipe.removeFromList("Spice");
+				  lm.removeFromTempList("Spice");
 		  }
 		});
 		
@@ -128,7 +121,7 @@ public class Spice extends Activity {
 		{
 		  public void onClick(View v)
 		  {
-		      QuickRecipe.mergeLists(); 
+		      lm.mergeLists(); 
 			  Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 		       startActivity(i);
 		  }

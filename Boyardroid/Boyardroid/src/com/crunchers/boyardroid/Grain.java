@@ -1,43 +1,36 @@
 package com.crunchers.boyardroid;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.support.v4.app.NavUtils;
 
 public class Grain extends Activity {
 
-	Button findRecipes;
-	Button add;
-	CheckBox bagel;
-	CheckBox bread;
-	CheckBox cereal;
-	CheckBox cracker;
-	CheckBox oatmeal;
-	CheckBox pasta;
-	CheckBox rice;
+	private Button findRecipes, add;
+	private CheckBox bagel, bread, cereal, cracker, oatmeal, pasta, rice;
+	
+	private ListManager lm = new ListManager();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_grain);
-		// Show the Up button in the action bar.
-		//getActionBar().setDisplayHomeAsUpEnabled(true);
+		
+		
 		bagel = (CheckBox)findViewById(R.id.bagel);
 		bagel.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Bagel");
+				  lm.addToTempList("Bagel");
 			  else
-				  QuickRecipe.removeFromList("Bagel");
+				  lm.removeFromTempList("Bagel");
 		  }
 		});
 		
@@ -47,9 +40,9 @@ public class Grain extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Bread");
+				  lm.addToTempList("Bread");
 			  else
-				  QuickRecipe.removeFromList("Bread");
+				  lm.removeFromTempList("Bread");
 		  }
 		});
 		
@@ -59,9 +52,9 @@ public class Grain extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Cereal");
+				  lm.addToTempList("Cereal");
 			  else
-				  QuickRecipe.removeFromList("Cereal");
+				  lm.removeFromTempList("Cereal");
 		  }
 		});
 		
@@ -71,9 +64,9 @@ public class Grain extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Cracker");
+				  lm.addToTempList("Cracker");
 			  else
-				  QuickRecipe.removeFromList("Cracker");
+				  lm.removeFromTempList("Cracker");
 		  }
 		});
 		
@@ -83,9 +76,9 @@ public class Grain extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Oatmeal");
+				  lm.addToTempList("Oatmeal");
 			  else
-				  QuickRecipe.removeFromList("Oatmeal");
+				  lm.removeFromTempList("Oatmeal");
 		  }
 		});
 		
@@ -95,9 +88,9 @@ public class Grain extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Pasta");
+				  lm.addToTempList("Pasta");
 			  else
-				  QuickRecipe.removeFromList("Pasta");
+				  lm.removeFromTempList("Pasta");
 		  }
 		});
 		
@@ -107,9 +100,9 @@ public class Grain extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Rice");
+				  lm.addToTempList("Rice");
 			  else
-				  QuickRecipe.removeFromList("Rice");
+				  lm.removeFromTempList("Rice");
 		  }
 		});
 		
@@ -128,7 +121,7 @@ public class Grain extends Activity {
 		{
 		  public void onClick(View v)
 		  {
-		      QuickRecipe.mergeLists(); 
+		      lm.mergeLists(); 
 			  Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 		       startActivity(i);
 		  }

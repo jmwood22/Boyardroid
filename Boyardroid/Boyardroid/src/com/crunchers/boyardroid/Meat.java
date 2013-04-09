@@ -11,28 +11,11 @@ import android.widget.CheckBox;
 
 public class Meat extends Activity {
 
-	Button findRecipes;
-	Button add;
-	CheckBox bacon;
-	CheckBox bologna;
-	CheckBox chicken;
-	CheckBox clam;
-	CheckBox crab;
-	CheckBox crawfish;
-	CheckBox eggs;
-	CheckBox groundBeef;
-	CheckBox ham;
-	CheckBox lamb;
-	CheckBox lobster;
-	CheckBox oyster;
-	CheckBox pepperoni;
-	CheckBox pork;
-	CheckBox sausage;
-	CheckBox scallop;
-	CheckBox shrimp;
-	CheckBox solami;
-	CheckBox steak;
-	CheckBox turkey;
+	private Button findRecipes, add;
+	private CheckBox bacon, bologna, chicken, clam, crab, crawfish, eggs, groundBeef, ham, lamb;
+	private CheckBox lobster, oyster, pepperoni, pork, sausage, scallop, shrimp, solami, steak, turkey;
+	
+	private ListManager lm = new ListManager();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +29,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Bacon");
+				  lm.addToTempList("Bacon");
 			  else
-				  QuickRecipe.removeFromList("Bacon");
+				  lm.removeFromTempList("Bacon");
 		  }
 		});
 		
@@ -58,9 +41,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Bologna");
+				  lm.addToTempList("Bologna");
 			  else
-				  QuickRecipe.removeFromList("Bologna");
+				  lm.removeFromTempList("Bologna");
 		  }
 		});
 		
@@ -71,9 +54,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Chicken");
+				  lm.addToTempList("Chicken");
 			  else
-				  QuickRecipe.removeFromList("Chicken");
+				  lm.removeFromTempList("Chicken");
 		  }
 		});
 		
@@ -83,9 +66,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Clam");
+				  lm.addToTempList("Clam");
 			  else
-				  QuickRecipe.removeFromList("Clam");
+				  lm.removeFromTempList("Clam");
 		  }
 		});
 		
@@ -96,9 +79,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Crab");
+				  lm.addToTempList("Crab");
 			  else
-				  QuickRecipe.removeFromList("Crab");
+				  lm.removeFromTempList("Crab");
 		  }
 		});
 		
@@ -108,9 +91,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Crawfish");
+				  lm.addToTempList("Crawfish");
 			  else
-				  QuickRecipe.removeFromList("Crawfish");
+				  lm.removeFromTempList("Crawfish");
 		  }
 		});
 		
@@ -121,9 +104,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Eggs");
+				  lm.addToTempList("Eggs");
 			  else
-				  QuickRecipe.removeFromList("Eggs");
+				  lm.removeFromTempList("Eggs");
 		  }
 		});
 		
@@ -133,9 +116,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Ground Beef");
+				  lm.addToTempList("Ground Beef");
 			  else
-				  QuickRecipe.removeFromList("Ground Beef");
+				  lm.removeFromTempList("Ground Beef");
 		  }
 		});
 		
@@ -146,9 +129,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Ham");
+				  lm.addToTempList("Ham");
 			  else
-				  QuickRecipe.removeFromList("Ham");
+				  lm.removeFromTempList("Ham");
 		  }
 		});
 		
@@ -158,9 +141,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Lamb");
+				  lm.addToTempList("Lamb");
 			  else
-				  QuickRecipe.removeFromList("Lamb");
+				  lm.removeFromTempList("Lamb");
 		  }
 		});
 		
@@ -170,9 +153,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("lobster");
+				  lm.addToTempList("lobster");
 			  else
-				  QuickRecipe.removeFromList("lobster");
+				  lm.removeFromTempList("lobster");
 		  }
 		});
 		
@@ -182,9 +165,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Oyster");
+				  lm.addToTempList("Oyster");
 			  else
-				  QuickRecipe.removeFromList("Oyster");
+				  lm.removeFromTempList("Oyster");
 		  }
 		});
 		
@@ -194,9 +177,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Pepperoni");
+				  lm.addToTempList("Pepperoni");
 			  else
-				  QuickRecipe.removeFromList("Pepperoni");
+				  lm.removeFromTempList("Pepperoni");
 		  }
 		});
 		
@@ -206,9 +189,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Pork");
+				  lm.addToTempList("Pork");
 			  else
-				  QuickRecipe.removeFromList("Pork");
+				  lm.removeFromTempList("Pork");
 		  }
 		});
 		
@@ -218,9 +201,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Sausage");
+				  lm.addToTempList("Sausage");
 			  else
-				  QuickRecipe.removeFromList("Sausage");
+				  lm.removeFromTempList("Sausage");
 		  }
 		});
 		
@@ -230,9 +213,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Scallop");
+				  lm.addToTempList("Scallop");
 			  else
-				  QuickRecipe.removeFromList("Scallop");
+				  lm.removeFromTempList("Scallop");
 		  }
 		});
 		
@@ -242,9 +225,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Shrimp");
+				  lm.addToTempList("Shrimp");
 			  else
-				  QuickRecipe.removeFromList("Shrimp");
+				  lm.removeFromTempList("Shrimp");
 		  }
 		});
 		
@@ -254,9 +237,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Solami");
+				  lm.addToTempList("Solami");
 			  else
-				  QuickRecipe.removeFromList("Solami");
+				  lm.removeFromTempList("Solami");
 		  }
 		});
 		
@@ -266,9 +249,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Steak");
+				  lm.addToTempList("Steak");
 			  else
-				  QuickRecipe.removeFromList("Steak");
+				  lm.removeFromTempList("Steak");
 		  }
 		});
 		
@@ -278,9 +261,9 @@ public class Meat extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Turkey");
+				  lm.addToTempList("Turkey");
 			  else
-				  QuickRecipe.removeFromList("Turkey");
+				  lm.removeFromTempList("Turkey");
 		  }
 		});
 		
@@ -299,7 +282,7 @@ public class Meat extends Activity {
 		{
 		  public void onClick(View v)
 		  {
-		      QuickRecipe.mergeLists(); 
+		      lm.mergeLists(); 
 			  Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 		       startActivity(i);
 		  }

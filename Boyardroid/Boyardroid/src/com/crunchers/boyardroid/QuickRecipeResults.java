@@ -15,12 +15,12 @@ import android.widget.Toast;
 
 public class QuickRecipeResults extends Activity {
 
-	ListView listView;
-	ArrayAdapter<String> adapter;
-	ArrayList<String> recipes = new ArrayList<String>();
-	Cursor c;
-	DataBaseHelper db;
-	SQLiteDatabase database;
+	private ListView listView;
+	private ArrayAdapter<String> adapter;
+	private ArrayList<String> recipes = new ArrayList<String>();
+	private Cursor c;
+	private DataBaseHelper db;
+	private SQLiteDatabase database;
 
 	
 

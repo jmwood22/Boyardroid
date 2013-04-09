@@ -13,36 +13,13 @@ import android.support.v4.app.NavUtils;
 
 public class Vegetable extends Activity {
 
-	Button findRecipes;
-	Button add;
-	CheckBox avocado;
-	CheckBox beet;
-	CheckBox blackOlive;
-	CheckBox broccolli;
-	CheckBox celery;
-	CheckBox carrot;
-	CheckBox cauliflower;
-	CheckBox cucumber;
-	CheckBox eggplant;
-	CheckBox garlic;
-	CheckBox ginger;
-	CheckBox greenBean;
-	CheckBox jalapeno;
-	CheckBox lettuce;
-	CheckBox olive;
-	CheckBox onion;
-	CheckBox peas;
-	CheckBox pepper;
-	CheckBox pickle;
-	CheckBox potato;
-	CheckBox pumpkin;
-	CheckBox radish;
-	CheckBox spinach;
-	CheckBox squash;
-	CheckBox tomato;
-	CheckBox yam;
-	CheckBox zuchini;
+	private Button findRecipes, add;
+	private CheckBox avocado, beet, blackOlive, broccolli, celery, carrot, cauliflower, cucumber;
+	private CheckBox eggplant, garlic, ginger, greenBean, jalapeno, lettuce, olive, onion, peas;
+	private CheckBox pepper, pickle, potato, pumpkin, radish, spinach, squash, tomato, yam, zuchini;
 	
+	private ListManager lm = new ListManager();
+		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -54,9 +31,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Avocado");
+				  lm.addToTempList("Avocado");
 			  else
-				  QuickRecipe.removeFromList("Avocado");
+				  lm.removeFromTempList("Avocado");
 		  }
 		});
 		
@@ -66,9 +43,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Beet");
+				  lm.addToTempList("Beet");
 			  else
-				  QuickRecipe.removeFromList("Beet");
+				  lm.removeFromTempList("Beet");
 		  }
 		});
 		
@@ -78,9 +55,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Black Olive");
+				  lm.addToTempList("Black Olive");
 			  else
-				  QuickRecipe.removeFromList("Black Olive");
+				  lm.removeFromTempList("Black Olive");
 		  }
 		});
 		
@@ -90,9 +67,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Broccolli");
+				  lm.addToTempList("Broccolli");
 			  else
-				  QuickRecipe.removeFromList("Broccolli");
+				  lm.removeFromTempList("Broccolli");
 		  }
 		});
 		
@@ -102,9 +79,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Celery");
+				  lm.addToTempList("Celery");
 			  else
-				  QuickRecipe.removeFromList("Celery");
+				  lm.removeFromTempList("Celery");
 		  }
 		});
 		
@@ -114,9 +91,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Carrot");
+				  lm.addToTempList("Carrot");
 			  else
-				  QuickRecipe.removeFromList("Carrot");
+				  lm.removeFromTempList("Carrot");
 		  }
 		});
 		
@@ -126,9 +103,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Cauliflower");
+				  lm.addToTempList("Cauliflower");
 			  else
-				  QuickRecipe.removeFromList("Cauliflower");
+				  lm.removeFromTempList("Cauliflower");
 		  }
 		});
 		
@@ -138,9 +115,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Cucumber");
+				  lm.addToTempList("Cucumber");
 			  else
-				  QuickRecipe.removeFromList("Cucumber");
+				  lm.removeFromTempList("Cucumber");
 		  }
 		});
 		
@@ -150,9 +127,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Eggplant");
+				  lm.addToTempList("Eggplant");
 			  else
-				  QuickRecipe.removeFromList("Eggplant");
+				  lm.removeFromTempList("Eggplant");
 		  }
 		});
 		
@@ -162,9 +139,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Garlic");
+				  lm.addToTempList("Garlic");
 			  else
-				  QuickRecipe.removeFromList("Garlic");
+				  lm.removeFromTempList("Garlic");
 		  }
 		});
 		
@@ -174,9 +151,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Ginger");
+				  lm.addToTempList("Ginger");
 			  else
-				  QuickRecipe.removeFromList("Ginger");
+				  lm.removeFromTempList("Ginger");
 		  }
 		});
 		
@@ -186,9 +163,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Green Bean");
+				  lm.addToTempList("Green Bean");
 			  else
-				  QuickRecipe.removeFromList("Green Bean");
+				  lm.removeFromTempList("Green Bean");
 		  }
 		});
 		
@@ -198,9 +175,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Jalapeno");
+				  lm.addToTempList("Jalapeno");
 			  else
-				  QuickRecipe.removeFromList("Jalapeno");
+				  lm.removeFromTempList("Jalapeno");
 		  }
 		});
 		
@@ -210,9 +187,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Lettuce");
+				  lm.addToTempList("Lettuce");
 			  else
-				  QuickRecipe.removeFromList("Lettuce");
+				  lm.removeFromTempList("Lettuce");
 		  }
 		});
 		
@@ -222,9 +199,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Olive");
+				  lm.addToTempList("Olive");
 			  else
-				  QuickRecipe.removeFromList("Olive");
+				  lm.removeFromTempList("Olive");
 		  }
 		});
 		
@@ -234,9 +211,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Onion");
+				  lm.addToTempList("Onion");
 			  else
-				  QuickRecipe.removeFromList("Onion");
+				  lm.removeFromTempList("Onion");
 		  }
 		});
 		
@@ -246,9 +223,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Peas");
+				  lm.addToTempList("Peas");
 			  else
-				  QuickRecipe.removeFromList("Peas");
+				  lm.removeFromTempList("Peas");
 		  }
 		});
 		
@@ -258,9 +235,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Pepper");
+				  lm.addToTempList("Pepper");
 			  else
-				  QuickRecipe.removeFromList("Pepper");
+				  lm.removeFromTempList("Pepper");
 		  }
 		});
 		
@@ -270,9 +247,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Pickle");
+				  lm.addToTempList("Pickle");
 			  else
-				  QuickRecipe.removeFromList("Pickle");
+				  lm.removeFromTempList("Pickle");
 		  }
 		});
 		
@@ -282,9 +259,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Potato");
+				  lm.addToTempList("Potato");
 			  else
-				  QuickRecipe.removeFromList("Potato");
+				  lm.removeFromTempList("Potato");
 		  }
 		});
 		
@@ -294,9 +271,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Pumpkin");
+				  lm.addToTempList("Pumpkin");
 			  else
-				  QuickRecipe.removeFromList("Pumpkin");
+				  lm.removeFromTempList("Pumpkin");
 		  }
 		});
 		
@@ -306,9 +283,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Radish");
+				  lm.addToTempList("Radish");
 			  else
-				  QuickRecipe.removeFromList("Radish");
+				  lm.removeFromTempList("Radish");
 		  }
 		});
 		
@@ -318,9 +295,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Spinach");
+				  lm.addToTempList("Spinach");
 			  else
-				  QuickRecipe.removeFromList("Spinach");
+				  lm.removeFromTempList("Spinach");
 		  }
 		});
 		
@@ -330,9 +307,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Squash");
+				  lm.addToTempList("Squash");
 			  else
-				  QuickRecipe.removeFromList("Squash");
+				  lm.removeFromTempList("Squash");
 		  }
 		});
 		
@@ -342,9 +319,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Tomato");
+				  lm.addToTempList("Tomato");
 			  else
-				  QuickRecipe.removeFromList("Tomato");
+				  lm.removeFromTempList("Tomato");
 		  }
 		});
 		
@@ -354,9 +331,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Yam");
+				  lm.addToTempList("Yam");
 			  else
-				  QuickRecipe.removeFromList("Yam");
+				  lm.removeFromTempList("Yam");
 		  }
 		});
 		
@@ -366,9 +343,9 @@ public class Vegetable extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Zuchini");
+				  lm.addToTempList("Zuchini");
 			  else
-				  QuickRecipe.removeFromList("Zuchini");
+				  lm.removeFromTempList("Zuchini");
 		  }
 		});
 		
@@ -387,7 +364,7 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
-		      QuickRecipe.mergeLists(); 
+		      lm.mergeLists(); 
 			  Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 		       startActivity(i);
 		  }

@@ -10,9 +10,8 @@ import android.widget.Button;
 public class HomeScreen extends Activity 
 {
 
-Button fridge;
-Button quickRecipe;
-static boolean fridgeList = true;
+private Button fridge;
+private Button quickRecipe;
 
 @Override
 public void onCreate(Bundle savedInstanceState) 
@@ -23,8 +22,7 @@ public void onCreate(Bundle savedInstanceState)
 	 fridge.setOnClickListener(new OnClickListener()
 	 {
 	  public void onClick(View v)
-	   {
-	      fridgeList = true; 
+	  { 
 		  Intent i=new Intent(getApplicationContext(),Fridge.class);
 	       startActivity(i);
 	    }
@@ -36,7 +34,6 @@ public void onCreate(Bundle savedInstanceState)
 	{
 	 public void onClick(View v)
 	  {
-	     fridgeList = false; 
 		 Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 	      startActivity(i);
 	   }

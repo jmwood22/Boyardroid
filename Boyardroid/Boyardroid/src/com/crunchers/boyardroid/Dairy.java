@@ -13,22 +13,12 @@ import android.support.v4.app.NavUtils;
 
 public class Dairy extends Activity {
 
-	Button findRecipes;
-	Button add;
-	CheckBox bleuCheese;
-	CheckBox butter;
-	CheckBox cheese;
-	CheckBox cheese2;
-	CheckBox feta;
-	CheckBox gouda;
-	CheckBox milk;
-	CheckBox mozzarella;
-	CheckBox munster;
-	CheckBox parmesan;
-	CheckBox pepperjack;
-	CheckBox provolone;
-	CheckBox sourCream;
-	CheckBox swiss;
+	private Button findRecipes,add;
+	private CheckBox bleuCheese, butter, cheese, cheese2, feta, gouda, milk;
+	private CheckBox mozzarella, munster, parmesan, pepperjack, provolone, sourCream, swiss;
+	
+	private ListManager lm = new ListManager();
+	
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +31,9 @@ public class Dairy extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Bleu Cheese");
+				  lm.addToTempList("Bleu Cheese");
 			  else
-				  QuickRecipe.removeFromList("Bleu Cheese");
+				  lm.removeFromTempList("Bleu Cheese");
 		  }
 		});
 		
@@ -53,9 +43,9 @@ public class Dairy extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Butter");
+				  lm.addToTempList("Butter");
 			  else
-				  QuickRecipe.removeFromList("Butter");
+				  lm.removeFromTempList("Butter");
 		  }
 		});
 		
@@ -66,9 +56,9 @@ public class Dairy extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Cheese");
+				  lm.addToTempList("Cheese");
 			  else
-				  QuickRecipe.removeFromList("Cheese");
+				  lm.removeFromTempList("Cheese");
 		  }
 		});
 		
@@ -78,9 +68,9 @@ public class Dairy extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Cheese 2");
+				  lm.addToTempList("Cheese 2");
 			  else
-				  QuickRecipe.removeFromList("Cheese 2");
+				  lm.removeFromTempList("Cheese 2");
 		  }
 		});
 		
@@ -91,9 +81,9 @@ public class Dairy extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Feta");
+				  lm.addToTempList("Feta");
 			  else
-				  QuickRecipe.removeFromList("Feta");
+				  lm.removeFromTempList("Feta");
 		  }
 		});
 		
@@ -103,9 +93,9 @@ public class Dairy extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Gouda");
+				  lm.addToTempList("Gouda");
 			  else
-				  QuickRecipe.removeFromList("Gouda");
+				  lm.removeFromTempList("Gouda");
 		  }
 		});
 		
@@ -116,9 +106,9 @@ public class Dairy extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Milk");
+				  lm.addToTempList("Milk");
 			  else
-				  QuickRecipe.removeFromList("Milk");
+				  lm.removeFromTempList("Milk");
 		  }
 		});
 		
@@ -128,9 +118,9 @@ public class Dairy extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Mozzarella");
+				  lm.addToTempList("Mozzarella");
 			  else
-				  QuickRecipe.removeFromList("Mozzarella");
+				  lm.removeFromTempList("Mozzarella");
 		  }
 		});
 		
@@ -141,9 +131,9 @@ public class Dairy extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Munster");
+				  lm.addToTempList("Munster");
 			  else
-				  QuickRecipe.removeFromList("Munster");
+				  lm.removeFromTempList("Munster");
 		  }
 		});
 		
@@ -153,9 +143,9 @@ public class Dairy extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Parmesan");
+				  lm.addToTempList("Parmesan");
 			  else
-				  QuickRecipe.removeFromList("Parmesan");
+				  lm.removeFromTempList("Parmesan");
 		  }
 		});
 		
@@ -165,9 +155,9 @@ public class Dairy extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Pepperjack");
+				  lm.addToTempList("Pepperjack");
 			  else
-				  QuickRecipe.removeFromList("Pepperjack");
+				  lm.removeFromTempList("Pepperjack");
 		  }
 		});
 		
@@ -177,9 +167,9 @@ public class Dairy extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Provolone");
+				  lm.addToTempList("Provolone");
 			  else
-				  QuickRecipe.removeFromList("Provolone");
+				  lm.removeFromTempList("Provolone");
 		  }
 		});
 		
@@ -189,9 +179,9 @@ public class Dairy extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Sour Cream");
+				  lm.addToTempList("Sour Cream");
 			  else
-				  QuickRecipe.removeFromList("Sour Cream");
+				  lm.removeFromTempList("Sour Cream");
 		  }
 		});
 		
@@ -201,9 +191,9 @@ public class Dairy extends Activity {
 		  public void onClick(View v)
 		  {
 			  if (((CheckBox) v).isChecked())
-				  QuickRecipe.addToList("Swiss");
+				  lm.addToTempList("Swiss");
 			  else
-				  QuickRecipe.removeFromList("Swiss");
+				  lm.removeFromTempList("Swiss");
 		  }
 		});
 		
@@ -222,7 +212,7 @@ public class Dairy extends Activity {
 		{
 		  public void onClick(View v)
 		  {
-		      QuickRecipe.mergeLists(); 
+		      lm.mergeLists(); 
 			  Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 		       startActivity(i);
 		  }

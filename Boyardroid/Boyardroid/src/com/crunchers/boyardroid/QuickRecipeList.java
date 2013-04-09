@@ -3,38 +3,33 @@ package com.crunchers.boyardroid;
 import java.io.IOException;
 import java.util.ArrayList;
 
-import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckedTextView;
 import android.widget.ListView;
-import android.widget.AdapterView.OnItemClickListener;
 
 public class QuickRecipeList extends Activity 
 {
-	Button add;
-	Button remove;
-	Button find;
-	ListView listView;
-	ArrayAdapter<String> adapter;
-	static ArrayList<String> quickListItems = new ArrayList<String>();
+	private Button add, remove, find;
+	private ListView listView;
+	private ArrayAdapter<String> adapter;
 
-	static ArrayList<String> tempList = new ArrayList<String>();
+	private static ArrayList<String> tempList = new ArrayList<String>();
 	
-	String query;
-	static Cursor c;
+	private DataBaseHelper db;
+	private static SQLiteDatabase database;
 	
-	DataBaseHelper db;
-	static SQLiteDatabase database;
+	private static ListManager lm = new ListManager();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +62,7 @@ public class QuickRecipeList extends Activity
 		setContentView(R.layout.activity_quick_recipe_list);
 		
 		listView = (ListView)findViewById(R.id.listView1);
-		adapter = new ArrayAdapter<String>( this, android.R.layout.simple_list_item_multiple_choice, quickListItems );
+		adapter = new ArrayAdapter<String>( this, android.R.layout.simple_list_item_multiple_choice, lm.getQuickList() );
 		listView.setAdapter(adapter);
 		listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
 		listView.setOnItemClickListener(new OnItemClickListener(){
@@ -77,12 +72,12 @@ public class QuickRecipeList extends Activity
 				if(check.isChecked())
 				{
 					check.setChecked(false);
-					tempList.remove(quickListItems.get(position));
+					tempList.remove(lm.getQuickList().get(position));
 				}
 				else
 				{
 					check.setChecked(true);
-					tempList.add(quickListItems.get(position));
+					tempList.add(lm.getQuickList().get(position));
 				}
 			}
 
@@ -94,12 +89,12 @@ public class QuickRecipeList extends Activity
     		public void onClick(View v)
     		{
     			
-    			if(quickListItems.size()>0)
+    			if(lm.getQuickList().size()>0)
     			{
     					database.execSQL("DELETE FROM QuickList");
-    					for(int i = 0;i<quickListItems.size();i++)
+    					for(int i = 0;i<lm.getQuickList().size();i++)
     					{
-    						database.execSQL("INSERT INTO QuickList (Ingredient) VALUES ('" + quickListItems.get(i) +"')");
+    						database.execSQL("INSERT INTO QuickList (Ingredient) VALUES ('" + lm.getQuickList().get(i) +"')");
     					}
     			}
     			
@@ -117,7 +112,7 @@ public class QuickRecipeList extends Activity
 		{
 		  public void onClick(View v)
 		  {
-			  HomeScreen.fridgeList = false;
+			  lm.FridgeListFalse();
 			  Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 		      startActivity(i);
 		  }
@@ -127,20 +122,20 @@ public class QuickRecipeList extends Activity
 		{
 		  public void onClick(View v)
 		  {
-		       removeFromFridge();
+		       removeFromQuickList();
 		  }
 		});
 	}
 	
-	public void removeFromFridge()
+	public void removeFromQuickList()
 	{
 		for (int i = 0; i < tempList.size(); i++) {
-			quickListItems.remove(tempList.get(i));
-			database.execSQL("DELETE FROM QuickList WHERE Fridge.Ingredient = '" + tempList.get(i) + "'");
+			lm.removeFromQuickList(tempList.get(i));
+			database.execSQL("DELETE FROM QuickList WHERE QuickList.Ingredient = '" + tempList.get(i) + "'");
 			adapter.notifyDataSetChanged();
 		}
 		tempList.clear();
-		for(int i = 0; i < quickListItems.size();i++){
+		for(int i = 0; i < lm.getQuickList().size();i++){
 			listView.setItemChecked(i, false);
 		}
 	}
@@ -148,11 +143,11 @@ public class QuickRecipeList extends Activity
 	//adds ingredient to fridge
 		public static void addToQuick(String ingredient)
 		{
-			quickListItems.add(ingredient);
+			lm.addToQuickList(ingredient);
 		}
 		public static void removeFromQuick(String ingredient)
 		{
-			quickListItems.remove(ingredient);
+			lm.removeFromQuickList(ingredient);
 		}
 
 	@Override
