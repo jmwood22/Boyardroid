@@ -449,7 +449,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:background="@drawable/longbutton"
-        android:text="Find Recipes" />
+        android:text="Toggle View" />
 
     <Button
         android:id="@+id/add"

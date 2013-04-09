@@ -1,15 +1,26 @@
 package com.crunchers.boyardroid;
 
-import android.os.Bundle;
+import java.io.IOException;
+import java.util.ArrayList;
+
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.support.v4.app.NavUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
-import android.support.v4.app.NavUtils;
+import android.widget.CheckedTextView;
+import android.widget.ListView;
 
 public class Vegetable extends Activity {
 
@@ -18,11 +29,77 @@ public class Vegetable extends Activity {
 	private CheckBox eggplant, garlic, ginger, greenBean, jalapeno, lettuce, olive, onion, peas;
 	private CheckBox pepper, pickle, potato, pumpkin, radish, spinach, squash, tomato, yam, zuchini;
 	
+	private ListView listView;
+	private ArrayAdapter<String> adapter;
+	private ArrayList<String> vegetables = new ArrayList<String>();
+	
 	private ListManager lm = new ListManager();
+	
+	private DataBaseHelper db;
+	private static SQLiteDatabase database;
+	private Cursor c;
+	
+	private static boolean listToggle = false;
 		
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		
+		db = new DataBaseHelper(this);
+		 
+		 try {
+		  
+		 db.createDataBase();
+		  
+		 } catch (IOException ioe) {
+		  
+		 throw new Error("Unable to create database");
+		  
+		 }
+		  
+		 try {
+		  
+		 db.openDataBase();
+		  
+		 }catch(SQLException sqle){
+		  
+		 throw sqle;
+		  
+		 }
+		 
+		database = db.getWritableDatabase();
+		
+		if(listToggle)
+		{
+			setContentView(R.layout.ingredient_list);
+			
+			if(vegetables.size()==0)
+				getVegetables();
+			
+			listView = (ListView)findViewById(R.id.listView1);
+			adapter = new ArrayAdapter<String>( this, android.R.layout.simple_list_item_multiple_choice, vegetables );
+			listView.setAdapter(adapter);
+			listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+	    	listView.setOnItemClickListener(new OnItemClickListener(){
+				@Override
+				public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+					CheckedTextView check = (CheckedTextView)view;
+					if(check.isChecked())
+					{
+						check.setChecked(false);
+						lm.removeFromTempList(vegetables.get(position));
+					}
+					else
+					{
+						check.setChecked(true);
+						lm.addToTempList(vegetables.get(position));
+					}
+				}
+	    	});
+		}
+		
+		else
+		{
 		setContentView(R.layout.activity_vegetable);
 		
 		avocado = (CheckBox)findViewById(R.id.avocado);
@@ -349,26 +426,54 @@ public class Vegetable extends Activity {
 		  }
 		});
 		
+		
+		}
+		
 		findRecipes = (Button)findViewById(R.id.findRecipes);
 		findRecipes.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
 		  {
+			  if(listToggle)
+				  listToggle = false;
+			  else
+				  listToggle = true;
 			  
+			  
+			  Intent intent = getIntent();
+			  finish();
+			  startActivity(intent);
 		  }
 		});
 		
 		
-		add = (Button)findViewById(R.id.add);
-		add.setOnClickListener(new OnClickListener() 
+			add = (Button)findViewById(R.id.add);
+			add.setOnClickListener(new OnClickListener() 
+			{
+			public void onClick(View v)
+		  	{	
+		      	lm.mergeLists(); 
+			  	Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
+			  	startActivity(i);
+		  	}
+			});
+	}
+
+	private void getVegetables() 
+	{
+		String results = "Select Ingredient.Name From Ingredient Where Ingredient.Category = 'Veggie' Order By Ingredient.Name";
+		
+		c = database.rawQuery(results, null);
+		
+		for(c.moveToFirst();!c.isAfterLast();c.moveToNext())
 		{
-		  public void onClick(View v)
-		  {
-		      lm.mergeLists(); 
-			  Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
-		       startActivity(i);
-		  }
-		});
+			String veg = c.getString(0);
+			
+			if(!vegetables.contains(veg))
+				vegetables.add(veg);
+		}
+		
+		c.close();
 	}
 
 	@Override

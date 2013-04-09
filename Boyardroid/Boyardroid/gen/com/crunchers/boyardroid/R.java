@@ -413,6 +413,7 @@ public final class R {
         public static final int activity_quick_recipe_results=0x7f03000a;
         public static final int activity_spice=0x7f03000b;
         public static final int activity_vegetable=0x7f03000c;
+        public static final int ingredient_list=0x7f03000d;
     }
     public static final class menu {
         public static final int activity_dairy=0x7f070000;
