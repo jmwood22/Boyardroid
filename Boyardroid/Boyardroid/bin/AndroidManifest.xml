@@ -94,6 +94,10 @@
             android:name="com.crunchers.boyardroid.QuickRecipeResults"
             android:label="@string/title_activity_quick_recipe_results" >
         </activity>
+        <activity
+            android:name="com.crunchers.boyardroid.RecipeInfo"
+            android:label="@string/title_activity_recipe_info" >
+        </activity>
     </application>
 
 </manifest>

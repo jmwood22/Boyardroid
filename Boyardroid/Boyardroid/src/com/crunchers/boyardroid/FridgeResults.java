@@ -4,11 +4,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -62,6 +66,17 @@ public class FridgeResults extends Activity {
 			listView.setAdapter(adapter);
 		else
 			Toast.makeText(getApplicationContext(), "listView is null", Toast.LENGTH_LONG).show();
+		
+		listView.setOnItemClickListener(new OnItemClickListener(){
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id)
+			{
+				Intent i=new Intent(getApplicationContext(),RecipeInfo.class);
+				i.putExtra("recipe", recipes.get(position));
+  		      	startActivity(i); 
+			}
+    	});
+		
 	}
 
 	@Override
@@ -79,7 +94,7 @@ public class FridgeResults extends Activity {
 				 "left join ingredient on ingredient._id = recipecontains.ingredient_id " +
 				 "Where ingredient.name in (Select Fridge.Ingredient From Fridge) Group by recipe.name) " +
 				 "r1 Join (select recipe.name nm, count(*) cnt from recipe left join recipecontains on recipecontains.recipe_id = recipe._id " +
-				 "left join ingredient on ingredient._id = recipecontains.ingredient_id group by recipe.name) r on r.nm = r1.nm Where  (Cast(r1.cnt AS REAL)/Cast(r.cnt AS REAL)) >= .75";
+				 "left join ingredient on ingredient._id = recipecontains.ingredient_id group by recipe.name) r on r.nm = r1.nm Where  (Cast(r1.cnt AS REAL)/Cast(r.cnt AS REAL)) >= .25";
 		
 		c = database.rawQuery(results, null);
 		

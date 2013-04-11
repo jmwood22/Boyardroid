@@ -411,9 +411,10 @@ public final class R {
         public static final int activity_quick_recipe=0x7f030008;
         public static final int activity_quick_recipe_list=0x7f030009;
         public static final int activity_quick_recipe_results=0x7f03000a;
-        public static final int activity_spice=0x7f03000b;
-        public static final int activity_vegetable=0x7f03000c;
-        public static final int ingredient_list=0x7f03000d;
+        public static final int activity_recipe_info=0x7f03000b;
+        public static final int activity_spice=0x7f03000c;
+        public static final int activity_vegetable=0x7f03000d;
+        public static final int ingredient_list=0x7f03000e;
     }
     public static final class menu {
         public static final int activity_dairy=0x7f070000;
@@ -431,6 +432,7 @@ public final class R {
         public static final int fridge_results=0x7f07000c;
         public static final int quick_recipe_list=0x7f07000d;
         public static final int quick_recipe_results=0x7f07000e;
+        public static final int recipe_info=0x7f07000f;
     }
     public static final class string {
         public static final int action_settings=0x7f050072;
@@ -544,6 +546,7 @@ public final class R {
         public static final int title_activity_quick_recipe=0x7f050004;
         public static final int title_activity_quick_recipe_list=0x7f050073;
         public static final int title_activity_quick_recipe_results=0x7f050076;
+        public static final int title_activity_recipe_info=0x7f050077;
         public static final int title_activity_spice=0x7f05006a;
         public static final int title_activity_vegetable=0x7f050036;
         public static final int tomato=0x7f050050;
