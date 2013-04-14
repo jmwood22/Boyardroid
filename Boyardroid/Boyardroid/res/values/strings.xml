@@ -125,5 +125,6 @@
     <string name="add_to_list">Add To List</string>
     <string name="view_all_recipes">View All Recipes</string>
     <string name="title_activity_recipes">Recipes</string>
+    <string name="title_service_music_service">MusicService</string>
 
 </resources>

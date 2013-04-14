@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -36,6 +37,8 @@ public class Fruit extends Activity
 	private DataBaseHelper db;
 	private static SQLiteDatabase database;
 	private Cursor c;
+	
+	private MediaPlayer mp;
 	
 	private static boolean listToggle = false;
 	
@@ -106,7 +109,9 @@ public class Fruit extends Activity
 		apple.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Fruit.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Apple");
 			  else
@@ -119,7 +124,9 @@ public class Fruit extends Activity
 		banana.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Fruit.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Banana");
 			  else
@@ -132,7 +139,9 @@ public class Fruit extends Activity
 		orange.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Fruit.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Orange");
 			  else
@@ -145,7 +154,9 @@ public class Fruit extends Activity
 		lemon.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Fruit.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Lemon");
 			  else
@@ -158,7 +169,9 @@ public class Fruit extends Activity
 		lime.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Fruit.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Lime");
 			  else
@@ -171,7 +184,9 @@ public class Fruit extends Activity
 		blueberry.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Fruit.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Blueberry");
 			  else
@@ -184,7 +199,9 @@ public class Fruit extends Activity
 		grape.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Fruit.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Grape");
 			  else
@@ -204,7 +221,9 @@ public class Fruit extends Activity
 			  else
 				  listToggle = true;
 			  
-			  
+	  			 
+				  mp = MediaPlayer.create(Fruit.this, R.raw.search);
+				  mp.start();
 			  Intent intent = getIntent();
 			  finish();
 			  startActivity(intent);
@@ -216,7 +235,9 @@ public class Fruit extends Activity
 		add.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Fruit.this, R.raw.select);
+			  mp.start();
 		      lm.mergeLists(); 
 			  Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 		       startActivity(i);
@@ -237,7 +258,9 @@ public class Fruit extends Activity
 	public boolean onKeyDown(int keyCode, KeyEvent event) 
 	{
 	    if ( keyCode == KeyEvent.KEYCODE_MENU ) 
-	    {
+	    {  			 
+			  mp = MediaPlayer.create(Fruit.this, R.raw.opendoor);
+			  mp.start();
 	    	Intent i=new Intent(getApplicationContext(),HomeScreen.class);
 		    startActivity(i); 
 	        return true;

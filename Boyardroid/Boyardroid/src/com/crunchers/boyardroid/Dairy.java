@@ -3,6 +3,7 @@ package com.crunchers.boyardroid;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -34,6 +35,8 @@ public class Dairy extends Activity {
 	private ArrayList<String> ingredients = new ArrayList<String>();
 	
 	private ListManager lm = new ListManager();
+	
+	private MediaPlayer mp;
 	
 	private DataBaseHelper db;
 	private static SQLiteDatabase database;
@@ -108,6 +111,10 @@ public class Dairy extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Dairy.this, R.raw.click);
+			  mp.start();
+			  mp = MediaPlayer.create(Dairy.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Bleu Cheese");
 			  else
@@ -120,6 +127,8 @@ public class Dairy extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Dairy.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Butter");
 			  else
@@ -133,6 +142,8 @@ public class Dairy extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Dairy.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Cheese");
 			  else
@@ -145,6 +156,8 @@ public class Dairy extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Dairy.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Cheese 2");
 			  else
@@ -158,6 +171,8 @@ public class Dairy extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Dairy.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Feta");
 			  else
@@ -170,6 +185,8 @@ public class Dairy extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Dairy.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Gouda");
 			  else
@@ -183,6 +200,8 @@ public class Dairy extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Dairy.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Milk");
 			  else
@@ -195,6 +214,8 @@ public class Dairy extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Dairy.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Mozzarella");
 			  else
@@ -208,6 +229,8 @@ public class Dairy extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Dairy.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Munster");
 			  else
@@ -220,6 +243,8 @@ public class Dairy extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Dairy.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Parmesan");
 			  else
@@ -232,6 +257,8 @@ public class Dairy extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Dairy.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Pepperjack");
 			  else
@@ -244,6 +271,8 @@ public class Dairy extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Dairy.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Provolone");
 			  else
@@ -256,6 +285,8 @@ public class Dairy extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Dairy.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Sour Cream");
 			  else
@@ -268,6 +299,8 @@ public class Dairy extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Dairy.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Swiss");
 			  else
@@ -281,6 +314,8 @@ public class Dairy extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Dairy.this, R.raw.search);
+			  mp.start();
 			  if(listToggle)
 				  listToggle = false;
 			  else
@@ -299,6 +334,8 @@ public class Dairy extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Dairy.this, R.raw.select);
+			  mp.start();
 		      lm.mergeLists(); 
 			  Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 		       startActivity(i);
@@ -319,6 +356,8 @@ public class Dairy extends Activity {
 	{
 	    if ( keyCode == KeyEvent.KEYCODE_MENU ) 
 	    {
+			  mp = MediaPlayer.create(Dairy.this, R.raw.opendoor);
+			  mp.start();
 	    	Intent i=new Intent(getApplicationContext(),HomeScreen.class);
 		    startActivity(i); 
 	        return true;

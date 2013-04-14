@@ -7,6 +7,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -29,6 +30,8 @@ public class Fridge extends Activity
 	
 	private DataBaseHelper db;
 	private static SQLiteDatabase database;
+	
+	private MediaPlayer mp;
 	
 	private ListManager lm = new ListManager();
 	
@@ -100,7 +103,9 @@ public class Fridge extends Activity
     						database.execSQL("INSERT INTO Fridge (Ingredient) VALUES ('" + lm.getFridgeList().get(i) +"')");
     					}
     			}
-    			
+
+  			  mp = MediaPlayer.create(Fridge.this, R.raw.search);
+  			  mp.start();
     			Intent i=new Intent(getApplicationContext(),FridgeResults.class);
   		      	startActivity(i); 
     		}
@@ -113,6 +118,8 @@ public class Fridge extends Activity
     	{
     		public void onClick(View v)
     		{
+    			  mp = MediaPlayer.create(Fridge.this, R.raw.pot);
+      			  mp.start();
     			Intent i = new Intent(getApplicationContext(),Recipes.class);
     			startActivity(i);
     		}
@@ -122,7 +129,9 @@ public class Fridge extends Activity
 		add.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Fridge.this, R.raw.select);
+			  mp.start();
 			  lm.FridgeListTrue();
 			  Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 		      startActivity(i);
@@ -132,7 +141,9 @@ public class Fridge extends Activity
 		remove.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Fridge.this, R.raw.drop);
+			  mp.start();
 		       removeFromFridge();
 		  }
 		});

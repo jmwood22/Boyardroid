@@ -102,6 +102,10 @@
             android:name="com.crunchers.boyardroid.Recipes"
             android:label="@string/title_activity_recipes" >
         </activity>
+        <service
+            android:name="com.crunchers.boyardroid.MusicService"
+            android:label="@string/title_service_music_service" >
+        </service>
     </application>
 
 </manifest>

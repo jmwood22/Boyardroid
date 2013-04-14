@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -31,6 +32,8 @@ public class Spice extends Activity {
 	private ArrayList<String> ingredients = new ArrayList<String>();
 	
 	private ListManager lm = new ListManager();
+	
+	private MediaPlayer mp;
 	
 	private DataBaseHelper db;
 	private static SQLiteDatabase database;
@@ -104,7 +107,9 @@ public class Spice extends Activity {
 		jelly.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Spice.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Jelly");
 			  else
@@ -116,7 +121,9 @@ public class Spice extends Activity {
 		ketchup.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Spice.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Ketchup");
 			  else
@@ -128,7 +135,9 @@ public class Spice extends Activity {
 		mustard.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Spice.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Mustard");
 			  else
@@ -140,7 +149,9 @@ public class Spice extends Activity {
 		peanutbutter.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Spice.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("PeanutButter");
 			  else
@@ -152,7 +163,9 @@ public class Spice extends Activity {
 		pepper.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Spice.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Pepper");
 			  else
@@ -164,7 +177,9 @@ public class Spice extends Activity {
 		salt.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Spice.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Salt");
 			  else
@@ -176,7 +191,9 @@ public class Spice extends Activity {
 		spice.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Spice.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Spice");
 			  else
@@ -189,7 +206,9 @@ public class Spice extends Activity {
 		findRecipes.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Spice.this, R.raw.search);
+			  mp.start();
 			  if(listToggle)
 				  listToggle = false;
 			  else
@@ -207,7 +226,9 @@ public class Spice extends Activity {
 		add.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Spice.this, R.raw.select);
+			  mp.start();
 		      lm.mergeLists(); 
 			  Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 		       startActivity(i);
@@ -227,7 +248,9 @@ public class Spice extends Activity {
 	public boolean onKeyDown(int keyCode, KeyEvent event) 
 	{
 	    if ( keyCode == KeyEvent.KEYCODE_MENU ) 
-	    {
+	    {  			 
+			  mp = MediaPlayer.create(Spice.this, R.raw.opendoor);
+			  mp.start();
 	    	Intent i=new Intent(getApplicationContext(),HomeScreen.class);
 		    startActivity(i); 
 	        return true;

@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.KeyEvent;
@@ -24,6 +25,7 @@ public class RecipeInfo extends Activity {
 	private static SQLiteDatabase database;
 	private Cursor c;
 	
+	private MediaPlayer mp;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -91,7 +93,9 @@ public class RecipeInfo extends Activity {
 	public boolean onKeyDown(int keyCode, KeyEvent event) 
 	{
 	    if ( keyCode == KeyEvent.KEYCODE_MENU ) 
-	    {
+	    {  			 
+			  mp = MediaPlayer.create(RecipeInfo.this, R.raw.opendoor);
+			  mp.start();
 	    	Intent i=new Intent(getApplicationContext(),HomeScreen.class);
 		    startActivity(i); 
 	        return true;

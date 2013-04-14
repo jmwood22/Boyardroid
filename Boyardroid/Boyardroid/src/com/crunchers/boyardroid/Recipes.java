@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -36,6 +37,8 @@ public class Recipes extends Activity {
 	private ExpandListAdapter ExpAdapter;
 	private ArrayList<ExpandListGroup> ExpListItems;
 	private ExpandableListView ExpandList;
+	
+	private MediaPlayer mp;
 	
 	private static String sort = "ABC";
 
@@ -103,11 +106,23 @@ public class Recipes extends Activity {
 		  public void onClick(View v)
 		  {
 			  if(sort.equals("ABC"))
+			  {
 				  sort = "FAV";
+				  mp = MediaPlayer.create(Recipes.this, R.raw.select);
+				  mp.start();
+			  }
 			  else if(sort.equals("FAV"))
-				  sort = "FRQ";
+			  {
+				  sort = "FRQ";  			 
+				  mp = MediaPlayer.create(Recipes.this, R.raw.select);
+				  mp.start();
+			  }
 			  else 
-				  sort = "ABC";
+			  {
+				  sort = "ABC";  			 
+				  mp = MediaPlayer.create(Recipes.this, R.raw.select);
+				  mp.start();
+			  }
 			  
 			  
 			  Intent intent = getIntent();

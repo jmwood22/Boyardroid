@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -36,6 +37,8 @@ public class Meat extends Activity {
 	private DataBaseHelper db;
 	private static SQLiteDatabase database;
 	private Cursor c;
+	
+	private MediaPlayer mp;
 	
 	private static boolean listToggle = false;
 	
@@ -106,7 +109,9 @@ public class Meat extends Activity {
 		bacon.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Bacon");
 			  else
@@ -118,7 +123,9 @@ public class Meat extends Activity {
 		bologna.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Bologna");
 			  else
@@ -131,7 +138,9 @@ public class Meat extends Activity {
 		chicken.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Chicken");
 			  else
@@ -143,7 +152,9 @@ public class Meat extends Activity {
 		clam.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Clam");
 			  else
@@ -156,7 +167,9 @@ public class Meat extends Activity {
 		crab.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Crab");
 			  else
@@ -168,7 +181,9 @@ public class Meat extends Activity {
 		crawfish.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Crawfish");
 			  else
@@ -181,7 +196,9 @@ public class Meat extends Activity {
 		eggs.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Eggs");
 			  else
@@ -193,7 +210,9 @@ public class Meat extends Activity {
 		groundBeef.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Ground Beef");
 			  else
@@ -206,7 +225,9 @@ public class Meat extends Activity {
 		ham.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Ham");
 			  else
@@ -218,7 +239,9 @@ public class Meat extends Activity {
 		lamb.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Lamb");
 			  else
@@ -230,7 +253,9 @@ public class Meat extends Activity {
 		lobster.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("lobster");
 			  else
@@ -242,7 +267,9 @@ public class Meat extends Activity {
 		oyster.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Oyster");
 			  else
@@ -254,7 +281,9 @@ public class Meat extends Activity {
 		pepperoni.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Pepperoni");
 			  else
@@ -266,7 +295,9 @@ public class Meat extends Activity {
 		pork.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Pork");
 			  else
@@ -278,7 +309,9 @@ public class Meat extends Activity {
 		sausage.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Sausage");
 			  else
@@ -290,7 +323,9 @@ public class Meat extends Activity {
 		scallop.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Scallop");
 			  else
@@ -302,7 +337,9 @@ public class Meat extends Activity {
 		shrimp.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Shrimp");
 			  else
@@ -314,7 +351,9 @@ public class Meat extends Activity {
 		solami.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Solami");
 			  else
@@ -326,7 +365,9 @@ public class Meat extends Activity {
 		steak.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Steak");
 			  else
@@ -338,7 +379,9 @@ public class Meat extends Activity {
 		turkey.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Turkey");
 			  else
@@ -356,7 +399,9 @@ public class Meat extends Activity {
 				  listToggle = false;
 			  else
 				  listToggle = true;
-			  
+	  			 
+				  mp = MediaPlayer.create(Meat.this, R.raw.search);
+				  mp.start();
 			  
 			  Intent intent = getIntent();
 			  finish();
@@ -369,7 +414,9 @@ public class Meat extends Activity {
 		add.setOnClickListener(new OnClickListener() 
 		{
 		  public void onClick(View v)
-		  {
+		  {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.select);
+			  mp.start();
 		      lm.mergeLists(); 
 			  Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 		      startActivity(i);
@@ -389,7 +436,9 @@ public class Meat extends Activity {
 	public boolean onKeyDown(int keyCode, KeyEvent event) 
 	{
 	    if ( keyCode == KeyEvent.KEYCODE_MENU ) 
-	    {
+	    {  			 
+			  mp = MediaPlayer.create(Meat.this, R.raw.opendoor);
+			  mp.start();
 	    	Intent i=new Intent(getApplicationContext(),HomeScreen.class);
 		    startActivity(i); 
 	        return true;

@@ -2,6 +2,7 @@ package com.crunchers.boyardroid;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -12,6 +13,8 @@ import android.widget.Button;
 public class QuickRecipe extends Activity {
 
 	private Button fruit, meat, vegetable, grain, dairy, spice, quickRecipe, fridge;
+	
+	private MediaPlayer mp;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +24,8 @@ public class QuickRecipe extends Activity {
 		fruit = (Button) findViewById(R.id.fruit);
 		fruit.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
+				  mp = MediaPlayer.create(QuickRecipe.this, R.raw.click);
+				  mp.start();
 				Intent i = new Intent(getApplicationContext(), Fruit.class);
 				startActivity(i);
 			}
@@ -29,6 +34,8 @@ public class QuickRecipe extends Activity {
 		meat = (Button) findViewById(R.id.meat);
 		meat.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
+				  mp = MediaPlayer.create(QuickRecipe.this, R.raw.click);
+				  mp.start();
 				Intent i = new Intent(getApplicationContext(), Meat.class);
 				startActivity(i);
 			}
@@ -37,6 +44,8 @@ public class QuickRecipe extends Activity {
 		vegetable = (Button) findViewById(R.id.vegetable);
 		vegetable.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
+				  mp = MediaPlayer.create(QuickRecipe.this, R.raw.click);
+				  mp.start();
 				Intent i = new Intent(getApplicationContext(), Vegetable.class);
 				startActivity(i);
 			}
@@ -45,6 +54,8 @@ public class QuickRecipe extends Activity {
 		grain = (Button) findViewById(R.id.grain);
 		grain.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
+				  mp = MediaPlayer.create(QuickRecipe.this, R.raw.click);
+				  mp.start();
 				Intent i = new Intent(getApplicationContext(), Grain.class);
 				startActivity(i);
 			}
@@ -53,6 +64,8 @@ public class QuickRecipe extends Activity {
 		dairy = (Button) findViewById(R.id.dairy);
 		dairy.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
+				  mp = MediaPlayer.create(QuickRecipe.this, R.raw.click);
+				  mp.start();
 				Intent i = new Intent(getApplicationContext(), Dairy.class);
 				startActivity(i);
 			}
@@ -61,6 +74,8 @@ public class QuickRecipe extends Activity {
 		spice = (Button) findViewById(R.id.spice);
 		spice.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
+				  mp = MediaPlayer.create(QuickRecipe.this, R.raw.click);
+				  mp.start();
 				Intent i = new Intent(getApplicationContext(), Spice.class);
 				startActivity(i);
 			}
@@ -69,6 +84,8 @@ public class QuickRecipe extends Activity {
 		quickRecipe = (Button) findViewById(R.id.quickRecipe);
 		quickRecipe.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
+				  mp = MediaPlayer.create(QuickRecipe.this, R.raw.click);
+				  mp.start();
 				Intent i = new Intent(getApplicationContext(),
 						QuickRecipeList.class);
 				startActivity(i);
@@ -77,6 +94,8 @@ public class QuickRecipe extends Activity {
 		fridge = (Button) findViewById(R.id.fridgeList);
 		fridge.setOnClickListener(new OnClickListener() {
 			public void onClick(View v) {
+				  mp = MediaPlayer.create(QuickRecipe.this, R.raw.click);
+				  mp.start();
 				Intent i = new Intent(getApplicationContext(), Fridge.class);
 				startActivity(i);
 			}

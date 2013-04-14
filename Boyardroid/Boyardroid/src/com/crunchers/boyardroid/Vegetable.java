@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.NavUtils;
 import android.view.KeyEvent;
@@ -39,6 +40,8 @@ public class Vegetable extends Activity {
 	private DataBaseHelper db;
 	private static SQLiteDatabase database;
 	private Cursor c;
+	
+	private MediaPlayer mp;
 	
 	private static boolean listToggle = false;
 		
@@ -108,6 +111,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Avocado");
 			  else
@@ -120,6 +125,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Beet");
 			  else
@@ -132,6 +139,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Black Olive");
 			  else
@@ -144,6 +153,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Broccolli");
 			  else
@@ -156,6 +167,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Celery");
 			  else
@@ -168,6 +181,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Carrot");
 			  else
@@ -180,6 +195,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Cauliflower");
 			  else
@@ -192,6 +209,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Cucumber");
 			  else
@@ -204,6 +223,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Eggplant");
 			  else
@@ -216,6 +237,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Garlic");
 			  else
@@ -228,6 +251,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Ginger");
 			  else
@@ -240,6 +265,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Green Bean");
 			  else
@@ -252,6 +279,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Jalapeno");
 			  else
@@ -264,6 +293,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Lettuce");
 			  else
@@ -276,6 +307,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Olive");
 			  else
@@ -288,6 +321,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Onion");
 			  else
@@ -300,6 +335,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Peas");
 			  else
@@ -312,6 +349,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Pepper");
 			  else
@@ -324,6 +363,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Pickle");
 			  else
@@ -336,6 +377,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Potato");
 			  else
@@ -348,6 +391,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Pumpkin");
 			  else
@@ -360,6 +405,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Radish");
 			  else
@@ -372,6 +419,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Spinach");
 			  else
@@ -408,6 +457,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Yam");
 			  else
@@ -420,6 +471,8 @@ public class Vegetable extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Zuchini");
 			  else
@@ -440,7 +493,9 @@ public class Vegetable extends Activity {
 			  else
 				  listToggle = true;
 			  
-			  
+
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.search);
+			  mp.start();
 			  Intent intent = getIntent();
 			  finish();
 			  startActivity(intent);
@@ -454,6 +509,8 @@ public class Vegetable extends Activity {
 			public void onClick(View v)
 		  	{	
 		      	lm.mergeLists(); 
+				 mp = MediaPlayer.create(Vegetable.this, R.raw.select);
+				 mp.start();
 			  	Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 			  	startActivity(i);
 		  	}
@@ -490,6 +547,8 @@ public class Vegetable extends Activity {
 	{
 	    if ( keyCode == KeyEvent.KEYCODE_MENU ) 
 	    {
+			  mp = MediaPlayer.create(Vegetable.this, R.raw.opendoor);
+			  mp.start();
 	    	Intent i=new Intent(getApplicationContext(),HomeScreen.class);
 		    startActivity(i); 
 	        return true;

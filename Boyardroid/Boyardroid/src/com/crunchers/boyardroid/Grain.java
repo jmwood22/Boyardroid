@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.Menu;
@@ -32,6 +33,8 @@ public class Grain extends Activity {
 	private ArrayList<String> ingredients = new ArrayList<String>();
 	
 	private ListManager lm = new ListManager();
+	
+	private MediaPlayer mp;
 	
 	private DataBaseHelper db;
 	private static SQLiteDatabase database;
@@ -106,6 +109,8 @@ public class Grain extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Grain.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Bagel");
 			  else
@@ -118,6 +123,8 @@ public class Grain extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Grain.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Bread");
 			  else
@@ -130,6 +137,8 @@ public class Grain extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Grain.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Cereal");
 			  else
@@ -142,6 +151,8 @@ public class Grain extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Grain.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Cracker");
 			  else
@@ -154,6 +165,8 @@ public class Grain extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Grain.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Oatmeal");
 			  else
@@ -166,6 +179,8 @@ public class Grain extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Grain.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Pasta");
 			  else
@@ -178,6 +193,8 @@ public class Grain extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Grain.this, R.raw.click);
+			  mp.start();
 			  if (((CheckBox) v).isChecked())
 				  lm.addToTempList("Rice");
 			  else
@@ -191,6 +208,8 @@ public class Grain extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Grain.this, R.raw.search);
+			  mp.start();
 			  getIngredients();
 			  Toast.makeText(getApplicationContext(), ingredients.toString(), Toast.LENGTH_LONG).show();
 		  }
@@ -202,6 +221,8 @@ public class Grain extends Activity {
 		{
 		  public void onClick(View v)
 		  {
+			  mp = MediaPlayer.create(Grain.this, R.raw.select);
+			  mp.start();
 		      lm.mergeLists(); 
 			  Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
 		       startActivity(i);
@@ -223,6 +244,8 @@ public class Grain extends Activity {
 	{
 	    if ( keyCode == KeyEvent.KEYCODE_MENU ) 
 	    {
+			  mp = MediaPlayer.create(Grain.this, R.raw.opendoor);
+			  mp.start();
 	    	Intent i=new Intent(getApplicationContext(),HomeScreen.class);
 		    startActivity(i); 
 	        return true;
