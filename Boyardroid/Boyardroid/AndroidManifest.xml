@@ -98,6 +98,10 @@
             android:name="com.crunchers.boyardroid.RecipeInfo"
             android:label="@string/title_activity_recipe_info" >
         </activity>
+        <activity
+            android:name="com.crunchers.boyardroid.Recipes"
+            android:label="@string/title_activity_recipes" >
+        </activity>
     </application>
 
 </manifest>

@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -20,7 +21,7 @@ import android.widget.ListView;
 
 public class Fridge extends Activity 
 {
-	private Button add, remove, find;
+	private Button add, remove, find, recipes;
 	
 	private ListView listView;
 	private ArrayAdapter<String> adapter;
@@ -106,6 +107,16 @@ public class Fridge extends Activity
 
 			
     	});
+    	
+    	recipes = (Button)findViewById(R.id.button3);
+    	recipes.setOnClickListener(new OnClickListener()
+    	{
+    		public void onClick(View v)
+    		{
+    			Intent i = new Intent(getApplicationContext(),Recipes.class);
+    			startActivity(i);
+    		}
+    	});
         
     	add = (Button)findViewById(R.id.add);
 		add.setOnClickListener(new OnClickListener() 
@@ -161,9 +172,22 @@ public class Fridge extends Activity
     public boolean onCreateOptionsMenu(Menu menu) 
     {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.activity_fridge, menu);
+        getMenuInflater().inflate(R.menu.activity_fridge, menu); 
+		
         return true;
     }
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) 
+	{
+	    if ( keyCode == KeyEvent.KEYCODE_MENU ) 
+	    {
+	    	Intent i=new Intent(getApplicationContext(),HomeScreen.class);
+		    startActivity(i); 
+	        return true;
+	    }
+	    return super.onKeyDown(keyCode, event);
+	}
 	
 	
     /*

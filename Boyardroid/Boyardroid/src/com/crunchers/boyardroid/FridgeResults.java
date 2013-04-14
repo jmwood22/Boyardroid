@@ -9,21 +9,18 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemLongClickListener;
-import android.widget.ArrayAdapter;
 import android.widget.ExpandableListView;
-import android.widget.ListView;
-import android.widget.Toast;
 
 public class FridgeResults extends Activity {
 	
-	private ListView listView;
-	private ArrayAdapter<String> adapter;
 	private ArrayList<String> recipes = new ArrayList<String>();
 	private ArrayList<String> ingredients = new ArrayList<String>();
+	
 	private Cursor c;
 	private DataBaseHelper db;
 	private SQLiteDatabase database;
@@ -63,31 +60,28 @@ public class FridgeResults extends Activity {
 		database = db.getWritableDatabase();
 		
 		findRecipes();
-		//recipes.add("Banana");
+		
 		setContentView(R.layout.activity_fridge_results);
 		
 		ExpandList = (ExpandableListView) findViewById(R.id.ExpList);
         ExpListItems = SetStandardGroups();
         ExpAdapter = new ExpandListAdapter(FridgeResults.this, ExpListItems);
         ExpandList.setAdapter(ExpAdapter);
-        /*
-		listView = (ListView)findViewById(R.id.listView1);
-		adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,recipes);
-		
-		if(listView!=null)
-			listView.setAdapter(adapter);
-		else
-			Toast.makeText(getApplicationContext(), "listView is null", Toast.LENGTH_LONG).show();
-		*/
+        
 		ExpandList.setOnItemLongClickListener(new OnItemLongClickListener(){
 			@Override
 			public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id)
 			{
-				//Toast.makeText(getApplicationContext(),ExpListItems.,Toast.LENGTH_SHORT).show();
-				Intent i=new Intent(getApplicationContext(),RecipeInfo.class);
-				i.putExtra("recipe", recipes.get(position));
-  		      	startActivity(i); 
-  		      	return false;
+				if(ExpandableListView.getPackedPositionType(id)==ExpandableListView.PACKED_POSITION_TYPE_GROUP)
+				{	
+					int groupPosition = ExpandableListView.getPackedPositionGroup(id);
+					
+					Intent i=new Intent(getApplicationContext(),RecipeInfo.class);
+					i.putExtra("recipe", recipes.get(groupPosition));
+  		      		startActivity(i); 
+  		      		return true;
+				}
+				return false;
 			}
     	});
 		
@@ -97,9 +91,21 @@ public class FridgeResults extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.fridge_recipe_results, menu);
+		
 		return true;
 	}
 	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) 
+	{
+	    if ( keyCode == KeyEvent.KEYCODE_MENU ) 
+	    {
+	    	Intent i=new Intent(getApplicationContext(),HomeScreen.class);
+		    startActivity(i); 
+	        return true;
+	    }
+	    return super.onKeyDown(keyCode, event);
+	}
 	
 	public void findIngredients(String recipe)
 	{
@@ -148,7 +154,8 @@ public class FridgeResults extends Activity {
 		c.close();
 	}
 	
-	public ArrayList<ExpandListGroup> SetStandardGroups() {
+	public ArrayList<ExpandListGroup> SetStandardGroups() 
+	{
     	ArrayList<ExpandListGroup> list = new ArrayList<ExpandListGroup>();
     	ArrayList<ExpandListChild> list2 = new ArrayList<ExpandListChild>();
     	
@@ -173,49 +180,6 @@ public class FridgeResults extends Activity {
     		list2 = new ArrayList<ExpandListChild>();
     	}
     	
-    	
-    	
-    	
-    	/*
-        ExpandListGroup gru1 = new ExpandListGroup();
-        gru1.setName("Recipe1");
-        
-        ExpandListChild ch1_1 = new ExpandListChild();
-        ch1_1.setName("Ingredient1");
-        ch1_1.setTag(null);
-        list2.add(ch1_1);
-        
-        ExpandListChild ch1_2 = new ExpandListChild();
-        ch1_2.setName("Ingredient2");
-        ch1_2.setTag(null);
-        list2.add(ch1_2);
-        
-        ExpandListChild ch1_3 = new ExpandListChild();
-        ch1_3.setName("Ingredient3");
-        ch1_3.setTag(null);
-        list2.add(ch1_3);
-        gru1.setItems(list2);
-        
-        list2 = new ArrayList<ExpandListChild>();
-        
-        ExpandListGroup gru2 = new ExpandListGroup();
-        gru2.setName("Recipe2");
-        ExpandListChild ch2_1 = new ExpandListChild();
-        ch2_1.setName("Ingredient1");
-        ch2_1.setTag(null);
-        list2.add(ch2_1);
-        ExpandListChild ch2_2 = new ExpandListChild();
-        ch2_2.setName("Ingredient2");
-        ch2_2.setTag(null);
-        list2.add(ch2_2);
-        ExpandListChild ch2_3 = new ExpandListChild();
-        ch2_3.setName("Ingredient3");
-        ch2_3.setTag(null);
-        list2.add(ch2_3);
-        gru2.setItems(list2);
-        list.add(gru1);
-        list.add(gru2);
-        */
         return list;
     }
 

@@ -38,7 +38,7 @@
 	        android:layout_marginBottom="0dp"
 	        android:onClick="favRecipe"
 	        android:background="@drawable/longbutton"
-	        android:text="@string/favoriteRecipe_button" />
+	        android:text="@string/view_all_recipes" />
 
 	    <Button
 	        android:id="@+id/button4"

@@ -449,7 +449,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:background="@drawable/longbutton"
-        android:text="Toggle View" />
+        android:text="@string/toggle_View" />
 
     <Button
         android:id="@+id/add"
@@ -458,6 +458,6 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:background="@drawable/longbutton"
-        android:text="Add to List" />
+        android:text="@string/add_to_list" />
 
 </RelativeLayout>

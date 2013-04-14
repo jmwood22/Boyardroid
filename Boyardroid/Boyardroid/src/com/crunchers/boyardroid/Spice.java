@@ -9,6 +9,7 @@ import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -218,7 +219,20 @@ public class Spice extends Activity {
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
 		getMenuInflater().inflate(R.menu.activity_spice, menu);
+		
 		return true;
+	}
+	
+	@Override
+	public boolean onKeyDown(int keyCode, KeyEvent event) 
+	{
+	    if ( keyCode == KeyEvent.KEYCODE_MENU ) 
+	    {
+	    	Intent i=new Intent(getApplicationContext(),HomeScreen.class);
+		    startActivity(i); 
+	        return true;
+	    }
+	    return super.onKeyDown(keyCode, event);
 	}
 
 	//@Override(might need for the home button)

@@ -121,5 +121,9 @@
     <string name="title_activity_fridge_results">FridgeResults</string>
     <string name="title_activity_quick_recipe_results">QuickRecipeResults</string>
     <string name="title_activity_recipe_info">RecipeInfo</string>
+    <string name="toggle_View">Toggle View</string>
+    <string name="add_to_list">Add To List</string>
+    <string name="view_all_recipes">View All Recipes</string>
+    <string name="title_activity_recipes">Recipes</string>
 
 </resources>

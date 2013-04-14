@@ -34,7 +34,7 @@ public void onCreate(Bundle savedInstanceState)
 	{
 	 public void onClick(View v)
 	  {
-		 Intent i=new Intent(getApplicationContext(),QuickRecipe.class);
+		 Intent i=new Intent(getApplicationContext(),QuickRecipeList.class);
 	      startActivity(i);
 	   }
 	}

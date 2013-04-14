@@ -2,9 +2,6 @@ package com.crunchers.boyardroid;
 
 import java.util.ArrayList;
 
-import com.crunchers.boyardroid.R;
-import com.crunchers.boyardroid.*;
-
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,7 +42,7 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
 			ViewGroup parent) {
 		ExpandListChild child = (ExpandListChild) getChild(groupPosition, childPosition);
 		if (view == null) {
-			LayoutInflater infalInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+			LayoutInflater infalInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			view = infalInflater.inflate(R.layout.expandlist_child_item, null);
 		}
 		TextView tv = (TextView) view.findViewById(R.id.tvChild);
@@ -82,7 +79,7 @@ public class ExpandListAdapter extends BaseExpandableListAdapter {
 			ViewGroup parent) {
 		ExpandListGroup group = (ExpandListGroup) getGroup(groupPosition);
 		if (view == null) {
-			LayoutInflater inf = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+			LayoutInflater inf = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 			view = inf.inflate(R.layout.expandlist_group_item, null);
 		}
 		TextView tv = (TextView) view.findViewById(R.id.tvGroup);
