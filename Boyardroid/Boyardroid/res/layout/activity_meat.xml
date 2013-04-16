@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/LinearLayout1"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -9,7 +9,9 @@
 
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="400dip"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/add"
+        android:layout_alignParentTop="true"
         android:isScrollContainer="true"
         android:overScrollMode="always"
         android:scrollbarAlwaysDrawVerticalTrack="true"
@@ -345,4 +347,4 @@
             android:text="@string/add_to_list" />
     </RelativeLayout>
 
-</LinearLayout>
+</RelativeLayout>

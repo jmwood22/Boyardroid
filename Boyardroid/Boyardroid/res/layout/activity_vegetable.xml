@@ -9,7 +9,9 @@
 
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="400dip"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/add"
+        android:layout_alignParentTop="true"
         android:isScrollContainer="true"
         android:overScrollMode="always"
         android:scrollbarAlwaysDrawVerticalTrack="true"
