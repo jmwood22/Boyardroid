@@ -4,6 +4,9 @@
     android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:background="@drawable/mascot"
     android:orientation="vertical"
     tools:context=".Quick Recipe" >
 
@@ -76,7 +79,7 @@
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
                     android:layout_marginTop="15dp"
-                    android:background="@drawable/broccolli"
+                    android:background="@drawable/broccli"
                     android:gravity="top"
                     android:text="@string/broccolli"
                     android:textColor="@android:color/black" />
@@ -214,7 +217,7 @@
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
                     android:layout_marginTop="15dp"
-                    android:background="@drawable/greenbean"
+                    android:background="@drawable/greenbeans"
                     android:gravity="top"
                     android:text="@string/greenbean"
                     android:textColor="@android:color/black" />
@@ -256,7 +259,7 @@
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
                     android:layout_marginTop="15dp"
-                    android:background="@drawable/olive"
+                    android:background="@drawable/greenolive"
                     android:gravity="top"
                     android:text="@string/olive"
                     android:textColor="@android:color/black" />

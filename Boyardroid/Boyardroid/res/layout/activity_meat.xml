@@ -4,6 +4,9 @@
     android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:layout_centerVertical="true"
+    android:background="@drawable/mascot"
     android:orientation="vertical"
     tools:context=".Quick Recipe" >
 
@@ -124,7 +127,7 @@
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
                     android:layout_marginTop="15dp"
-                    android:background="@drawable/eggs"
+                    android:background="@drawable/egg"
                     android:gravity="top"
                     android:text="@string/eggs"
                     android:textColor="@android:color/black" />
@@ -136,7 +139,7 @@
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
                     android:layout_marginTop="15dp"
-                    android:background="@drawable/ground_beef"
+                    android:background="@drawable/beef"
                     android:gravity="top"
                     android:text="@string/ground_beef"
                     android:textColor="@android:color/black" />

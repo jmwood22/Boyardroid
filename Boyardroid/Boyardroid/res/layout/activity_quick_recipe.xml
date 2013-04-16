@@ -5,6 +5,7 @@
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
     android:layout_margin="0dip"
+    android:background="@drawable/mascot"
     tools:context=".QuickRecipe" >
 
     <TableRow
@@ -22,7 +23,7 @@
             android:layout_marginLeft="22dp"
             android:layout_marginRight="22dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/meatbutton"
+            android:background="@drawable/meats"
             android:gravity="center_horizontal"
             android:text="@string/meat" />
 
@@ -34,7 +35,7 @@
             android:layout_marginLeft="22dp"
             android:layout_marginRight="22dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/vegetablebutton"
+            android:background="@drawable/veggies"
             android:gravity="center_horizontal"
             android:text="@string/title_activity_vegetable" />
     </TableRow>
@@ -55,7 +56,7 @@
             android:layout_marginLeft="22dp"
             android:layout_marginRight="22dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/fruitbutton"
+            android:background="@drawable/fruit"
             android:gravity="center_horizontal"
             android:text="@string/title_activity_fruit" />
 
@@ -67,7 +68,7 @@
             android:layout_marginLeft="22dp"
             android:layout_marginRight="22dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/dairybutton"
+            android:background="@drawable/dairy"
             android:gravity="center_horizontal"
             android:text="@string/dairy" />
     </TableRow>
@@ -88,7 +89,7 @@
             android:layout_marginLeft="22dp"
             android:layout_marginRight="22dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/grainbutton"
+            android:background="@drawable/grains"
             android:gravity="center_horizontal"
             android:text="@string/grain" />
 
@@ -100,7 +101,7 @@
             android:layout_marginLeft="22dp"
             android:layout_marginRight="22dp"
             android:layout_marginTop="15dp"
-            android:background="@drawable/spicebutton"
+            android:background="@drawable/spices"
             android:gravity="center_horizontal"
             android:text="@string/spice" />
     </TableRow>
