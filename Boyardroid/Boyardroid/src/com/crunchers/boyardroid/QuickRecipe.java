@@ -1,6 +1,12 @@
 package com.crunchers.boyardroid;
 
+import java.util.List;
+
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.ActivityManager.RunningTaskInfo;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -100,6 +106,32 @@ public class QuickRecipe extends Activity {
 				startActivity(i);
 			}
 		});
+	}
+	
+	@Override
+	protected void onPause()
+	{
+		Context context = getApplicationContext();
+        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<RunningTaskInfo> tasks = activityManager.getRunningTasks(1);
+        if (!tasks.isEmpty()) {
+          ComponentName topActivity = tasks.get(0).topActivity; 
+          if (!topActivity.getPackageName().equals(context.getPackageName())) {
+            Intent service = new Intent(getApplicationContext(), MusicService.class);
+            stopService(service);
+          }
+        }
+        super.onPause();
+
+	}
+	
+	@Override
+	protected void onResume()
+	{
+	  Intent intent = new Intent();
+  	  intent.setClass(getApplicationContext(), MusicService.class); 
+  	  getApplicationContext().startService(intent);
+  	  super.onResume();
 	}
 
 	/*public static void addToList(String ingredient) {

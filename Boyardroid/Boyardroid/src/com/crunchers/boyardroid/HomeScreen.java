@@ -1,6 +1,12 @@
 package com.crunchers.boyardroid;
 
+import java.util.List;
+
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.ActivityManager.RunningTaskInfo;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -48,6 +54,26 @@ public void onCreate(Bundle savedInstanceState)
 	   }
 	}
 	);
+}
+
+@Override
+protected void onPause() {
+  Context context = getApplicationContext();
+  ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+  List<RunningTaskInfo> tasks = activityManager.getRunningTasks(1);
+  if (!tasks.isEmpty()) {
+    ComponentName topActivity = tasks.get(0).topActivity; 
+    if (!topActivity.getPackageName().equals(context.getPackageName())) 
+      stopService(service);   
+  }
+  super.onPause();
+}
+
+@Override
+public void onResume()
+{
+	startService(service);
+	super.onResume();
 }
 
 @Override

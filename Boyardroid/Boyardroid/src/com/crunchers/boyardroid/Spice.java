@@ -2,8 +2,13 @@ package com.crunchers.boyardroid;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import android.app.Activity;
+import android.app.ActivityManager;
+import android.app.ActivityManager.RunningTaskInfo;
+import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -236,6 +241,31 @@ public class Spice extends Activity {
 		});
 	}
 
+	@Override
+	protected void onPause()
+	{
+		Context context = getApplicationContext();
+        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        List<RunningTaskInfo> tasks = activityManager.getRunningTasks(1);
+        if (!tasks.isEmpty()) {
+          ComponentName topActivity = tasks.get(0).topActivity; 
+          if (!topActivity.getPackageName().equals(context.getPackageName())) {
+            Intent service = new Intent(getApplicationContext(), MusicService.class);
+            stopService(service);
+          }
+        }
+        super.onPause();
+
+	}
+	
+	@Override
+	protected void onResume()
+	{
+	  Intent intent = new Intent();
+  	  intent.setClass(getApplicationContext(), MusicService.class); 
+  	  getApplicationContext().startService(intent);
+  	  super.onResume();
+	}
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		// Inflate the menu; this adds items to the action bar if it is present.
