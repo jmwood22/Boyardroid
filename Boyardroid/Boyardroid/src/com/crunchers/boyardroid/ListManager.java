@@ -14,6 +14,12 @@ public class ListManager
 		super();
 	}
 	
+	
+	public boolean getFlag()
+	{
+		return fridge;
+	}
+	
 	public void FridgeListTrue()
 	{
 		ListManager.fridge = true;

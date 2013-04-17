@@ -1,6 +1,7 @@
 package com.crunchers.boyardroid;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
@@ -16,16 +17,29 @@ import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.Menu;
+import android.view.View;
+import android.view.ViewGroup.LayoutParams;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.CheckedTextView;
+import android.widget.ListView;
+import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class RecipeInfo extends Activity {
 	
 	private String recipe;
 	private String recipeInfo;
-	
+	private ArrayList<String> ingredients = new ArrayList<String>();
+	private ArrayList<String> tempList = new ArrayList<String>();
 	private TextView textView;
-	
+	private ListView listView;
+	private ArrayAdapter<String> adapter;
+	private ListManager lm = new ListManager();
 	private DataBaseHelper db;
 	private static SQLiteDatabase database;
 	private Cursor c;
@@ -85,6 +99,25 @@ public class RecipeInfo extends Activity {
 		
 		c.close();
 	}
+	
+	public void findIngredients(String recipe)
+	{
+		String results = "Select Fridge.Ingredient From Fridge Where Fridge.Ingredient In (Select Ingredient.Name From Ingredient Left Join RecipeContains On Ingredient._id = RecipeContains.Ingredient_id " +
+							"Left Join Recipe On Recipe._id = RecipeContains.Recipe_id Where Recipe.Name = '" + recipe + "')";
+		c = database.rawQuery(results, null);
+		
+		ingredients.clear();
+		
+		for(c.moveToFirst();!c.isAfterLast();c.moveToNext())
+		{
+			String rec = c.getString(0);
+			
+			if(!ingredients.contains(rec))
+				ingredients.add(rec);
+		}
+		
+		c.close();
+	}
 
 	@Override
 	protected void onPause()
@@ -120,7 +153,7 @@ public class RecipeInfo extends Activity {
 	}
 	
 	@Override
-	public boolean onKeyDown(int keyCode, KeyEvent event) 
+	public boolean onKeyUp(int keyCode, KeyEvent event) 
 	{
 	    if ( keyCode == KeyEvent.KEYCODE_MENU ) 
 	    {  			 
@@ -130,6 +163,93 @@ public class RecipeInfo extends Activity {
 		    startActivity(i); 
 	        return true;
 	    }
+	    if(keyCode == KeyEvent.KEYCODE_BACK)
+	    {
+	    	LayoutInflater layoutInflater = (LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);  
+	    	View popupView = layoutInflater.inflate(R.layout.activity_popup_window, null);  
+	        final PopupWindow popupWindow = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+	        
+	    	findIngredients(recipe);
+	    	//setContentView(R.layout.activity_popup_window);
+	    	listView = (ListView)popupView.findViewById(R.id.junk);
+			adapter = new ArrayAdapter<String>( this, android.R.layout.simple_list_item_multiple_choice, ingredients );
+			listView.setAdapter(adapter);
+			listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+	    	listView.setOnItemClickListener(new OnItemClickListener(){
+				@Override
+				public void onItemClick(AdapterView<?> parent, View view, int position, long id){
+					CheckedTextView check = (CheckedTextView)view;
+					if(check.isChecked())
+					{
+						check.setChecked(false);
+						tempList.remove(ingredients.get(position));
+					}
+					else
+					{
+						check.setChecked(true);
+						tempList.add(ingredients.get(position));
+					}
+				}
+				
+				
+
+	    	});  
+	                
+	        Button yes = (Button)popupView.findViewById(R.id.yes);
+	        yes.setOnClickListener(new Button.OnClickListener(){
+	        @Override
+	        public void onClick(View v) {
+	         // TODO Auto-generated method stub
+	        	
+	        	
+	        	
+	        	
+	        	
+	        	popupWindow.dismiss();
+	        	if(lm.getFlag())
+	        	{
+	        		for(int i = 0; i < tempList.size(); i++)
+		        	{
+		        		lm.removeFromFridge(tempList.get(i));
+		        	}
+	        		Intent i=new Intent(getApplicationContext(),FridgeResults.class);
+	  		      	startActivity(i); 
+	        	}
+	        	else
+	        	{
+	        		for(int i = 0; i < tempList.size(); i++)
+		        	{
+		        		lm.removeFromQuickList(tempList.get(i));
+		        	}
+	        		Intent i=new Intent(getApplicationContext(),QuickRecipeResults.class);
+  		      		startActivity(i); 
+	        	}
+	        }});
+	        
+	        Button no = (Button)popupView.findViewById(R.id.no);
+	        no.setOnClickListener(new Button.OnClickListener(){
+	        @Override
+	        public void onClick(View v) {
+	         // TODO Auto-generated method stub
+	        	//setContentView(R.layout.activity_recipe_info);
+	        	popupWindow.dismiss();
+	        	if(lm.getFlag())
+	        	{
+	        		Intent i=new Intent(getApplicationContext(),FridgeResults.class);
+	  		      	startActivity(i); 
+	        	}
+	        	else
+	        	{
+	        		Intent i=new Intent(getApplicationContext(),QuickRecipeResults.class);
+  		      		startActivity(i); 
+	        	}
+	        }});
+	                  
+	        popupWindow.showAtLocation(popupView, 1, 1, 1);
+	            
+	      }
+	       
+	    
 	    return super.onKeyDown(keyCode, event);
 	}
 
