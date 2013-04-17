@@ -7,8 +7,10 @@ import java.util.List;
 import android.app.Activity;
 import android.app.ActivityManager;
 import android.app.ActivityManager.RunningTaskInfo;
+import android.app.AlertDialog;
 import android.content.ComponentName;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.SQLException;
@@ -83,6 +85,7 @@ public class RecipeInfo extends Activity {
 		recipe = i.getExtras().getString("recipe");
 		
 		getRecipeInfo();
+		findIngredients();
 		
 		textView.setText(recipeInfo);
 	}
@@ -100,7 +103,7 @@ public class RecipeInfo extends Activity {
 		c.close();
 	}
 	
-	public void findIngredients(String recipe)
+	public void findIngredients()
 	{
 		String results = "Select Fridge.Ingredient From Fridge Where Fridge.Ingredient In (Select Ingredient.Name From Ingredient Left Join RecipeContains On Ingredient._id = RecipeContains.Ingredient_id " +
 							"Left Join Recipe On Recipe._id = RecipeContains.Recipe_id Where Recipe.Name = '" + recipe + "')";
@@ -115,6 +118,8 @@ public class RecipeInfo extends Activity {
 			if(!ingredients.contains(rec))
 				ingredients.add(rec);
 		}
+		
+		
 		
 		c.close();
 	}
@@ -165,7 +170,78 @@ public class RecipeInfo extends Activity {
 	    }
 	    if(keyCode == KeyEvent.KEYCODE_BACK)
 	    {
-	    	LayoutInflater layoutInflater = (LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);  
+	    	
+	    	
+	    	final CharSequence[] items = new CharSequence[ingredients.size()];
+	    	boolean[] checks = new boolean[ingredients.size()];
+	    	for(int i = 0; i<ingredients.size(); i++)
+	    	{
+	    		items[i] = ingredients.get(i);
+	    		checks[i] = false;
+	    	}
+
+	    	AlertDialog.Builder builder = new AlertDialog.Builder(this);
+	    	builder.setTitle("Would you like to remove any ingredients?");
+	    	builder.setMultiChoiceItems(items, checks ,new DialogInterface.OnMultiChoiceClickListener() {
+	    	    public void onClick(DialogInterface dialog, int item, boolean isChecked) {
+	    	         if(isChecked)
+	    	         {
+	    	        	 tempList.add(ingredients.get(item));
+	    	         }
+	    	         else
+	    	        	 tempList.remove(ingredients.get(item));
+	    	    }
+	    	});
+	    	builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                	if(lm.getFlag())
+                	{
+                		for(int i = 0; i<tempList.size(); i++)
+                    	{
+                			lm.removeFromFridge(tempList.get(i));
+                    	}
+                    
+                		Intent i=new Intent(getApplicationContext(),HomeScreen.class);
+  		      			startActivity(i); 
+                	}
+                	
+                	else
+                	{
+                		for(int i = 0; i<tempList.size(); i++)
+                    	{
+                			lm.removeFromQuickList(tempList.get(i));
+                    	}
+                    
+                		Intent i=new Intent(getApplicationContext(),HomeScreen.class);
+  		      			startActivity(i);
+                	}
+                }
+            });
+	    	builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+
+                	Intent i=new Intent(getApplicationContext(),HomeScreen.class);
+  		      		startActivity(i);
+                }
+            });
+	    	builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                	if(lm.getFlag())
+                	{
+                		Intent i=new Intent(getApplicationContext(),FridgeResults.class);
+  		      			startActivity(i);
+                	}
+                	else
+                	{
+                		Intent i=new Intent(getApplicationContext(),QuickRecipeResults.class);
+  		      			startActivity(i);
+                	}
+                }
+            });
+	    	AlertDialog alert = builder.create();
+	    	alert.show();
+	    	
+	    	/*LayoutInflater layoutInflater = (LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);  
 	    	View popupView = layoutInflater.inflate(R.layout.activity_popup_window, null);  
 	        final PopupWindow popupWindow = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 	        
@@ -245,7 +321,7 @@ public class RecipeInfo extends Activity {
 	        	}
 	        }});
 	                  
-	        popupWindow.showAtLocation(popupView, 1, 1, 1);
+	        popupWindow.showAtLocation(popupView, 1, 1, 1);*/
 	            
 	      }
 	       

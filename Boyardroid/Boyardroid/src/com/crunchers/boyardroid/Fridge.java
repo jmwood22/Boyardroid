@@ -10,6 +10,7 @@ import android.app.ActivityManager.RunningTaskInfo;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.media.MediaPlayer;
@@ -32,6 +33,7 @@ public class Fridge extends Activity
 	private ListView listView;
 	private ArrayAdapter<String> adapter;
 	private static ArrayList<String> tempList = new ArrayList<String>();
+	private Cursor c;
 	
 	private DataBaseHelper db;
 	private static SQLiteDatabase database;
@@ -68,6 +70,11 @@ public class Fridge extends Activity
 		 }
 		 
 		 database = db.getWritableDatabase();
+		 
+		 if(lm.getFridgeList().size()==0)
+		 {
+			 getFridgeIngredients();
+		 }
 		 
         setContentView(R.layout.activity_fridge);
 		listView = (ListView)findViewById(R.id.listView1);
@@ -155,6 +162,25 @@ public class Fridge extends Activity
 				 
     }
 	
+	private void getFridgeIngredients() 
+	{
+		String results = "Select Fridge.Ingredient From Fridge Order By Fridge.Ingredient";
+		c = database.rawQuery(results, null);
+
+
+		for(c.moveToFirst();!c.isAfterLast();c.moveToNext())
+		{
+			String rec = c.getString(0);
+
+			if(!lm.getFridgeList().contains(rec))
+				lm.addToFridge(rec);
+		}
+
+
+
+		c.close();
+	}
+
 	@Override
 	protected void onPause()
 	{
