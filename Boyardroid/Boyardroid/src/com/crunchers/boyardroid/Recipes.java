@@ -24,6 +24,7 @@ import android.widget.AdapterView.OnItemLongClickListener;
 import android.widget.Button;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Recipes extends Activity {
 	
@@ -138,10 +139,19 @@ public class Recipes extends Activity {
 		
 	}
 
+
 	private void getRecipes() 
 	{
-		String results = "Select Recipe.Name From Recipe Order By Recipe.Name";
+		String results = "Select Recipe.Name From Recipe Order By Recipe.";
 		
+		if(sort.equals("ABC"))
+			results+="Name";
+		else if(sort.equals("FAV"))
+			results+="Favorite DESC, Recipe.Name";
+		else
+			results+="Frequency DESC, Recipe.Name";
+		
+		Toast.makeText(getApplicationContext(), results, Toast.LENGTH_LONG).show();
 		c = database.rawQuery(results, null);
 		
 		for(c.moveToFirst();!c.isAfterLast();c.moveToNext())

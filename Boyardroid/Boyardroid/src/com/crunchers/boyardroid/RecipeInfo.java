@@ -84,10 +84,18 @@ public class RecipeInfo extends Activity {
 		Intent i = getIntent();
 		recipe = i.getExtras().getString("recipe");
 		
+		addToFrequency();
 		getRecipeInfo();
 		findIngredients();
 		
 		textView.setText(recipeInfo);
+	}
+
+	private void addToFrequency() 
+	{
+		String freq = "Update Recipe Set Frequency = Frequency + 1 Where Name = '" + recipe + "'";
+		
+		database.execSQL(freq);
 	}
 
 	private void getRecipeInfo() 
