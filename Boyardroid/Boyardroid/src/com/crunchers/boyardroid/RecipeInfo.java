@@ -277,7 +277,7 @@ public class RecipeInfo extends Activity {
                 			lm.removeFromFridge(tempList.get(i));
                     	}
                     
-                		Intent i=new Intent(getApplicationContext(),HomeScreen.class);
+                		Intent i=new Intent(getApplicationContext(),FridgeResults.class);
   		      			startActivity(i); 
                 	}
                 	
@@ -288,20 +288,14 @@ public class RecipeInfo extends Activity {
                 			lm.removeFromQuickList(tempList.get(i));
                     	}
                     
-                		Intent i=new Intent(getApplicationContext(),HomeScreen.class);
+                		Intent i=new Intent(getApplicationContext(),QuickRecipeResults.class);
   		      			startActivity(i);
                 	}
                 }
             });
 	    	builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
-
-                	Intent i=new Intent(getApplicationContext(),HomeScreen.class);
-  		      		startActivity(i);
-                }
-            });
-	    	builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
-                public void onClick(DialogInterface dialog, int whichButton) {
+                	
                 	if(lm.getFlag())
                 	{
                 		Intent i=new Intent(getApplicationContext(),FridgeResults.class);
@@ -311,6 +305,20 @@ public class RecipeInfo extends Activity {
                 	{
                 		Intent i=new Intent(getApplicationContext(),QuickRecipeResults.class);
   		      			startActivity(i);
+                	}
+                }
+            });
+	    	builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int whichButton) {
+                	if(lm.getFlag())
+                	{
+                		//Intent i=new Intent(getApplicationContext(),FridgeResults.class);
+  		      			//startActivity(i);
+                	}
+                	else
+                	{
+                		//Intent i=new Intent(getApplicationContext(),QuickRecipeResults.class);
+  		      			//startActivity(i);
                 	}
                 }
             });

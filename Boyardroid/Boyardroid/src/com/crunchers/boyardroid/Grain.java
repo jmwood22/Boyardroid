@@ -216,7 +216,7 @@ public class Grain extends Activity {
 			  mp = MediaPlayer.create(Grain.this, R.raw.search);
 			  mp.start();
 			  getIngredients();
-			  Toast.makeText(getApplicationContext(), ingredients.toString(), Toast.LENGTH_LONG).show();
+			  Toast.makeText(getApplicationContext(), "Nothing to Toggle", Toast.LENGTH_LONG).show();
 		  }
 		});
 		

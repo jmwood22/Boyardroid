@@ -151,7 +151,7 @@ public class Recipes extends Activity {
 		else
 			results+="Frequency DESC, Recipe.Name";
 		
-		Toast.makeText(getApplicationContext(), results, Toast.LENGTH_LONG).show();
+		//Toast.makeText(getApplicationContext(), results, Toast.LENGTH_LONG).show();
 		c = database.rawQuery(results, null);
 		
 		for(c.moveToFirst();!c.isAfterLast();c.moveToNext())
@@ -202,9 +202,9 @@ public class Recipes extends Activity {
 		{
 			String rec = c.getString(0);
 			if(!lm.getFridgeList().contains(rec))
-				rec = "(Needed)\t" + rec;
+				rec = "\t\t(Needed)\t" + rec;
 			else
-				rec = "\t\t\t\t\t\t" + rec;
+				rec = "\t\t\t\t\t\t\t\t" + rec;
 			if(!ingredients.contains(rec))
 				ingredients.add(rec);
 		}
