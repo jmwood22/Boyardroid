@@ -126,5 +126,6 @@
     <string name="view_all_recipes">View All Recipes</string>
     <string name="title_activity_recipes">Recipes</string>
     <string name="title_service_music_service">MusicService</string>
+    <string name="add_to_fav">Add to Favorites?</string>
 
 </resources>

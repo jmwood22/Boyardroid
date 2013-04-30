@@ -67,7 +67,7 @@ public class FridgeResults extends Activity {
 		findRecipes();
 		
 		setContentView(R.layout.activity_fridge_results);
-		
+		lm.setViewRecipes(false);
 		ExpandList = (ExpandableListView) findViewById(R.id.ExpList);
         ExpListItems = SetStandardGroups();
         ExpAdapter = new ExpandListAdapter(FridgeResults.this, ExpListItems);
@@ -149,7 +149,9 @@ public class FridgeResults extends Activity {
 		{
 			String rec = c.getString(0);
 			if(!lm.getFridgeList().contains(rec))
-				rec += " needed";
+				rec = "(Needed)\t" + rec;
+			else
+				rec = "\t\t\t\t\t\t" + rec;
 			if(!ingredients.contains(rec))
 				ingredients.add(rec);
 		}

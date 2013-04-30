@@ -26,6 +26,7 @@ public class QuickRecipe extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_quick_recipe);
+		setTitle("Categories");
 
 		fruit = (Button) findViewById(R.id.fruit);
 		fruit.setOnClickListener(new OnClickListener() {

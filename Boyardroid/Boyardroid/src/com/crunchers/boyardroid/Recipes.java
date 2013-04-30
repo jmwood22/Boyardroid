@@ -56,7 +56,7 @@ public class Recipes extends Activity {
 		textView = (TextView)this.findViewById(R.id.textView1);
 
 		textView.setText(sort);
-		
+		lm.setViewRecipes(true);
 		db = new DataBaseHelper(this);
 		 
 		 try {
@@ -202,7 +202,9 @@ public class Recipes extends Activity {
 		{
 			String rec = c.getString(0);
 			if(!lm.getFridgeList().contains(rec))
-				rec += " needed";
+				rec = "(Needed)\t" + rec;
+			else
+				rec = "\t\t\t\t\t\t" + rec;
 			if(!ingredients.contains(rec))
 				ingredients.add(rec);
 		}

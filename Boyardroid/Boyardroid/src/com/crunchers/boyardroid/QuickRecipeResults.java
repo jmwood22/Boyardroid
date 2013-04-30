@@ -66,7 +66,7 @@ public class QuickRecipeResults extends Activity {
 		findRecipes();
 		
 		setContentView(R.layout.activity_quick_recipe_results);
-		
+		lm.setViewRecipes(false);
 		ExpandList = (ExpandableListView) findViewById(R.id.ExpList);
         ExpListItems = SetStandardGroups();
         ExpAdapter = new ExpandListAdapter(QuickRecipeResults.this, ExpListItems);
@@ -173,8 +173,10 @@ public class QuickRecipeResults extends Activity {
 		for(c.moveToFirst();!c.isAfterLast();c.moveToNext())
 		{
 			String rec = c.getString(0);
-			if(!lm.getFridgeList().contains(rec))
-				rec += " needed";
+			if(!lm.getQuickList().contains(rec))
+				rec = "(Needed)\t" + rec;
+			else
+				rec = "\t\t\t\t\t\t" + rec;
 			if(!ingredients.contains(rec))
 				ingredients.add(rec);
 		}

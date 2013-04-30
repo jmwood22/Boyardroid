@@ -22,14 +22,17 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CheckedTextView;
 import android.widget.ListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 
 public class RecipeInfo extends Activity {
@@ -45,6 +48,7 @@ public class RecipeInfo extends Activity {
 	private DataBaseHelper db;
 	private static SQLiteDatabase database;
 	private Cursor c;
+	private Button addToFav;
 	
 	private MediaPlayer mp;
 
@@ -83,12 +87,73 @@ public class RecipeInfo extends Activity {
 		
 		Intent i = getIntent();
 		recipe = i.getExtras().getString("recipe");
+		setTitle(recipe);
+		
+		addToFav = (Button)findViewById(R.id.button1);
+		
+		if(checkFavRecipe())
+			addToFav.setText("Remove From Favorites?");
+		else
+			addToFav.setText("Add To Favorites?");
+		
+		addToFav.setOnClickListener(new OnClickListener() 
+		{
+		  public void onClick(View v)
+		  {
+			 toggleFav();
+		  }
+		});
 		
 		addToFrequency();
 		getRecipeInfo();
 		findIngredients();
 		
 		textView.setText(recipeInfo);
+	}
+
+	protected void toggleFav() 
+	{
+		if(checkFavRecipe())
+		{
+			 String fav = "Update Recipe Set Favorite = 0 Where Name = '" + recipe + "'";
+				
+			 database.execSQL(fav);
+			  
+			 Toast.makeText(getApplicationContext(), "Unfavorited", Toast.LENGTH_SHORT).show();
+			 Intent intent = getIntent();
+			 finish();
+			 startActivity(intent);
+		}
+		
+		else
+		{
+			 String fav = "Update Recipe Set Favorite = 1 Where Name = '" + recipe + "'";
+				
+			 database.execSQL(fav);
+			  
+			 Toast.makeText(getApplicationContext(), "Favorited", Toast.LENGTH_SHORT).show();
+			 Intent intent = getIntent();
+			 finish();
+			 startActivity(intent);
+		}
+	}
+
+	private boolean checkFavRecipe() 
+	{
+		String results = "Select Recipe.Favorite From Recipe Where Recipe.Name = '" + recipe + "'";
+		String val;
+		c = database.rawQuery(results, null);
+		
+		c.moveToFirst();
+		
+		val = c.getString(0);
+		
+		c.close();
+		
+		if(val.equals("1"))
+			return true;
+		else
+			return false;
 	}
 
 	private void addToFrequency() 
@@ -176,10 +241,13 @@ public class RecipeInfo extends Activity {
 		    startActivity(i); 
 	        return true;
 	    }
+		
+		
 	    if(keyCode == KeyEvent.KEYCODE_BACK)
 	    {
 	    	
-	    	
+	    	if(ingredients.size()!=0)
+	    	{
 	    	final CharSequence[] items = new CharSequence[ingredients.size()];
 	    	boolean[] checks = new boolean[ingredients.size()];
 	    	for(int i = 0; i<ingredients.size(); i++)
@@ -249,91 +317,27 @@ public class RecipeInfo extends Activity {
 	    	AlertDialog alert = builder.create();
 	    	alert.show();
 	    	
-	    	/*LayoutInflater layoutInflater = (LayoutInflater)getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);  
-	    	View popupView = layoutInflater.inflate(R.layout.activity_popup_window, null);  
-	        final PopupWindow popupWindow = new PopupWindow(popupView, LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
-	        
-	    	findIngredients(recipe);
-	    	//setContentView(R.layout.activity_popup_window);
-	    	listView = (ListView)popupView.findViewById(R.id.junk);
-			adapter = new ArrayAdapter<String>( this, android.R.layout.simple_list_item_multiple_choice, ingredients );
-			listView.setAdapter(adapter);
-			listView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
-	    	listView.setOnItemClickListener(new OnItemClickListener(){
-				@Override
-				public void onItemClick(AdapterView<?> parent, View view, int position, long id){
-					CheckedTextView check = (CheckedTextView)view;
-					if(check.isChecked())
-					{
-						check.setChecked(false);
-						tempList.remove(ingredients.get(position));
-					}
-					else
-					{
-						check.setChecked(true);
-						tempList.add(ingredients.get(position));
-					}
-				}
-				
-				
-
-	    	});  
-	                
-	        Button yes = (Button)popupView.findViewById(R.id.yes);
-	        yes.setOnClickListener(new Button.OnClickListener(){
-	        @Override
-	        public void onClick(View v) {
-	         // TODO Auto-generated method stub
-	        	
-	        	
-	        	
-	        	
-	        	
-	        	popupWindow.dismiss();
-	        	if(lm.getFlag())
-	        	{
-	        		for(int i = 0; i < tempList.size(); i++)
-		        	{
-		        		lm.removeFromFridge(tempList.get(i));
-		        	}
-	        		Intent i=new Intent(getApplicationContext(),FridgeResults.class);
-	  		      	startActivity(i); 
-	        	}
-	        	else
-	        	{
-	        		for(int i = 0; i < tempList.size(); i++)
-		        	{
-		        		lm.removeFromQuickList(tempList.get(i));
-		        	}
-	        		Intent i=new Intent(getApplicationContext(),QuickRecipeResults.class);
-  		      		startActivity(i); 
-	        	}
-	        }});
-	        
-	        Button no = (Button)popupView.findViewById(R.id.no);
-	        no.setOnClickListener(new Button.OnClickListener(){
-	        @Override
-	        public void onClick(View v) {
-	         // TODO Auto-generated method stub
-	        	//setContentView(R.layout.activity_recipe_info);
-	        	popupWindow.dismiss();
-	        	if(lm.getFlag())
-	        	{
-	        		Intent i=new Intent(getApplicationContext(),FridgeResults.class);
-	  		      	startActivity(i); 
-	        	}
-	        	else
-	        	{
-	        		Intent i=new Intent(getApplicationContext(),QuickRecipeResults.class);
-  		      		startActivity(i); 
-	        	}
-	        }});
-	                  
-	        popupWindow.showAtLocation(popupView, 1, 1, 1);*/
-	            
 	      }
-	       
-	    
+	    	else
+	    	{
+	    		if(lm.getViewRecipes())
+	    		{
+	    			Intent i=new Intent(getApplicationContext(),Recipes.class);
+	      			startActivity(i);
+	    		}
+	    		
+	    		else if(lm.getFlag())
+            	{
+            		Intent i=new Intent(getApplicationContext(),FridgeResults.class);
+		      			startActivity(i);
+            	}
+            	else
+            	{
+            		Intent i=new Intent(getApplicationContext(),QuickRecipeResults.class);
+		      			startActivity(i);
+            	}
+	    	}
+	    }
 	    return super.onKeyDown(keyCode, event);
 	}
 

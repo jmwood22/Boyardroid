@@ -311,6 +311,7 @@ public final class R {
     public static final class string {
         public static final int action_settings=0x7f060072;
         public static final int addIngredient_button=0x7f06000e;
+        public static final int add_to_fav=0x7f06007d;
         public static final int add_to_list=0x7f060079;
         public static final int app_name=0x7f060000;
         public static final int apple=0x7f060012;

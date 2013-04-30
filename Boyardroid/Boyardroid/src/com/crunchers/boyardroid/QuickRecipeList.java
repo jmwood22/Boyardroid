@@ -68,7 +68,12 @@ public class QuickRecipeList extends Activity
 		 
 		database = db.getWritableDatabase();
 		database.execSQL("CREATE TABLE IF NOT EXISTS QuickList (_id INTEGER PRIMARY KEY, ingredient TEXT)");
+		
+		if(lm.getQuickList().size()==0)
+			database.execSQL("Delete From QuickList");
+		
 		setContentView(R.layout.activity_quick_recipe_list);
+		setTitle("Quick Recipe List");
 		
 		listView = (ListView)findViewById(R.id.listView1);
 		adapter = new ArrayAdapter<String>( this, android.R.layout.simple_list_item_multiple_choice, lm.getQuickList() );

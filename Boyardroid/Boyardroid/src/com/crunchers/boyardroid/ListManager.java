@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class ListManager 
 {
 	private static boolean fridge = true;
+	private static boolean viewRecipes = false;
 	private ArrayList<String> tempList = new ArrayList<String>();
 	private static ArrayList<String> fridgeList = new ArrayList<String>();
 	private static ArrayList<String> quickList = new ArrayList<String>();
@@ -28,6 +29,16 @@ public class ListManager
 	public void FridgeListFalse()
 	{
 		ListManager.fridge= false;
+	}
+	
+	public boolean getViewRecipes()
+	{
+		return viewRecipes;
+	}
+	
+	public void setViewRecipes(boolean val)
+	{
+		viewRecipes = val;
 	}
 	
 	public void addToTempList(String ingredient)
