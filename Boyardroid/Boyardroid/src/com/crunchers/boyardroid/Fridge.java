@@ -254,6 +254,14 @@ public class Fridge extends Activity
 		    startActivity(i); 
 	        return true;
 	    }
+	    
+	    else if(keyCode == KeyEvent.KEYCODE_BACK)
+	    {
+	    	Intent i=new Intent(getApplicationContext(),HomeScreen.class);
+		    startActivity(i); 
+	        return true;
+	    }
+	    
 	    return super.onKeyDown(keyCode, event);
 	}
 	

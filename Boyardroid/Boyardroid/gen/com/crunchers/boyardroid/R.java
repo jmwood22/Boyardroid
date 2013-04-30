@@ -163,7 +163,7 @@ public final class R {
         public static final int eggs=0x7f09003d;
         public static final int feta=0x7f090009;
         public static final int findRecipes=0x7f090017;
-        public static final int fridge=0x7f090034;
+        public static final int fridge=0x7f090035;
         public static final int fridgeList=0x7f090057;
         public static final int fruit=0x7f090053;
         public static final int garlic=0x7f09006a;
@@ -212,7 +212,7 @@ public final class R {
         public static final int provolone=0x7f090013;
         public static final int pumpkin=0x7f090075;
         public static final int quickRecipe=0x7f090058;
-        public static final int quick_recipe=0x7f090035;
+        public static final int quick_recipe=0x7f090034;
         public static final int radish=0x7f090077;
         public static final int raspberry=0x7f090029;
         public static final int remove=0x7f090019;

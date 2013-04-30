@@ -270,7 +270,17 @@ public class RecipeInfo extends Activity {
 	    	});
 	    	builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int whichButton) {
-                	if(lm.getFlag())
+                	if(lm.getViewRecipes())
+                	{
+                		for(int i = 0; i<tempList.size(); i++)
+                    	{
+                			lm.removeFromFridge(tempList.get(i));
+                    	}
+                    
+                		Intent i=new Intent(getApplicationContext(),Recipes.class);
+  		      			startActivity(i);
+                	}
+                	else if(lm.getFlag())
                 	{
                 		for(int i = 0; i<tempList.size(); i++)
                     	{

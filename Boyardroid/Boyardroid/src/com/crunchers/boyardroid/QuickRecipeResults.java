@@ -134,6 +134,13 @@ public class QuickRecipeResults extends Activity {
 		    startActivity(i); 
 	        return true;
 	    }
+	    
+	    else if(keyCode == KeyEvent.KEYCODE_BACK)
+	    {
+        		Intent i=new Intent(getApplicationContext(),QuickRecipeList.class);
+	      		startActivity(i);
+	    }
+	    
 	    return super.onKeyDown(keyCode, event);
 	}
 	

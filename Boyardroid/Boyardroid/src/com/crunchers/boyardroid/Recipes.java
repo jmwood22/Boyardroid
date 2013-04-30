@@ -229,6 +229,20 @@ public class Recipes extends Activity {
 		    startActivity(i); 
 	        return true;
 	    }
+	    
+	    else if (keyCode == KeyEvent.KEYCODE_BACK)
+	    {
+	    	if(lm.getFlag())
+        	{
+        		Intent i=new Intent(getApplicationContext(),Fridge.class);
+	      		startActivity(i);
+        	}
+        	else
+        	{
+        		Intent i=new Intent(getApplicationContext(),QuickRecipeList.class);
+	      		startActivity(i);
+        	}
+	    }
 	    return super.onKeyDown(keyCode, event);
 	}
 	
