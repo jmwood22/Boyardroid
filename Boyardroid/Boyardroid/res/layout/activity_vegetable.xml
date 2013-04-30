@@ -23,12 +23,14 @@
 
         <TableLayout
             android:layout_width="match_parent"
-            android:layout_height="404dp" >
+            android:layout_height="404dp" 
+            android:gravity="center">
 
             <TableRow
                 android:id="@+id/tableRow1"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content" 
+                android:gravity="center">
 
                 <CheckBox
                     android:id="@+id/avocado"
@@ -58,7 +60,8 @@
             <TableRow
                 android:id="@+id/tableRow2"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
                 <CheckBox
                     android:id="@+id/blackolive"
@@ -88,7 +91,8 @@
             <TableRow
                 android:id="@+id/tableRow3"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
                 <CheckBox
                     android:id="@+id/celery"
@@ -118,7 +122,8 @@
             <TableRow
                 android:id="@+id/tableRow4"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
                 <CheckBox
                     android:id="@+id/cauliflower"
@@ -148,7 +153,8 @@
             <TableRow
                 android:id="@+id/tableRow5"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content" 
+                android:gravity="center">
 
                 <CheckBox
                     android:id="@+id/cucumber"
@@ -178,7 +184,8 @@
             <TableRow
                 android:id="@+id/tableRow6"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
                 <CheckBox
                     android:id="@+id/garlic"
@@ -208,7 +215,8 @@
             <TableRow
                 android:id="@+id/tableRow7"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
                 <CheckBox
                     android:id="@+id/greenbean"
@@ -238,7 +246,8 @@
             <TableRow
                 android:id="@+id/tableRow8"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
                 <CheckBox
                     android:id="@+id/lettuce"
@@ -268,7 +277,8 @@
             <TableRow
                 android:id="@+id/tableRow9"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
                 <CheckBox
                     android:id="@+id/onion"
@@ -298,7 +308,8 @@
             <TableRow
                 android:id="@+id/tableRow10"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
                 <CheckBox
                     android:id="@+id/pepper"
@@ -328,7 +339,8 @@
             <TableRow
                 android:id="@+id/tableRow11"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content" 
+                android:gravity="center">
 
                 <CheckBox
                     android:id="@+id/potato"
@@ -358,7 +370,8 @@
             <TableRow
                 android:id="@+id/tableRow12"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content" 
+                android:gravity="center">
 
                 <CheckBox
                     android:id="@+id/radish"
@@ -388,7 +401,8 @@
             <TableRow
                 android:id="@+id/tableRow13"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content" 
+                android:gravity="center">
 
                 <CheckBox
                     android:id="@+id/squash"
@@ -418,7 +432,8 @@
             <TableRow
                 android:id="@+id/tableRow14"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content" 
+                android:gravity="center">
 
                 <CheckBox
                     android:id="@+id/yam"

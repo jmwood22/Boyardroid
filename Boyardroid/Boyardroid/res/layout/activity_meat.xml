@@ -28,7 +28,8 @@
             <TableRow
                 android:id="@+id/tableRow1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
                 <CheckBox
                     android:id="@+id/bacon"
@@ -58,7 +59,8 @@
             <TableRow
                 android:id="@+id/tableRow2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
                 <CheckBox
                     android:id="@+id/chicken"
@@ -88,7 +90,8 @@
             <TableRow
                 android:id="@+id/tableRow3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
                 <CheckBox
                     android:id="@+id/crab"
@@ -118,7 +121,8 @@
             <TableRow
                 android:id="@+id/tableRow4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
                 <CheckBox
                     android:id="@+id/eggs"
@@ -148,7 +152,8 @@
             <TableRow
                 android:id="@+id/tableRow5"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
                 <CheckBox
                     android:id="@+id/ham"
@@ -178,7 +183,8 @@
             <TableRow
                 android:id="@+id/tableRow6"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
                 <CheckBox
                     android:id="@+id/lobster"
@@ -208,7 +214,8 @@
             <TableRow
                 android:id="@+id/tableRow7"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
                 <CheckBox
                     android:id="@+id/pepperoni"
@@ -238,7 +245,8 @@
             <TableRow
                 android:id="@+id/tableRow8"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
                 <CheckBox
                     android:id="@+id/sausage"
@@ -268,7 +276,8 @@
             <TableRow
                 android:id="@+id/tableRow9"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
                 <CheckBox
                     android:id="@+id/shrimp"
@@ -298,7 +307,8 @@
             <TableRow
                 android:id="@+id/tableRow10"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:gravity="center" >
 
                 <CheckBox
                     android:id="@+id/steak"
