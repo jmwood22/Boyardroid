@@ -12,6 +12,7 @@
 	        android:id="@+id/scrollView1"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
+        android:layout_above="@+id/linearLayout1"
 	        android:layout_alignParentLeft="true"
 	        android:layout_marginLeft="34dp" >
 	    </ScrollView>
@@ -20,27 +21,34 @@
 	        android:id="@+id/listView1"
 	        android:layout_width="match_parent"
 	        android:layout_height="wrap_content"
-	        android:layout_above="@+id/findRecipes"
+        android:layout_above="@+id/linearLayout1"
 	        android:layout_alignParentLeft="true">
 
 	    </ListView>
 
-    <Button
-        android:id="@+id/findRecipes"
-        android:layout_width="160dp"
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:background="@drawable/longbutton"
-        android:text="@string/toggle_View" />
+        android:layout_alignParentLeft="true" >
 
-    <Button
-        android:id="@+id/add"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/longbutton"
-        android:text="@string/add_to_list" />
+        <Button
+            android:id="@+id/findRecipes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/longbutton"
+            android:text="@string/toggle_View" />
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/longbutton"
+            android:text="@string/add_to_list" />
+    </LinearLayout>
 
 </RelativeLayout>
