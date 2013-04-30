@@ -3,73 +3,71 @@
     android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/withoutmascot"
     android:orientation="vertical"
-    android:background="@drawable/mascot" 
     tools:context=".FridgeScreen" >
 
     <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:layout_alignParentLeft="true">
-    
-    
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:orientation="horizontal" >
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/longbutton"
+            android:onClick="addIngre"
+            android:text="@string/addIngredient_button" />
+
+        <Button
+            android:id="@+id/remove"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/longbutton"
+            android:onClick="removIngre"
+            android:text="@string/removeIngredient_button" />
+    </LinearLayout>
+
     <Button
-        android:id="@+id/add"
+        android:id="@+id/button3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/longbutton"
+        android:onClick="favRecipe"
+        android:text="@string/view_all_recipes" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button3"
+        android:background="@drawable/longbutton"
+        android:onClick="dialogBtn"
+        android:text="@string/find_recipe" />
+
+    <ScrollView
+        android:id="@+id/scrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/add"
+        android:layout_marginLeft="34dp" >
+    </ScrollView>
+
+    <ListView
+        android:id="@+id/listView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:onClick="addIngre"
-        android:background="@drawable/longbutton"
-        android:text="@string/addIngredient_button" />
+        android:layout_above="@+id/button4"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/linearLayout1" >
+    </ListView>
 
-    <Button
-        android:id="@+id/remove"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:onClick="removIngre"
-        android:background="@drawable/longbutton"
-        android:text="@string/removeIngredient_button" />
-</LinearLayout>
-	    
-
-	    <Button
-	        android:id="@+id/button3"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentBottom="true"
-	        android:layout_marginBottom="0dp"
-	        android:onClick="favRecipe"
-	        android:background="@drawable/longbutton"
-	        android:text="@string/view_all_recipes" />
-
-	    <Button
-	        android:id="@+id/button4"
-	        android:layout_width="fill_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_above="@+id/button3"
-	        android:onClick="dialogBtn"
-	        android:background="@drawable/longbutton"
-	        android:text="@string/find_recipe" />
-
-	    <ScrollView
-	        android:id="@+id/scrollView1"
-	        android:layout_width="wrap_content"
-	        android:layout_height="wrap_content"
-	        android:layout_alignParentLeft="true"
-	        android:layout_below="@+id/add"
-	        android:layout_marginLeft="34dp" >
-	    </ScrollView>
-
-	    <ListView
-	        android:id="@+id/listView1"
-	        android:layout_width="match_parent"
-	        android:layout_height="wrap_content"
-	        android:layout_above="@+id/button4"
-	        android:layout_alignParentLeft="true"
-	        android:layout_below="@+id/add" >
-
-	    </ListView>
-	
 </RelativeLayout>

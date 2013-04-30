@@ -6,14 +6,14 @@
     android:layout_height="match_parent"
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
-    android:background="@drawable/mascot"
+    android:background="@drawable/withoutmascot"
     android:orientation="vertical"
     tools:context=".Quick Recipe" >
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@+id/add"
+        android:layout_above="@+id/linearLayout1"
         android:layout_alignParentTop="true"
         android:isScrollContainer="true"
         android:overScrollMode="always"
@@ -37,9 +37,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/apple"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/apple"
                     android:textColor="@android:color/black" />
 
@@ -49,9 +50,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/banana"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/banana"
                     android:textColor="@android:color/black" />
             </TableRow>
@@ -68,9 +70,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/blueberry"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/blueberry"
                     android:textColor="@android:color/black" />
 
@@ -80,9 +83,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/cherry"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/cherry"
                     android:textColor="@android:color/black" />
             </TableRow>
@@ -99,9 +103,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/grape"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/grape"
                     android:textColor="@android:color/black" />
 
@@ -111,9 +116,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/lemon"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/lemon"
                     android:textColor="@android:color/black" />
             </TableRow>
@@ -130,9 +136,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/lime"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/lime"
                     android:textColor="@android:color/black" />
 
@@ -142,9 +149,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/orange"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/orange"
                     android:textColor="@android:color/black" />
             </TableRow>
@@ -161,9 +169,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/pear"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/pear"
                     android:textColor="@android:color/black" />
 
@@ -173,9 +182,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/pineapple"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/pineapple"
                     android:textColor="@android:color/black" />
             </TableRow>
@@ -192,9 +202,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/raspberry"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/raspberry"
                     android:textColor="@android:color/black" />
 
@@ -204,9 +215,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/strawberry"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/strawberry"
                     android:textColor="@android:color/black" />
             </TableRow>
@@ -223,31 +235,39 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/watermelon"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/watermelon"
                     android:textColor="@android:color/black" />
             </TableRow>
         </TableLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/findRecipes"
-        android:layout_width="160dp"
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:background="@drawable/longbutton"
-        android:text="@string/toggle_View" />
+        android:layout_alignParentLeft="true" >
 
-    <Button
-        android:id="@+id/add"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/longbutton"
-        android:text="@string/add_to_list" />
+        <Button
+            android:id="@+id/findRecipes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/longbutton"
+            android:text="@string/toggle_View" />
+
+        <Button
+            android:id="@+id/add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/longbutton"
+            android:text="@string/add_to_list" />
+    </LinearLayout>
 
 </RelativeLayout>

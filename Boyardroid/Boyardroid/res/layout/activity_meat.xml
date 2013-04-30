@@ -6,20 +6,20 @@
     android:layout_height="match_parent"
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
-    android:background="@drawable/mascot"
+    android:background="@drawable/withoutmascot"
     android:orientation="vertical"
     tools:context=".Quick Recipe" >
 
     <ScrollView
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_above="@+id/add"
         android:layout_alignParentTop="true"
         android:isScrollContainer="true"
         android:overScrollMode="always"
         android:scrollbarAlwaysDrawVerticalTrack="true"
         android:scrollbarStyle="outsideInset"
-        android:scrollbars="vertical" >
+        android:scrollbars="vertical"
+        android:layout_above="@+id/linearLayout1" >
 
         <TableLayout
             android:layout_width="match_parent"
@@ -37,9 +37,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/bacon"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/bacon"
                     android:textColor="@android:color/black" />
 
@@ -49,9 +50,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/bologna"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/bologna"
                     android:textColor="@android:color/black" />
             </TableRow>
@@ -68,9 +70,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/chicken"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/chicken"
                     android:textColor="@android:color/black" />
 
@@ -80,9 +83,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/clam"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/clam"
                     android:textColor="@android:color/black" />
             </TableRow>
@@ -99,9 +103,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/crab"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/crab"
                     android:textColor="@android:color/black" />
 
@@ -111,9 +116,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/crawfish"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/crawfish"
                     android:textColor="@android:color/black" />
             </TableRow>
@@ -130,9 +136,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/egg"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/eggs"
                     android:textColor="@android:color/black" />
 
@@ -142,9 +149,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/beef"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/ground_beef"
                     android:textColor="@android:color/black" />
             </TableRow>
@@ -161,9 +169,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/ham"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/ham"
                     android:textColor="@android:color/black" />
 
@@ -173,9 +182,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/lamb"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/lamb"
                     android:textColor="@android:color/black" />
             </TableRow>
@@ -192,9 +202,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/lobster"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/lobster"
                     android:textColor="@android:color/black" />
 
@@ -204,9 +215,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/oyster"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/oyster"
                     android:textColor="@android:color/black" />
             </TableRow>
@@ -223,9 +235,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/pepperoni"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/pepperoni"
                     android:textColor="@android:color/black" />
 
@@ -235,9 +248,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/pork"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/pork"
                     android:textColor="@android:color/black" />
             </TableRow>
@@ -254,9 +268,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/sausage"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/sausage"
                     android:textColor="@android:color/black" />
 
@@ -266,9 +281,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/scallop"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/scallop"
                     android:textColor="@android:color/black" />
             </TableRow>
@@ -285,9 +301,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/shrimp"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/shrimp"
                     android:textColor="@android:color/black" />
 
@@ -297,9 +314,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/solami"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/solami"
                     android:textColor="@android:color/black" />
             </TableRow>
@@ -316,9 +334,10 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/steak"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/steak"
                     android:textColor="@android:color/black" />
 
@@ -328,36 +347,41 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="22dp"
                     android:layout_marginRight="22dp"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginBottom="7dp"
                     android:background="@drawable/turkey"
-                    android:gravity="top"
+                    android:gravity="center_horizontal"
                     android:text="@string/turkey"
                     android:textColor="@android:color/black" />
             </TableRow>
         </TableLayout>
     </ScrollView>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
 
         <Button
             android:id="@+id/findRecipes"
-            android:layout_width="160dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
+            android:layout_weight="1"
             android:background="@drawable/longbutton"
             android:text="@string/toggle_View" />
 
         <Button
             android:id="@+id/add"
-            android:layout_width="160dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
+            android:layout_weight="1"
             android:background="@drawable/longbutton"
             android:text="@string/add_to_list" />
-    </RelativeLayout>
+    </LinearLayout>
+
+       
 
 </RelativeLayout>

@@ -5,15 +5,28 @@
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
     android:layout_margin="0dip"
-    android:background="@drawable/mascot"
+    android:background="@drawable/withoutmascot"
     tools:context=".QuickRecipe" >
 
+    
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentTop="true"
+        android:isScrollContainer="true"
+        android:overScrollMode="always"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:scrollbarStyle="outsideInset"
+        android:scrollbars="vertical"
+        android:layout_above="@+id/linearLayout1" >
+    <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="404dp" >
     <TableRow
         android:id="@+id/tableRow1"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:gravity="center" >
+        android:gravity="center" > >
 
         <Button
             android:id="@+id/meat"
@@ -42,11 +55,9 @@
 
     <TableRow
         android:id="@+id/tableRow2"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/tableRow1"
-        android:gravity="center" >
+        android:gravity="center" > >
 
         <Button
             android:id="@+id/fruit"
@@ -75,11 +86,9 @@
 
     <TableRow
         android:id="@+id/tableRow3"
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/tableRow2"
-        android:gravity="center" >
+        android:gravity="center" > >
 
         <Button
             android:id="@+id/grain"
@@ -105,24 +114,34 @@
             android:gravity="center_horizontal"
             android:text="@string/spice" />
     </TableRow>
-
-    <Button
-        android:id="@+id/quickRecipe"
-        android:layout_width="160dp"
+    </TableLayout>
+	</ScrollView>
+    
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/fridgeList"
-        android:layout_alignBottom="@+id/fridgeList"
-        android:layout_alignParentRight="true"
-        android:background="@drawable/longbutton"
-        android:text="Quick Recipe List" />
-
-    <Button
-        android:id="@+id/fridgeList"
-        android:layout_width="160dp"
-        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:background="@drawable/longbutton"
-        android:text="Fridge List" />
+        android:layout_alignParentLeft="true" >
+
+        <Button
+            android:id="@+id/fridgeList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/longbutton"
+            android:text="Fridge List" />
+
+        <Button
+            android:id="@+id/quickRecipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/longbutton"
+            android:text="Quick Recipe List" />
+    </LinearLayout>
+    
+    
 
 </RelativeLayout>
